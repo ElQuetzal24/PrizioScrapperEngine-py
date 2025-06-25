@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 import re
 import os
 from datetime import datetime
-import csv
 
 from scraper.normalizador import obtener_marca_con_renderizado, obtener_sku_renderizado
 from repositorio.sql_server import insertar_o_actualizar_producto
@@ -62,7 +61,7 @@ def procesar_categorias(driver):
 
                     nombre = nombre_el.get_text(strip=True) if nombre_el else "N/A"
                     precio = precio_el.get_text(strip=True) if precio_el else "0"
-                    imagen = img_el.get('data-src') or img_el.get('src') or "N/A"
+                    imagen = img_el.get('data-src') or img_el.get('src') or ""
                     enlace = enlace_el['href'] if enlace_el and enlace_el.has_attr('href') else "N/A"
 
                     if not enlace.startswith("http") or enlace in visitados:
@@ -71,19 +70,30 @@ def procesar_categorias(driver):
                     productos_visitados_log.write(enlace + "\n")
                     nuevos += 1
 
-                    if imagen.startswith("data:image"):
+                    if "pixel.jpg" in imagen or not imagen:
                         imagen = "N/A"
 
                     precio_valor = float(precio.replace("₡", "").replace(".", "").replace(",", ".").strip())
 
-                    # Ir al detalle solo para marca y SKU
                     driver.get(enlace)
                     WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'body')))
+                    detalle_soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+                    # Imagen real desde detalle
+                    img_detalle = detalle_soup.select_one('img.fotorama__img')
+                    imagen_detalle = (
+                        img_detalle.get('data-src')
+                        or img_detalle.get('src')
+                        or ""
+                    ).strip()
+                    if imagen_detalle.startswith("https://tienda.pequenomundo.com/media/catalog/product/"):
+                        imagen = imagen_detalle
+
                     sku = obtener_sku_renderizado(driver)
                     marca = obtener_marca_con_renderizado(driver, enlace)
-                    modelo = re.sub(re.escape(marca), "", nombre, flags=re.IGNORECASE).strip()
+                    modelo = re.sub(re.escape(marca), "", nombre, flags=re.IGNORECASE).strip() if marca else nombre
 
-                    print(f"🔍 {nombre} | ₡{precio_valor} | SKU: {sku} | Marca: {marca}")
+                    print(f"🔍 {nombre} | ₡{precio_valor} | SKU: {sku} | Marca: {marca} | Img: {imagen}")
 
                     fue_insertado = insertar_o_actualizar_producto(
                         nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor
