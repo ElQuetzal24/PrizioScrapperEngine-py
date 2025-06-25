@@ -1,52 +1,66 @@
 import pyodbc
 
-# Conexión a SQL Server
-conexion = pyodbc.connect(
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=localhost;"
-    "DATABASE=scrap_db;"
-    "Trusted_Connection=yes;"
-)
-cursor = conexion.cursor()
-
 def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, categoria, precio_valor):
     try:
-        cursor.execute(
-            "SELECT ProductoId FROM Producto WHERE Nombre = ? AND Fuente = ?",
-            nombre, 'PequenoMundo'
-        )
-        fila = cursor.fetchone()
+        with pyodbc.connect(
+            "DRIVER={ODBC Driver 17 for SQL Server};"
+            "SERVER=localhost;"
+            "DATABASE=scrap_db;"
+            "Trusted_Connection=yes;"
+        ) as conexion:
+            cursor = conexion.cursor()
 
-        if fila:
-            producto_id = fila[0]
+            print(f"📥 Revisando producto: {nombre}")
+
             cursor.execute(
-                "SELECT TOP 1 Precio FROM PrecioProducto WHERE ProductoId = ? ORDER BY FechaRegistro DESC",
-                producto_id
+                "SELECT ProductoId FROM Producto WHERE Nombre = ? AND Fuente = ?",
+                nombre, 'PequenoMundo'
             )
-            ultimo = cursor.fetchone()
+            fila = cursor.fetchone()
 
-            if not ultimo or float(ultimo[0]) != precio_valor:
+            if fila:
+                producto_id = fila[0]
                 cursor.execute(
-                    "INSERT INTO PrecioProducto (ProductoId, Precio) VALUES (?, ?)",
+                    "SELECT TOP 1 Precio FROM PrecioProducto WHERE ProductoId = ? ORDER BY FechaRegistro DESC",
+                    producto_id
+                )
+                ultimo = cursor.fetchone()
+
+                if not ultimo:
+                    print(f"➕ Insertando primer precio para {nombre}")
+                    cursor.execute(
+                        "INSERT INTO PrecioProducto (ProductoId, Precio,FechaRegistro) VALUES (?, ?, GETDATE())",
+                        producto_id, precio_valor
+                    )
+                    conexion.commit()
+                    return True
+                elif float(ultimo[0]) != precio_valor:
+                    print(f"🔁 Precio actualizado para {nombre}: {ultimo[0]} → {precio_valor}")
+                    cursor.execute(
+                        "INSERT INTO PrecioProducto (ProductoId, Precio,FechaRegistro) VALUES (?, ?, GETDATE())",
+                        producto_id, precio_valor
+                    )
+                    conexion.commit()
+                    return True
+                else:
+                    print(f"🟰 Precio sin cambios para {nombre}: {precio_valor}")
+                    return False
+            else:
+                print(f"🆕 Insertando nuevo producto: {nombre}")
+                cursor.execute("""
+                    INSERT INTO Producto (Nombre, ImagenUrl, Fuente, SKU, Marca, Modelo, UrlCompra, Categoria)
+                    OUTPUT INSERTED.ProductoId
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """, nombre, imagen, 'PequenoMundo', sku, marca, modelo, enlace, categoria)
+                producto_id = cursor.fetchone()[0]
+                cursor.execute(
+                    "INSERT INTO PrecioProducto (ProductoId, Precio,FechaRegistro) VALUES (?, ?, GETDATE())",
                     producto_id, precio_valor
                 )
                 conexion.commit()
-                return True  # Cambio detectado
-        else:
-            cursor.execute("""
-                INSERT INTO Producto (Nombre, ImagenUrl, Fuente, SKU, Marca, Modelo, UrlCompra, Categoria)
-                OUTPUT INSERTED.ProductoId
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """, nombre, imagen, 'PequenoMundo', sku, marca, modelo, enlace, categoria)
-            producto_id = cursor.fetchone()[0]
-            cursor.execute(
-                "INSERT INTO PrecioProducto (ProductoId, Precio, FechaRegistro) VALUES (?, ?, GETDATE())",
-                producto_id, precio_valor
-            )
-            conexion.commit()
-            return True  # Producto nuevo insertado
+                return True
 
     except Exception as e:
         print(f"❌ Error SQL para '{nombre}': {e}")
 
-    return False  # Sin cambios
+    return False
