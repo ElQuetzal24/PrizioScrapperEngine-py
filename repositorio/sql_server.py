@@ -40,7 +40,7 @@ def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, c
             """, nombre, imagen, 'PequenoMundo', sku, marca, modelo, enlace, categoria)
             producto_id = cursor.fetchone()[0]
             cursor.execute(
-                "INSERT INTO PrecioProducto (ProductoId, Precio) VALUES (?, ?)",
+                "INSERT INTO PrecioProducto (ProductoId, Precio, FechaRegistro) VALUES (?, ?, GETDATE())",
                 producto_id, precio_valor
             )
             conexion.commit()

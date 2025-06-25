@@ -4,10 +4,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import re
 import os
+import asyncio
 from datetime import datetime
+
 
 from scraper.normalizador import obtener_marca_con_renderizado, obtener_sku_renderizado
 from repositorio.sql_server import insertar_o_actualizar_producto
+
+from helpers.sku_extractor import extraer_sku_desde_url
+
 
 CATEGORIA_SELECTORES = [
     "/electrodomesticos.html",
@@ -89,7 +94,8 @@ def procesar_categorias(driver):
                     if imagen_detalle.startswith("https://tienda.pequenomundo.com/media/catalog/product/"):
                         imagen = imagen_detalle
 
-                    sku = obtener_sku_renderizado(driver)
+                    sku = asyncio.run(extraer_sku_desde_url(enlace))
+
                     marca = obtener_marca_con_renderizado(driver, enlace)
                     modelo = re.sub(re.escape(marca), "", nombre, flags=re.IGNORECASE).strip() if marca else nombre
 
