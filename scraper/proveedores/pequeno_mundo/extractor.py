@@ -99,7 +99,7 @@ async def procesar_categorias(categorias, driver, queue):
 
                 except Exception as e:
                     errores_log.write(f"{datetime.now()} | Error en {enlace}: {e}\n")
-                    print(f"❌ Error procesando producto: {e}")
+                    print(f"Error procesando producto: {e}")
                     continue
 
             print(f"📄 Página {pagina} de {categoria} procesada.")

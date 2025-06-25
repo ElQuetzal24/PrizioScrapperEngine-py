@@ -19,35 +19,35 @@ class WalmartScraper(IScraper):
         with open(log_file, "a", encoding="utf-8") as log:
             log.write(f"\n===== INICIO DE EJECUCIÓN {datetime.now()} =====\n")
 
-        print("🟢 Iniciando WalmartScraper...")
+        print("Iniciando WalmartScraper...")
 
         while True:
             url = f"https://www.walmart.co.cr/api/catalog_system/pub/products/search?&O=OrderByTopSaleDESC&_from={(pagina-1)*limite}&_to={(pagina*limite)-1}"
-            print(f"🌐 Consultando página {pagina} → {url}")
+            print(f"Consultando página {pagina} → {url}")
             try:
                 res = requests.get(url, verify=False)
                 productos = res.json()
             except Exception as e:
-                mensaje = f"❌ Error al consultar o parsear JSON: {e}"
+                mensaje = f"Error al consultar o parsear JSON: {e}"
                 print(mensaje)
                 with open(log_file, "a", encoding="utf-8") as log:
                     log.write(mensaje + "\n")
                 break
 
-            print(f"📦 Productos en página {pagina}: {len(productos)}")
+            print(f"Productos en página {pagina}: {len(productos)}")
 
             if not productos:
                 break
 
             for p in productos:
                 if not isinstance(p, dict):
-                    mensaje = f"⚠️ Producto inválido (no es dict): {str(p)[:100]}"
+                    mensaje = f"Producto inválido (no es dict): {str(p)[:100]}"
                     print(mensaje)
                     with open(log_file, "a", encoding="utf-8") as log:
                         log.write(mensaje + "\n")
                     errores += 1
                     if errores > 10:
-                        final_msg = "🚨 Demasiados productos inválidos. Finalizando scraping."
+                        final_msg = "Demasiados productos inválidos. Finalizando scraping."
                         print(final_msg)
                         with open(log_file, "a", encoding="utf-8") as log:
                             log.write(final_msg + "\n")
@@ -80,7 +80,7 @@ class WalmartScraper(IScraper):
 
                     cambios.append([nombre, precio, marca, categoria, url_producto, imagen])
                 except Exception as e:
-                    mensaje = f"❌ Error procesando producto: {e}"
+                    mensaje = f"Error procesando producto: {e}"
                     print(mensaje)
                     with open(log_file, "a", encoding="utf-8") as log:
                         log.write(mensaje + "\n")

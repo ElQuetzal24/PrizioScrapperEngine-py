@@ -45,7 +45,7 @@ def obtener_marca_con_renderizado(driver, url_producto):
                     return partes[1].strip()
         return "Marca no encontrada"
     except Exception as e:
-        print(f"❌ Error renderizando marca desde {url_producto}: {e}")
+        print(f"Error renderizando marca desde {url_producto}: {e}")
         return "Error al renderizar"
 
 def obtener_sku_renderizado(driver):
@@ -58,7 +58,7 @@ def obtener_sku_renderizado(driver):
                 return match.group(1)
         return None
     except Exception as e:
-        print(f"❌ Error extrayendo SKU: {e}")
+        print(f"Error extrayendo SKU: {e}")
         return None
 
 cambios_detectados = []
@@ -130,7 +130,7 @@ for categoria_url in CATEGORIA_SELECTORES:
                     cambios_detectados.append([nombre, precio_valor, marca, categoria, enlace, imagen])
 
             except Exception as e:
-                print(f"❌ Error procesando producto: {e}")
+                print(f"Error procesando producto: {e}")
                 continue
 
         print(f"✅ Página {pagina} de categoría {categoria} procesada.")
@@ -146,4 +146,4 @@ if cambios_detectados:
         writer.writerow(["Nombre", "Precio", "Marca", "Categoria", "UrlCompra", "Imagen"])
         writer.writerows(cambios_detectados)
 
-print("🎯 Proceso finalizado. Total productos con cambios:", len(cambios_detectados))
+print("Proceso finalizado. Total productos con cambios:", len(cambios_detectados))
