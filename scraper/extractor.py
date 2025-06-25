@@ -7,11 +7,11 @@ import os
 import asyncio
 from datetime import datetime
 
-
-from scraper.normalizador import obtener_marca_con_renderizado, obtener_sku_renderizado
-from repositorio.sql_server import insertar_o_actualizar_producto
-
+from scraper.worker import worker
+from scraper.normalizador import obtener_marca_con_renderizado
 from helpers.sku_extractor import extraer_sku_desde_url
+
+from repositorio.sql_server import insertar_o_actualizar_producto
 
 
 CATEGORIA_SELECTORES = [
@@ -24,7 +24,11 @@ CATEGORIA_SELECTORES = [
     "/mi-negocio-limpio.html"
 ]
 
-def procesar_categorias(driver):
+async def procesar_categorias(driver):
+    queue = asyncio.Queue()
+    loop = asyncio.get_event_loop()
+    loop.create_task(worker(queue))
+
     cambios_detectados = []
 
     visitados_path = "logs/productos_visitados.txt"
@@ -94,21 +98,16 @@ def procesar_categorias(driver):
                     if imagen_detalle.startswith("https://tienda.pequenomundo.com/media/catalog/product/"):
                         imagen = imagen_detalle
 
-                    sku = asyncio.run(extraer_sku_desde_url(enlace))
+                    sku = await extraer_sku_desde_url(enlace)
 
                     marca = obtener_marca_con_renderizado(driver, enlace)
                     modelo = re.sub(re.escape(marca), "", nombre, flags=re.IGNORECASE).strip() if marca else nombre
 
                     print(f"🔍 {nombre} | ₡{precio_valor} | SKU: {sku} | Marca: {marca} | Img: {imagen}")
 
-                    fue_insertado = insertar_o_actualizar_producto(
-                        nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor
-                    )
-                    if fue_insertado:
-                        print(f"✅ Insertado: {nombre}")
-                        cambios_detectados.append([nombre, precio_valor, marca, categoria, enlace, imagen])
-                    else:
-                        print(f"➖ Sin cambios o error al insertar: {nombre}")
+                    # Enviar a la cola para que el worker lo procese
+                    await queue.put((nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor))
+                    cambios_detectados.append([nombre, precio_valor, marca, categoria, enlace, imagen])
 
                 except Exception as e:
                     errores_log.write(f"{datetime.now()} | Error en {enlace}: {e}\n")
@@ -122,4 +121,6 @@ def procesar_categorias(driver):
 
     productos_visitados_log.close()
     errores_log.close()
+    await queue.put(None)         # señal para cerrar worker
+    await queue.join()            # esperar a que termine
     return cambios_detectados

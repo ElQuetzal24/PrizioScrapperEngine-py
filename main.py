@@ -1,9 +1,10 @@
 from scraper.navegador import crear_driver
 from scraper.extractor import procesar_categorias
+import asyncio
 
-def main():
+async def main():
     driver = crear_driver()
-    cambios = procesar_categorias(driver)
+    cambios = await procesar_categorias(driver)
     driver.quit()
 
     if cambios:
@@ -17,4 +18,4 @@ def main():
     print(f"🎯 Proceso finalizado. Total productos con cambios: {len(cambios)}")
 
 if __name__ == "__main__":
-    main()
+     asyncio.run(main())
