@@ -8,6 +8,7 @@ from datetime import datetime
 from scraper.proveedores.pequeno_mundo.normalizador import obtener_marca_con_renderizado
 from helpers.sku_extractor import extraer_sku_desde_url
 
+
 CATEGORIA_SELECTORES = [
     "/electrodomesticos.html",
     "/hogar.html",
