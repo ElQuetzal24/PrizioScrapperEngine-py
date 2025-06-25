@@ -7,12 +7,8 @@ import os
 import asyncio
 from datetime import datetime
 
-from scraper.worker import worker
 from scraper.normalizador import obtener_marca_con_renderizado
 from helpers.sku_extractor import extraer_sku_desde_url
-
-from repositorio.sql_server import insertar_o_actualizar_producto
-
 
 CATEGORIA_SELECTORES = [
     "/electrodomesticos.html",
@@ -24,11 +20,7 @@ CATEGORIA_SELECTORES = [
     "/mi-negocio-limpio.html"
 ]
 
-async def procesar_categorias(driver):
-    queue = asyncio.Queue()
-    loop = asyncio.get_event_loop()
-    loop.create_task(worker(queue))
-
+async def procesar_categorias(categorias, driver, queue):
     cambios_detectados = []
 
     visitados_path = "logs/productos_visitados.txt"
@@ -41,7 +33,7 @@ async def procesar_categorias(driver):
     errores_log = open("logs/error_scraping.log", "a", encoding="utf-8")
     productos_visitados_log = open(visitados_path, "a", encoding="utf-8")
 
-    for categoria_url in CATEGORIA_SELECTORES:
+    for categoria_url in categorias:
         categoria = categoria_url.replace(".html", "").replace("-", " ").capitalize()
         pagina = 1
         while True:
@@ -97,7 +89,6 @@ async def procesar_categorias(driver):
                     ).strip()
                     if imagen_detalle.startswith("https://tienda.pequenomundo.com/media/catalog/product/"):
                         imagen = imagen_detalle
-
                     sku = await extraer_sku_desde_url(enlace)
 
                     marca = obtener_marca_con_renderizado(driver, enlace)
@@ -105,7 +96,6 @@ async def procesar_categorias(driver):
 
                     print(f"🔍 {nombre} | ₡{precio_valor} | SKU: {sku} | Marca: {marca} | Img: {imagen}")
 
-                    # Enviar a la cola para que el worker lo procese
                     await queue.put((nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor))
                     cambios_detectados.append([nombre, precio_valor, marca, categoria, enlace, imagen])
 
@@ -121,6 +111,4 @@ async def procesar_categorias(driver):
 
     productos_visitados_log.close()
     errores_log.close()
-    await queue.put(None)         # señal para cerrar worker
-    await queue.join()            # esperar a que termine
     return cambios_detectados
