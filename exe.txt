@@ -1,0 +1,8 @@
+# Solo Pequeño Mundo
+python main.py --pm
+
+# Solo Walmart
+python main.py --walmart
+
+# Ambos
+python main.py --pm --walmart

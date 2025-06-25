@@ -1,7 +1,8 @@
 import pyodbc
 
-def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, categoria, precio_valor):
+def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, categoria, precio_valor, fuente):
     try:
+        print(f"➡️ Insertando en SQL: {nombre} | Fuente: {fuente}")
         with pyodbc.connect(
             "DRIVER={ODBC Driver 17 for SQL Server};"
             "SERVER=localhost;"
@@ -10,11 +11,11 @@ def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, c
         ) as conexion:
             cursor = conexion.cursor()
 
-            print(f"📥 Revisando producto: {nombre}")
+            print(f"📥 Revisando producto: {nombre} [{fuente}]")
 
             cursor.execute(
                 "SELECT ProductoId FROM Producto WHERE Nombre = ? AND Fuente = ?",
-                nombre, 'PequenoMundo'
+                nombre, fuente
             )
             fila = cursor.fetchone()
 
@@ -51,7 +52,7 @@ def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, c
                     INSERT INTO Producto (Nombre, ImagenUrl, Fuente, SKU, Marca, Modelo, UrlCompra, Categoria)
                     OUTPUT INSERTED.ProductoId
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                """, nombre, imagen, 'PequenoMundo', sku, marca, modelo, enlace, categoria)
+                """, nombre, imagen, fuente, sku, marca, modelo, enlace, categoria)
                 producto_id = cursor.fetchone()[0]
                 cursor.execute(
                     "INSERT INTO PrecioProducto (ProductoId, Precio,FechaRegistro) VALUES (?, ?, GETDATE())",

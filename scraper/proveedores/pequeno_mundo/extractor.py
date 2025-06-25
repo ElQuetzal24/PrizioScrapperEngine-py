@@ -2,12 +2,10 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import re
-import os
-import asyncio
+import re, os, asyncio
 from datetime import datetime
 
-from scraper.normalizador import obtener_marca_con_renderizado
+from scraper.proveedores.pequeno_mundo.normalizador import obtener_marca_con_renderizado
 from helpers.sku_extractor import extraer_sku_desde_url
 
 CATEGORIA_SELECTORES = [
@@ -96,7 +94,7 @@ async def procesar_categorias(categorias, driver, queue):
 
                     print(f"🔍 {nombre} | ₡{precio_valor} | SKU: {sku} | Marca: {marca} | Img: {imagen}")
 
-                    await queue.put((nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor))
+                    await queue.put((nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor, "PequenoMundo"))
                     cambios_detectados.append([nombre, precio_valor, marca, categoria, enlace, imagen])
 
                 except Exception as e:
