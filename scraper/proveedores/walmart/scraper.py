@@ -3,6 +3,7 @@ from scraper.base_scraper import IScraper
 import requests
 import asyncio
 from repositorio.sql_server import insertar_o_actualizar_producto
+from datetime import datetime
 
 class WalmartScraper(IScraper):
     def nombre(self) -> str:
@@ -12,6 +13,11 @@ class WalmartScraper(IScraper):
         cambios = []
         pagina = 1
         limite = 50
+        errores = 0
+
+        log_file = "logs/walmart_errores.log"
+        with open(log_file, "a", encoding="utf-8") as log:
+            log.write(f"\n===== INICIO DE EJECUCIÓN {datetime.now()} =====\n")
 
         print("🟢 Iniciando WalmartScraper...")
 
@@ -22,7 +28,10 @@ class WalmartScraper(IScraper):
                 res = requests.get(url, verify=False)
                 productos = res.json()
             except Exception as e:
-                print(f"❌ Error al consultar o parsear JSON: {e}")
+                mensaje = f"❌ Error al consultar o parsear JSON: {e}"
+                print(mensaje)
+                with open(log_file, "a", encoding="utf-8") as log:
+                    log.write(mensaje + "\n")
                 break
 
             print(f"📦 Productos en página {pagina}: {len(productos)}")
@@ -31,6 +40,20 @@ class WalmartScraper(IScraper):
                 break
 
             for p in productos:
+                if not isinstance(p, dict):
+                    mensaje = f"⚠️ Producto inválido (no es dict): {str(p)[:100]}"
+                    print(mensaje)
+                    with open(log_file, "a", encoding="utf-8") as log:
+                        log.write(mensaje + "\n")
+                    errores += 1
+                    if errores > 10:
+                        final_msg = "🚨 Demasiados productos inválidos. Finalizando scraping."
+                        print(final_msg)
+                        with open(log_file, "a", encoding="utf-8") as log:
+                            log.write(final_msg + "\n")
+                        return cambios
+                    continue
+
                 try:
                     nombre = p.get("productName", "").strip()
                     precio = p["items"][0]["sellers"][0]["commertialOffer"]["Price"]
@@ -57,9 +80,15 @@ class WalmartScraper(IScraper):
 
                     cambios.append([nombre, precio, marca, categoria, url_producto, imagen])
                 except Exception as e:
-                    print(f"❌ Error procesando producto: {e}")
+                    mensaje = f"❌ Error procesando producto: {e}"
+                    print(mensaje)
+                    with open(log_file, "a", encoding="utf-8") as log:
+                        log.write(mensaje + "\n")
                     continue
 
             pagina += 1
+
+        with open(log_file, "a", encoding="utf-8") as log:
+            log.write(f"===== FIN DE EJECUCIÓN {datetime.now()} =====\n")
 
         return cambios
