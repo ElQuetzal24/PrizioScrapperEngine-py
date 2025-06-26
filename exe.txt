@@ -6,3 +6,7 @@ python main.py --walmart
 
 # Ambos
 python main.py --pm --walmart
+
+
+git add .
+>> git commit -m "commit"
