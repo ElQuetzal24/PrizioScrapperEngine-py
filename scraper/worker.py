@@ -15,6 +15,6 @@ async def worker(queue, worker_id=1):
             print(f"Worker {worker_id} guardando en BD: {producto[0]}")
             asyncio.create_task(asyncio.to_thread(insertar_o_actualizar_producto, *producto))
         except Exception as e:
-            print(f"❌ Error en worker {worker_id} con producto {producto[0]}: {e}")
+            print(f" Error en worker {worker_id} con producto {producto[0]}: {e}")
         finally:
             queue.task_done()

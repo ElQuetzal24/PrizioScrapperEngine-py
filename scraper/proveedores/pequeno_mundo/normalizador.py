@@ -18,7 +18,7 @@ def obtener_marca_con_renderizado(driver, url_producto):
                     return partes[1].strip()
         return "Marca no encontrada"
     except Exception as e:
-        print(f"❌ Error renderizando marca desde {url_producto}: {e}")
+        print(f"Error renderizando marca desde {url_producto}: {e}")
         return "Error al renderizar"
 
  

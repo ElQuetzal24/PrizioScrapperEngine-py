@@ -44,7 +44,7 @@ async def procesar_categorias(categorias, driver, queue):
                     EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li.product-item'))
                 )
             except:
-                print(f"⚠ No se encontraron productos en {url}")
+                print(f"No se encontraron productos en {url}")
                 break
 
             soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -103,7 +103,7 @@ async def procesar_categorias(categorias, driver, queue):
                     print(f"Error procesando producto: {e}")
                     continue
 
-            print(f"📄 Página {pagina} de {categoria} procesada.")
+            print(f" Página {pagina} de {categoria} procesada.")
             if nuevos == 0:
                 break
             pagina += 1
