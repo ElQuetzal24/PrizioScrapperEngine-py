@@ -62,7 +62,7 @@ class WalmartScraper(IScraper):
                     marca = str(p.get("brand", "")).strip()
                     categoria = p.get("categories", [""])[0].strip()
                     link_text = p.get("linkText", "")
-                    url_producto = f"https://www.walmart.co.cr/{link_text.strip()}" if link_text else ""
+                    url_producto = f"https://www.walmart.co.cr/{link_text.strip()}/p" if link_text else ""
 
                     if not nombre or not precio:
                         continue
