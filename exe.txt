@@ -1,12 +1,15 @@
-# Solo Pequeño Mundo
+# pm
 python main.py --pm
 
-# Solo Walmart
+# walt
 python main.py --walmart
 
-# Ambos
+# too
 python main.py --pm --walmart
 
 
 git add .
 >> git commit -m "commit"
+
+.\venv\Scripts\activate
+ 
