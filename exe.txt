@@ -1,15 +1,2 @@
-# pm
-python main.py --pm
-
-# walt
-python main.py --walmart
-
-# too
-python main.py --pm --walmart
-
-
-git add .
->> git commit -m "commit"
-
-.\venv\Scripts\activate
- 
+pip install playwright
+playwright install

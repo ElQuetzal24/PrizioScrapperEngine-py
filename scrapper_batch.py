@@ -3,9 +3,10 @@ from playwright.async_api import async_playwright
 from pathlib import Path
 import pyodbc
 from datetime import datetime
+ 
 
 CATEGORIA_URL = "https://www.walmart.co.cr/articulos-para-el-hogar?page="
-MAX_PAGINAS = 50
+MAX_PAGINAS = 1
 FUENTE = "WalmartCR"
 
 # Configura tu cadena de conexión aquí
@@ -17,8 +18,14 @@ CONN_STRING = (
 )
 
 def guardar_en_bd(productos):
-    from tqdm import tqdm
     try:
+        try:
+            from tqdm import tqdm
+        except ImportError:
+            # Si tqdm no está instalado, usar un iterador normal
+            def tqdm(x, **kwargs):
+                return x
+
         conn = pyodbc.connect(CONN_STRING)
         cursor = conn.cursor()
         total = len(productos)
@@ -43,6 +50,7 @@ def guardar_en_bd(productos):
         print(f"✅ Guardado completo de {total} productos.")
     except Exception as e:
         print(f"❌ Error al conectar o guardar en base de datos: {e}")
+
 
 def parsear_precio(pstr):
     try:
