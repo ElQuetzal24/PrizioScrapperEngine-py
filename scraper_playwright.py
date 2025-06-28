@@ -8,14 +8,41 @@ CATEGORIA_URL = "https://www.walmart.co.cr/articulos-para-el-hogar?page="
 MAX_PAGINAS = 50
 
 async def scroll_hasta_cargar_todos(page):
-    productos_antes = 0
-    while True:
-        await page.mouse.wheel(0, 2000)
-        await page.wait_for_timeout(1500)
+    productos_previos = -1
+    ciclos_sin_cambio = 0
+    max_sin_cambio = 4
+    max_ciclos = 30
+    velocidad_scroll = 1000  # milisegundos entre ciclos
+
+    for ciclo in range(max_ciclos):
+        # Scroll fuerte al fondo (como "End")
+        await page.keyboard.press("End")
+        await page.evaluate("window.scrollBy(0, window.innerHeight * 2)")
+        await page.wait_for_timeout(velocidad_scroll)
+
+        # Contar productos actuales
         productos_actuales = await page.locator(".vtex-search-result-3-x-galleryItem").count()
-        if productos_actuales == productos_antes:
+
+        # Mostrar solo si hay cambio o cada 5 ciclos
+        if productos_actuales != productos_previos or ciclo % 5 == 0:
+            print(f"🔄 Scroll {ciclo+1}: {productos_actuales} productos visibles")
+
+        # Control de cambio
+        if productos_actuales == productos_previos:
+            ciclos_sin_cambio += 1
+        else:
+            ciclos_sin_cambio = 0
+            productos_previos = productos_actuales
+
+        # Salir si se estanca
+        if ciclos_sin_cambio >= max_sin_cambio:
+            print(f"✅ Scroll finalizado: {productos_actuales} productos cargados (sin cambios en {max_sin_cambio} ciclos)")
             break
-        productos_antes = productos_actuales
+
+    else:
+        print(f"⚠️ Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
+
+
 
 async def extraer_productos(page, pagina):
     url = f"{CATEGORIA_URL}{pagina}"
@@ -30,7 +57,7 @@ async def extraer_productos(page, pagina):
     for i in range(total):
         item = items.nth(i)
 
-        # Nombre: probar múltiples fuentes de texto visibles
+        # Nombre robusto: varios intentos
         nombre = await item.locator(".vtex-product-summary-2-x-productBrand").first.text_content()
         if not nombre or nombre.strip().lower() in ["agregar", ""]:
             nombre = await item.locator(".vtex-product-summary-2-x-productName").first.text_content()
