@@ -54,6 +54,25 @@ async def scroll_hasta_cargar_todos(page):
         print(f"⚠️ Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
 
 
+async def procesar_categoria(page, categoria, visto_urls):
+    print(f"\n🔵 Procesando categoría: {categoria}")
+
+    for pagina in range(1, MAX_PAGINAS + 1):
+        try:
+            url_categoria = f"https://www.walmart.co.cr/{categoria}?page={pagina}"
+            print(f"🌀 Página {pagina} → {url_categoria}")
+            productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
+
+            if not productos:
+                print("✅ Fin de páginas (sin productos).")
+                break
+
+            print(f"✅ Productos extraídos: {len(productos)}")
+            await guardar_csv(productos)
+
+        except Exception as e:
+            print(f"❌ Error en la página {pagina}: {e}")
+            break
 
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
     await page.goto(url_categoria, timeout=60000)
@@ -126,42 +145,16 @@ async def guardar_csv(productos):
             writer.writerow(p)
 
 async def main():
-    ultima_pagina_exitosa = 1
-    try:
-        with open("ultima_pagina.txt", "r") as f:
-            ultima_pagina_exitosa = int(f.read().strip())
-    except:
-        pass
-
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        visto_urls = set()
-        visto_urls = set()
+        tareas = []
 
         for categoria in CATEGORIAS:
-            print(f"\n🔵 Procesando categoría: {categoria}")
+            page = await browser.new_page()
+            visto_urls = set()
+            tareas.append(procesar_categoria(page, categoria, visto_urls))
 
-            for pagina in range(1, MAX_PAGINAS + 1):
-                try:
-                    url_categoria = f"https://www.walmart.co.cr/{categoria}?page={pagina}"
-                    print(f"🌀 Página {pagina} → {url_categoria}")
-                    productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
-
-                    if not productos:
-                        print("✅ Fin de páginas (sin productos).")
-                        break
-
-                    print(f"✅ Productos extraídos: {len(productos)}")
-                    await guardar_csv(productos)
-
-                except Exception as e:
-                    print(f"❌ Error en la página {pagina}: {e}")
-                    break
-
-                    print(f"❌ Error en la página {pagina}: {e}")
-                    break
-
+        await asyncio.gather(*tareas)
         await browser.close()
 
 if __name__ == "__main__":
