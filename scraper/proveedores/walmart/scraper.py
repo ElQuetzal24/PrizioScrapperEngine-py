@@ -46,8 +46,8 @@ class WalmartScraper(IScraper):
                     with open(log_file, "a", encoding="utf-8") as log:
                         log.write(mensaje + "\n")
                     errores += 1
-                    if errores > 10:
-                        final_msg = "Demasiados productos inválidos. Finalizando scraping."
+                    if errores > 5:
+                        final_msg = "Fin del Catálogo. Finalizando scraping."
                         print(final_msg)
                         with open(log_file, "a", encoding="utf-8") as log:
                             log.write(final_msg + "\n")
