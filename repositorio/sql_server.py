@@ -18,6 +18,7 @@ def guardar_en_bd(productos):
         for i, p in enumerate(productos):
             try:
                 nombre = p.get("nombre", "") or ""
+                marca = p.get("nombre", "") or ""
                 precio = p.get("precio", "") or ""
                 precio_anterior = p.get("precio_anterior", "") or ""
                 sku = p.get("sku", "N/A") or "N/A"
@@ -29,6 +30,7 @@ def guardar_en_bd(productos):
                 # Mostrar detalle del producto antes de guardar
                 print(f"\n🧪 [{i}] Intentando guardar producto:")
                 print(f"   Nombre: {repr(nombre)}")
+                print(f"   Marca: {repr(marca)}")
                 print(f"   Precio: {repr(precio)}")
                 print(f"   Precioprecio_anterior: {repr(precio_anterior)}")
                 print(f"   SKU: {repr(sku)}")
@@ -38,9 +40,9 @@ def guardar_en_bd(productos):
                 print(f"   Categoría: {repr(categoria)}")
 
                 cursor.execute("""
-                    INSERT INTO ProductosScrapeados (Nombre, PrecioActual,PrecioAntes, SKU, Url, Fecha, Imagen, Categoria)
+                    INSERT INTO ProductosScrapeados (Nombre,Marca, PrecioActual,PrecioAntes, SKU, Url, Fecha, Imagen, Categoria)
                     VALUES (?, ?, ?, ?, ?, ?, ?,?)
-                """, nombre, precio,precio_anterior, sku, url, fecha, imagen, categoria)
+                """, nombre,marca, precio,precio_anterior, sku, url, fecha, imagen, categoria)
 
             except Exception as e:
                 print(f"❌ Error al guardar producto [{i}]: {e}")

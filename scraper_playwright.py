@@ -10,9 +10,10 @@ from repositorio.sql_server import guardar_en_bd
 
 ARCHIVO_CSV = "productos.csv"
 CATEGORIAS = [
-    "rebajas","juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","articulos-para-el-hogar","limpieza","abarrotes","higiene-y-belleza"
-    ,"bebes-y-ninos","lacteos","jugos-y-bebidas","carnes-y-pescados","cervezas-vinos-y-licores","embutidos","panaderia-y-tortilleria"
-    ,"alimentos-congelados","frutas-y-verduras","mascota","farmacia"
+    "rebajas"
+    #,"juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","articulos-para-el-hogar","limpieza","abarrotes","higiene-y-belleza"
+    #,"bebes-y-ninos","lacteos","jugos-y-bebidas","carnes-y-pescados","cervezas-vinos-y-licores","embutidos","panaderia-y-tortilleria"
+    #,"alimentos-congelados","frutas-y-verduras","mascota","farmacia"
 ]
 
 
@@ -137,10 +138,15 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
 
         visto_urls.add(url)
 
-# Extraer URL de imagen principal
+        # Extraer URL de imagen principal
         img_node = await item.query_selector("img")
         img_url = await img_node.get_attribute("src") if img_node else None
         img_url = img_url.strip() if img_url and isinstance(img_url, str) else "N/A"
+
+        # Extraer la marca si está disponible
+        marca_node = await item.query_selector(".vtex-product-summary-2-x-productBrand")
+        marca = await safe_text_content(marca_node)
+        marca = marca.strip() if marca and isinstance(marca, str) else "N/A"
 
         # Extraer nombre robusto
         nombre = await item.query_selector(".vtex-product-summary-2-x-productBrand")
@@ -168,6 +174,7 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
 
         productos.append({
             "nombre": nombre,
+            "marca": marca,  # 👈 nuevo campo
             "precio": precio_actual,
             "precio_anterior": precio_anterior,
             "sku": "N/A",
