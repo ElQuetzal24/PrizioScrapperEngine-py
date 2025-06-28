@@ -12,9 +12,9 @@ from repositorio.sql_server import guardar_en_bd2
 ARCHIVO_CSV = "productos.csv"
 CATEGORIAS = [
     "articulos-para-el-hogar"
-    #,"juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","limpieza","abarrotes","higiene-y-belleza"
-    #,"bebes-y-ninos","lacteos","jugos-y-bebidas","carnes-y-pescados","cervezas-vinos-y-licores","embutidos","panaderia-y-tortilleria"
-    #,"alimentos-congelados","frutas-y-verduras","mascota","farmacia","rebajas"
+    ,"juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","limpieza","abarrotes","higiene-y-belleza"
+    ,"bebes-y-ninos","lacteos","jugos-y-bebidas","carnes-y-pescados","cervezas-vinos-y-licores","embutidos","panaderia-y-tortilleria"
+    ,"alimentos-congelados","frutas-y-verduras","mascota","farmacia","rebajas"
 ]
 
 
@@ -56,8 +56,9 @@ async def scroll_hasta_cargar_todos(page):
         print(f"⚠️ Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
 
 
-async def procesar_categoria(page, categoria, visto_urls):
-    print(f"\n🔵 Procesando categoría: {categoria}")
+async def procesar_categoria(page, categoria, visto_urls, semaforo):
+    async with semaforo:
+        print(f"\n🔵 Procesando categoría: {categoria}")
 
     for pagina in range(1, MAX_PAGINAS + 1):
         try:
@@ -261,6 +262,7 @@ async def main():
         browser = await p.chromium.launch(headless=True)
         tareas = []
         visto_urls = set()
+        semaforo = asyncio.Semaphore(3)  # 👈 máximo 3 tareas concurrentes
         for categoria in CATEGORIAS:
             page = await browser.new_page()
 
