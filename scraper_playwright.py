@@ -3,9 +3,19 @@ import csv
 from playwright.async_api import async_playwright
 from pathlib import Path
 from datetime import datetime
+from urllib.parse import urlparse
 
 ARCHIVO_CSV = "productos.csv"
-CATEGORIA_URL = "https://www.walmart.co.cr/articulos-para-el-hogar?page="
+CATEGORIAS = [
+    "articulos-para-el-hogar",
+    "abarrotes",
+    "juguetes",
+    "electrodomesticos",
+    "ferreteria",
+    "mascotas"
+]
+
+
 MAX_PAGINAS = 50
 
 async def scroll_hasta_cargar_todos(page):
@@ -45,9 +55,8 @@ async def scroll_hasta_cargar_todos(page):
 
 
 
-async def extraer_productos(page, pagina, visto_urls):
-    url = f"{CATEGORIA_URL}{pagina}"
-    await page.goto(url, timeout=60000)
+async def extraer_productos(page, url_categoria, categoria, visto_urls):
+    await page.goto(url_categoria, timeout=60000)
     await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=15000)
     await scroll_hasta_cargar_todos(page)
 
@@ -58,6 +67,8 @@ async def extraer_productos(page, pagina, visto_urls):
     # Capturar todos los elementos de una sola vez (para evitar reevaluación del DOM)
     elements = await page.query_selector_all(".vtex-search-result-3-x-galleryItem")
     fecha_hoy = datetime.today().strftime('%Y-%m-%d')
+    # Deducir la categoría a partir de la URL
+    
 
     for item in elements:
         link = await item.query_selector("a")
@@ -99,7 +110,8 @@ async def extraer_productos(page, pagina, visto_urls):
             "sku": "N/A",
             "url": url,
             "fecha": fecha_hoy,
-            "imagen": img_url
+            "imagen": img_url,
+            "categoria": categoria
         })
     return productos
     # 
@@ -107,7 +119,7 @@ async def extraer_productos(page, pagina, visto_urls):
 async def guardar_csv(productos):
     archivo_existente = Path(ARCHIVO_CSV).exists()
     with open(ARCHIVO_CSV, mode="a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["nombre", "precio", "sku", "url", "fecha", "imagen"])
+        writer = csv.DictWriter(f, fieldnames=["nombre", "precio", "sku", "url", "fecha", "imagen", "categoria"])
         if not archivo_existente:
             writer.writeheader()
         for p in productos:
@@ -125,19 +137,30 @@ async def main():
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
         visto_urls = set()
-        for pagina in range(ultima_pagina_exitosa, MAX_PAGINAS + 1):
-            try:
-                print(f"🌀 Página {pagina}")
-                productos = await extraer_productos(page, pagina, visto_urls)
-                print(f"✅ Productos extraídos: {len(productos)}")
-                await guardar_csv(productos)
+        visto_urls = set()
 
-                with open("ultima_pagina.txt", "w") as f:
-                    f.write(str(pagina + 1))
+        for categoria in CATEGORIAS:
+            print(f"\n🔵 Procesando categoría: {categoria}")
 
-            except Exception as e:
-                print(f"❌ Error en la página {pagina}: {e}")
-                break
+            for pagina in range(1, MAX_PAGINAS + 1):
+                try:
+                    url_categoria = f"https://www.walmart.co.cr/{categoria}?page={pagina}"
+                    print(f"🌀 Página {pagina} → {url_categoria}")
+                    productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
+
+                    if not productos:
+                        print("✅ Fin de páginas (sin productos).")
+                        break
+
+                    print(f"✅ Productos extraídos: {len(productos)}")
+                    await guardar_csv(productos)
+
+                except Exception as e:
+                    print(f"❌ Error en la página {pagina}: {e}")
+                    break
+
+                    print(f"❌ Error en la página {pagina}: {e}")
+                    break
 
         await browser.close()
 

@@ -1,24 +1,50 @@
-import requests
-from bs4 import BeautifulSoup
+import asyncio
+from playwright.async_api import async_playwright
 
-url_base = "https://www.walmart.co.cr"
+async def obtener_categorias():
+    categorias = set()
 
-res = requests.get(url_base)
-soup = BeautifulSoup(res.text, "html.parser")
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
+        await page.goto("https://www.walmart.co.cr/", timeout=60000)
 
-categorias = set()
+        # Hacer clic en el botón de menú hamburguesa
+        try:
+            await page.click("button[id='burger-menu']")  # Ajuste si no encuentra ese ID exacto
+            await page.wait_for_timeout(2000)  # tiempo para que cargue el menú
+        except:
+            print("⚠️ No se pudo abrir el menú lateral.")
 
-for a in soup.select("nav a[href^='/']"):
-    href = a.get("href", "")
-    texto = a.get_text(strip=True)
-    if (
-        href.count("/") == 1 and
-        not href.endswith(".html") and
-        texto and len(texto) > 2 and
-        "login" not in href and "carrito" not in href
-    ):
-        categorias.add(href)
+        # Capturar todos los enlaces visibles después de abrir el menú
+        enlaces = await page.query_selector_all("a[href]")
 
-print("📂 Categorías detectadas:")
-for cat in sorted(categorias):
-    print(cat)
+        for enlace in enlaces:
+            if not enlace:
+                continue
+
+            try:
+                href = await enlace.get_attribute("href")
+            except:
+                continue
+
+            if not href:
+                continue
+
+            # Filtrar rutas que parezcan categorías principales
+            if (
+                href.startswith("/") and
+                not any(x in href for x in ["#", "login", "carrito", "search", "p", "account", "tienda", "wishlist"])
+                and len(href.strip("/").split("/")) <= 2
+            ):
+                categorias.add(href.strip("/"))
+
+        await browser.close()
+
+    return sorted(categorias)
+
+if __name__ == "__main__":
+    categorias = asyncio.run(obtener_categorias())
+    print("📁 Categorías encontradas:")
+    for c in categorias:
+        print(f"- {c}")
