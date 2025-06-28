@@ -116,9 +116,6 @@ async def procesar_pagina(context, page_number):
                 categoria = None
 
             await product_page.close()
-
-            print(f"✔ {nombre} | ₡{precio:,.0f} | SKU: {sku} | Cat: {categoria}")
-
             resultados.append((
                 datetime.now(), "scraper", 1, nombre.strip(), sku.strip(), FUENTE,
                 precio, img_url, marca, categoria
