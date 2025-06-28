@@ -27,9 +27,9 @@ MAX_PAGINAS = 20
 async def scroll_hasta_cargar_todos(page):
     productos_previos = -1
     ciclos_sin_cambio = 0
-    max_sin_cambio = 8
-    max_ciclos = 50 # máximo de intentos para evitar bucles infinitos
-    velocidad_scroll = 800  # milisegundos entre ciclos
+    max_sin_cambio = 12
+    max_ciclos = 80 # máximo de intentos para evitar bucles infinitos
+    velocidad_scroll = 1200    # milisegundos entre ciclos
 
     for ciclo in range(max_ciclos):
         # Scroll fuerte al fondo (como "End")
@@ -118,7 +118,12 @@ def extraer_precios(texto):
 
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
     await page.goto(url_categoria, timeout=60000)
-    await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=30000)
+    try:
+        await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=60000)
+    except Exception as e:
+        print(f"⚠️ Advertencia: No se detectaron productos visibles en esta página (posible timeout). Error: {e}")
+    return []
+
     await scroll_hasta_cargar_todos(page)
 
     #
@@ -132,6 +137,8 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
     
 
     for item in elements:
+        await item.scroll_into_view_if_needed()
+        await page.wait_for_timeout(200)
         link = await item.query_selector("a")
         href = await link.get_attribute("href") if link else None
         if not href:
