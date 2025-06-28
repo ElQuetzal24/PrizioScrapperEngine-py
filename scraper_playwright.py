@@ -111,6 +111,46 @@ def extraer_precios(texto):
     else:
         return 0.0, 0.0
 
+
+async def extraer_marca_detallada(page, url_producto):
+    try:
+        await page.goto(url_producto, timeout=30000)
+
+        # Esperar carga básica
+        await page.wait_for_timeout(1500)
+
+        # Intentar extraer desde tabla técnica
+        filas = await page.query_selector_all("table tr")
+        for fila in filas:
+            th = await fila.query_selector("th")
+            td = await fila.query_selector("td")
+
+            th_text = await safe_text_content(th)
+            if th_text and "marca" in th_text.lower():
+                td_text = await safe_text_content(td)
+                marca = td_text.strip()
+                if marca:
+                    print(f"🔍 Marca desde tabla: {marca}")
+                    return marca
+
+        # Otra posible estructura: definición <dt>Marca</dt><dd>Sony</dd>
+        dts = await page.query_selector_all("dt")
+        for dt in dts:
+            dt_text = await safe_text_content(dt)
+            if dt_text and "marca" in dt_text.lower():
+                dd = await dt.evaluate_handle("el => el.nextElementSibling")
+                marca = await safe_text_content(dd)
+                if marca:
+                    print(f"🔍 Marca desde definiciones: {marca}")
+                    return marca.strip()
+
+        return "N/A"
+    except Exception as e:
+        print(f"⚠️ Error extrayendo marca en detalle: {e}")
+        return "N/A"
+
+
+
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
     await page.goto(url_categoria, timeout=60000)
     await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=15000)
@@ -143,10 +183,24 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
         img_url = await img_node.get_attribute("src") if img_node else None
         img_url = img_url.strip() if img_url and isinstance(img_url, str) else "N/A"
 
-        # Extraer la marca si está disponible
-        marca_node = await item.query_selector(".vtex-product-summary-2-x-productBrand")
+        # Extraer marca desde la galería
+        marca_node = await item.query_selector(".vtex-product-summary-2-x-brandName")
         marca = await safe_text_content(marca_node)
-        marca = marca.strip() if marca and isinstance(marca, str) else "N/A"
+        marca = marca.strip() if marca else ""
+
+        # Fallback si no hay marca: entrar al detalle del producto
+        if not marca:
+            nueva_pestana = await page.context.new_page()
+            marca = await extraer_marca_detallada(nueva_pestana, url)
+            await nueva_pestana.close()
+
+        # Fallback si no está en .brandName
+        if not marca or marca.strip().lower() == "agregar":
+            marca_node = await item.query_selector(".vtex-product-summary-2-x-productBrand")
+            marca = await safe_text_content(marca_node)
+
+        marca = marca.strip() if marca else "N/A"
+
 
         # Extraer nombre robusto
         nombre = await item.query_selector(".vtex-product-summary-2-x-productBrand")

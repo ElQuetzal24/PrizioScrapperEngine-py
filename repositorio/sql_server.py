@@ -41,7 +41,7 @@ def guardar_en_bd(productos):
 
                 cursor.execute("""
                     INSERT INTO ProductosScrapeados (Nombre,Marca, PrecioActual,PrecioAntes, SKU, Url, Fecha, Imagen, Categoria)
-                    VALUES (?, ?, ?, ?, ?, ?, ?,?)
+                    VALUES (?, ?,?, ?, ?, ?, ?, ?,?)
                 """, nombre,marca, precio,precio_anterior, sku, url, fecha, imagen, categoria)
 
             except Exception as e:
