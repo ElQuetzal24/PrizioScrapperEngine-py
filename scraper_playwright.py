@@ -10,22 +10,25 @@ from repositorio.sql_server import guardar_en_bd
 
 ARCHIVO_CSV = "productos.csv"
 CATEGORIAS = [
-    #"articulos-para-el-hogar",
+    "rebajas"
+   # "articulos-para-el-hogar",
     #"abarrotes",
     #"juguetes",
-   # "electrodomesticos",
+    #"electrodomesticos",
     #"ferreteria",
-    "mascotas"
+    #"mascotas",
+    #"electronica","limpieza",
+    #"higiene-y-belleza","bebes-y-ninos","ropa-y-zapateria"
 ]
 
 
-MAX_PAGINAS = 50
+MAX_PAGINAS = 20
 
 async def scroll_hasta_cargar_todos(page):
     productos_previos = -1
     ciclos_sin_cambio = 0
-    max_sin_cambio = 4
-    max_ciclos = 20 # máximo de intentos para evitar bucles infinitos
+    max_sin_cambio = 8
+    max_ciclos = 50 # máximo de intentos para evitar bucles infinitos
     velocidad_scroll = 800  # milisegundos entre ciclos
 
     for ciclo in range(max_ciclos):
@@ -115,7 +118,7 @@ def extraer_precios(texto):
 
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
     await page.goto(url_categoria, timeout=60000)
-    await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=15000)
+    await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=30000)
     await scroll_hasta_cargar_todos(page)
 
     #

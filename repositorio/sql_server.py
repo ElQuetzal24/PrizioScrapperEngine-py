@@ -53,6 +53,22 @@ def guardar_en_bd(productos):
     except Exception as e:
         print(f"❌ Error general de conexión BD: {e}")
 
+def url_existente(url):
+    try:
+        conn = pyodbc.connect(
+            "DRIVER={ODBC Driver 17 for SQL Server};"
+            "SERVER=localhost;"
+            "DATABASE=scrap_db;"
+            "Trusted_Connection=yes;"
+        )
+        cursor = conn.cursor()
+        cursor.execute("SELECT 1 FROM ProductosScrapeados WHERE Url = ?", url)
+        existe = cursor.fetchone() is not None
+        conn.close()
+        return existe
+    except Exception as e:
+        print(f"❌ Error verificando existencia de URL en BD: {e}")
+        return False
 
 def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, categoria, precio_valor, fuente):
     try:
