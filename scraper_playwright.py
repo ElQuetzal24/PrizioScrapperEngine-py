@@ -7,13 +7,14 @@ from urllib.parse import urlparse
 import re
 
 from repositorio.sql_server import guardar_en_bd
+from repositorio.sql_server import guardar_en_bd2   
 
 ARCHIVO_CSV = "productos.csv"
 CATEGORIAS = [
-    "rebajas"
-    #,"juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","articulos-para-el-hogar","limpieza","abarrotes","higiene-y-belleza"
+    "articulos-para-el-hogar"
+    #,"juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","limpieza","abarrotes","higiene-y-belleza"
     #,"bebes-y-ninos","lacteos","jugos-y-bebidas","carnes-y-pescados","cervezas-vinos-y-licores","embutidos","panaderia-y-tortilleria"
-    #,"alimentos-congelados","frutas-y-verduras","mascota","farmacia"
+    #,"alimentos-congelados","frutas-y-verduras","mascota","farmacia","rebajas"
 ]
 
 
@@ -64,17 +65,19 @@ async def procesar_categoria(page, categoria, visto_urls):
             print(f"🌀 Página {pagina} → {url_categoria}")
             productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
 
+            
             if not productos:
-                print("✅ Fin de páginas (sin productos).")
-                break
+                print(f"⚠️ No se extrajeron productos de {categoria} en la página {pagina}.")
+                break  # ← rompe la paginación si no se cargó nada
 
             print(f"✅ Productos extraídos: {len(productos)}")
-            guardar_en_bd(productos)
+            guardar_en_bd2(productos)
  
 
         except Exception as e:
             print(f"❌ Error en la página {pagina}: {e}")
             break
+        
 
 
 async def safe_text_content(node):
@@ -152,8 +155,8 @@ async def extraer_marca_detallada(page, url_producto):
 
 
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
-    await page.goto(url_categoria, timeout=60000)
-    await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=15000)
+    await page.goto(url_categoria, timeout=30000)
+    await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=10000)
     await scroll_hasta_cargar_todos(page)
 
     #
@@ -262,7 +265,7 @@ async def main():
             page = await browser.new_page()
 
             tareas.append(procesar_categoria(page, categoria, visto_urls))
-
+    
         await asyncio.gather(*tareas)
         await browser.close()
 
