@@ -1,46 +1,11 @@
-
 import asyncio
-import re
-import pyodbc
-from datetime import datetime
+import csv
 from playwright.async_api import async_playwright
+from pathlib import Path
 
-BASE_URL = "https://www.walmart.co.cr"
-CATEGORIA_PATH = "/articulos-para-el-hogar"
-PAGINA_URL = f"{BASE_URL}{CATEGORIA_PATH}?page={{}}"
-FUENTE = "WalmartCR"
-
-CONN_STRING = (
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=localhost;"
-    "DATABASE=scrap_db;"
-    "Trusted_Connection=yes;"
-)
-
-def parsear_precio(pstr):
-    try:
-        limpio = pstr.replace("₡", "").replace(".", "").replace(",", "").strip()
-        return float(limpio)
-    except:
-        return 0.0
-
-def guardar_en_bd(productos, page_number):
-    try:
-        conn = pyodbc.connect(CONN_STRING)
-        cursor = conn.cursor()
-        print(f"[DB] Insertando {len(productos)} productos de la página {page_number}...")
-
-        cursor.executemany("""
-            INSERT INTO dbo.Producto (FechaCreacion, UsuarioCreacion, Estado, Nombre, SKU, Fuente, Precio, ImagenUrl, Marca, Categoria)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, productos)
-
-        conn.commit()
-        cursor.close()
-        conn.close()
-        print(f"[DB] Página {page_number} guardada con éxito.")
-    except Exception as e:
-        print(f"[DB Error] Página {page_number}: {e}")
+ARCHIVO_CSV = "productos.csv"
+CATEGORIA_URL = "https://www.walmart.co.cr/articulos-para-el-hogar?page="
+MAX_PAGINAS = 50
 
 async def scroll_hasta_cargar_todos(page):
     productos_antes = 0
@@ -52,97 +17,77 @@ async def scroll_hasta_cargar_todos(page):
             break
         productos_antes = productos_actuales
 
-async def procesar_pagina(context, page_number):
-    page = await context.new_page()
-    await page.goto(PAGINA_URL.format(page_number), timeout=60000)
+async def extraer_productos(page, pagina):
+    url = f"{CATEGORIA_URL}{pagina}"
+    await page.goto(url, timeout=60000)
     await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=15000)
     await scroll_hasta_cargar_todos(page)
 
-    productos_raw = await page.locator(".vtex-search-result-3-x-galleryItem").element_handles()
-    if not productos_raw:
-        await page.close()
-        return False
+    items = page.locator(".vtex-search-result-3-x-galleryItem")
+    total = await items.count()
+    productos = []
 
-    resultados = []
+    for i in range(total):
+        item = items.nth(i)
 
-    for p_item in productos_raw:
-        try:
-            nombre_el = await p_item.query_selector(".vtex-product-summary-2-x-productBrand")
-            nombre = await nombre_el.inner_text() if nombre_el else "N/A"
+        # Nombre: probar múltiples fuentes de texto visibles
+        nombre = await item.locator(".vtex-product-summary-2-x-productBrand").first.text_content()
+        if not nombre or nombre.strip().lower() in ["agregar", ""]:
+            nombre = await item.locator(".vtex-product-summary-2-x-productName").first.text_content()
+        if not nombre or nombre.strip().lower() in ["agregar", ""]:
+            nombre = await item.locator("a span").first.text_content()
+        if not nombre or nombre.strip().lower() in ["agregar", ""]:
+            nombre = await item.inner_text()
 
-            img_el = await p_item.query_selector("img")
-            img_url = await img_el.get_attribute("src") if img_el else None
+        nombre = nombre.strip() if nombre else "N/A"
 
-            link_el = await p_item.query_selector("a")
-            href = await link_el.get_attribute("href") if link_el else None
-            if not href:
-                continue
+        precio = await item.locator("[class*=price]").first.text_content()
+        link = await item.locator("a").first.get_attribute("href")
 
-            url = f"{BASE_URL}{href}" if href.startswith("/") else href
+        productos.append({
+            "nombre": nombre,
+            "precio": precio.strip().replace("₡", "").replace(",", "") if precio else "N/A",
+            "sku": "N/A",
+            "url": f"https://www.walmart.co.cr{link}" if link else "N/A"
+        })
+    return productos
 
-            product_page = await context.new_page()
-            await product_page.goto(url, timeout=30000)
-            await product_page.wait_for_timeout(2000)
-
-            try:
-                price_el = await product_page.query_selector(".vtex-store-components-3-x-price_sellingPrice span")
-                raw_price = await price_el.inner_text() if price_el else "0"
-                precio = parsear_precio(raw_price)
-            except:
-                precio = 0.0
-
-            try:
-                await product_page.wait_for_selector(".vtex-store-components-3-x-productReference", timeout=5000)
-                html = await product_page.content()
-                match = re.search(r">(\d{11,14})</span>\s*<h1", html)
-                if match:
-                    sku = match.group(1)
-                else:
-                    posibles = re.findall(r">\s*(\d{11,14})\s*<", html)
-                    sku = posibles[0] if posibles else "N/A"
-            except:
-                sku = "N/A"
-
-            try:
-                marca_el = await product_page.query_selector("meta[name='brand']")
-                marca = await marca_el.get_attribute("content") if marca_el else None
-            except:
-                marca = None
-
-            try:
-                breadcrumb = await product_page.locator("nav[aria-label='breadcrumb'] li a").all_inner_texts()
-                categoria = breadcrumb[-2] if len(breadcrumb) >= 2 else None
-            except:
-                categoria = None
-
-            await product_page.close()
-            resultados.append((
-                datetime.now(), "scraper", 1, nombre.strip(), sku.strip(), FUENTE,
-                precio, img_url, marca, categoria
-            ))
-
-        except Exception as e:
-            print("[Error] Producto:", e)
-
-    await page.close()
-
-    if resultados:
-        guardar_en_bd(resultados, page_number)
-    return True
+async def guardar_csv(productos):
+    archivo_existente = Path(ARCHIVO_CSV).exists()
+    with open(ARCHIVO_CSV, mode="a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["nombre", "precio", "sku", "url"])
+        if not archivo_existente:
+            writer.writeheader()
+        for p in productos:
+            writer.writerow(p)
 
 async def main():
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True, args=["--ignore-certificate-errors"])
-        context = await browser.new_context(ignore_https_errors=True)
+    ultima_pagina_exitosa = 1
+    try:
+        with open("ultima_pagina.txt", "r") as f:
+            ultima_pagina_exitosa = int(f.read().strip())
+    except:
+        pass
 
-        page_num = 1
-        while True:
-            tiene_productos = await procesar_pagina(context, page_num)
-            if not tiene_productos:
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
+
+        for pagina in range(ultima_pagina_exitosa, MAX_PAGINAS + 1):
+            try:
+                print(f"🌀 Página {pagina}")
+                productos = await extraer_productos(page, pagina)
+                print(f"✅ Productos extraídos: {len(productos)}")
+                await guardar_csv(productos)
+
+                with open("ultima_pagina.txt", "w") as f:
+                    f.write(str(pagina + 1))
+
+            except Exception as e:
+                print(f"❌ Error en la página {pagina}: {e}")
                 break
-            page_num += 1
 
         await browser.close()
-        print("[Info] Scraping completo")
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
