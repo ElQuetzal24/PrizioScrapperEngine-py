@@ -2,6 +2,7 @@ import asyncio
 import csv
 from playwright.async_api import async_playwright
 from pathlib import Path
+from datetime import datetime
 
 ARCHIVO_CSV = "productos.csv"
 CATEGORIA_URL = "https://www.walmart.co.cr/articulos-para-el-hogar?page="
@@ -11,8 +12,8 @@ async def scroll_hasta_cargar_todos(page):
     productos_previos = -1
     ciclos_sin_cambio = 0
     max_sin_cambio = 4
-    max_ciclos = 50 # máximo de intentos para evitar bucles infinitos
-    velocidad_scroll = 1000  # milisegundos entre ciclos
+    max_ciclos = 20 # máximo de intentos para evitar bucles infinitos
+    velocidad_scroll = 800  # milisegundos entre ciclos
 
     for ciclo in range(max_ciclos):
         # Scroll fuerte al fondo (como "End")
@@ -56,6 +57,7 @@ async def extraer_productos(page, pagina, visto_urls):
 
     # Capturar todos los elementos de una sola vez (para evitar reevaluación del DOM)
     elements = await page.query_selector_all(".vtex-search-result-3-x-galleryItem")
+    fecha_hoy = datetime.today().strftime('%Y-%m-%d')
 
     for item in elements:
         link = await item.query_selector("a")
@@ -68,6 +70,11 @@ async def extraer_productos(page, pagina, visto_urls):
             continue  # ya procesado
 
         visto_urls.add(url)
+
+# Extraer URL de imagen principal
+        img_node = await item.query_selector("img")
+        img_url = await img_node.get_attribute("src") if img_node else None
+        img_url = img_url.strip() if img_url and isinstance(img_url, str) else "N/A"
 
         # Extraer nombre robusto
         nombre = await item.query_selector(".vtex-product-summary-2-x-productBrand")
@@ -90,7 +97,9 @@ async def extraer_productos(page, pagina, visto_urls):
             "nombre": nombre,
             "precio": precio.strip().replace("₡", "").replace(",", "") if precio else "N/A",
             "sku": "N/A",
-            "url": url
+            "url": url,
+            "fecha": fecha_hoy,
+            "imagen": img_url
         })
     return productos
     # 
@@ -98,7 +107,7 @@ async def extraer_productos(page, pagina, visto_urls):
 async def guardar_csv(productos):
     archivo_existente = Path(ARCHIVO_CSV).exists()
     with open(ARCHIVO_CSV, mode="a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["nombre", "precio", "sku", "url"])
+        writer = csv.DictWriter(f, fieldnames=["nombre", "precio", "sku", "url", "fecha", "imagen"])
         if not archivo_existente:
             writer.writeheader()
         for p in productos:
