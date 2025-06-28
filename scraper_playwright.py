@@ -10,12 +10,9 @@ from repositorio.sql_server import guardar_en_bd
 
 ARCHIVO_CSV = "productos.csv"
 CATEGORIAS = [
-    "articulos-para-el-hogar",
-    "abarrotes",
-    "juguetes",
-    "electrodomesticos",
-    "ferreteria",
-    "mascotas"
+    "rebajas","juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","articulos-para-el-hogar","limpieza","abarrotes","higiene-y-belleza"
+    ,"bebes-y-ninos","lacteos","jugos-y-bebidas","carnes-y-pescados","cervezas-vinos-y-licores","embutidos","panaderia-y-tortilleria"
+    ,"alimentos-congelados","frutas-y-verduras","mascota","farmacia"
 ]
 
 
