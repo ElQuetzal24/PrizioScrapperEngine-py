@@ -11,7 +11,7 @@ async def scroll_hasta_cargar_todos(page):
     productos_previos = -1
     ciclos_sin_cambio = 0
     max_sin_cambio = 4
-    max_ciclos = 30
+    max_ciclos = 50 # máximo de intentos para evitar bucles infinitos
     velocidad_scroll = 1000  # milisegundos entre ciclos
 
     for ciclo in range(max_ciclos):
@@ -44,41 +44,47 @@ async def scroll_hasta_cargar_todos(page):
 
 
 
-async def extraer_productos(page, pagina):
+async def extraer_productos(page, pagina, visto_urls):
     url = f"{CATEGORIA_URL}{pagina}"
     await page.goto(url, timeout=60000)
     await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=15000)
     await scroll_hasta_cargar_todos(page)
 
-    items = page.locator(".vtex-search-result-3-x-galleryItem")
-    total = await items.count()
+    #
     productos = []
-    visto_urls = set()
+ 
 
-    for i in range(total):
-        item = items.nth(i)
+    # Capturar todos los elementos de una sola vez (para evitar reevaluación del DOM)
+    elements = await page.query_selector_all(".vtex-search-result-3-x-galleryItem")
 
-        # Obtener URL única
-        link = await item.locator("a").first.get_attribute("href")
-        if not link:
+    for item in elements:
+        link = await item.query_selector("a")
+        href = await link.get_attribute("href") if link else None
+        if not href:
             continue
-        url = f"https://www.walmart.co.cr{link}"
 
+        url = f"https://www.walmart.co.cr{href}"
         if url in visto_urls:
-            continue  # producto duplicado en esta página
+            continue  # ya procesado
+
         visto_urls.add(url)
 
         # Extraer nombre robusto
-        nombre = await item.locator(".vtex-product-summary-2-x-productBrand").first.text_content()
-        if not nombre or nombre.strip().lower() in ["agregar", ""]:
-            nombre = await item.locator(".vtex-product-summary-2-x-productName").first.text_content()
-        if not nombre or nombre.strip().lower() in ["agregar", ""]:
-            nombre = await item.locator("a span").first.text_content()
-        if not nombre or nombre.strip().lower() in ["agregar", ""]:
+        nombre = await item.query_selector(".vtex-product-summary-2-x-productBrand")
+        nombre = await nombre.text_content() if nombre else None
+        if not nombre or nombre.strip().lower() == "agregar":
+            nombre_node = await item.query_selector(".vtex-product-summary-2-x-productName")
+            nombre = await nombre_node.text_content() if nombre_node else None
+        if not nombre or nombre.strip().lower() == "agregar":
+            nombre_node = await item.query_selector("a span")
+            nombre = await nombre_node.text_content() if nombre_node else None
+        if not nombre or nombre.strip().lower() == "agregar":
             nombre = await item.inner_text()
-        nombre = nombre.strip() if nombre else "N/A"
+        nombre = nombre.strip() if nombre and isinstance(nombre, str) else "N/A"
 
-        precio = await item.locator("[class*=price]").first.text_content()
+
+        precio_node = await item.query_selector("[class*=price]")
+        precio = await precio_node.text_content() if precio_node else None
 
         productos.append({
             "nombre": nombre,
@@ -86,29 +92,8 @@ async def extraer_productos(page, pagina):
             "sku": "N/A",
             "url": url
         })
-
-
-        # Nombre robusto: varios intentos
-        nombre = await item.locator(".vtex-product-summary-2-x-productBrand").first.text_content()
-        if not nombre or nombre.strip().lower() in ["agregar", ""]:
-            nombre = await item.locator(".vtex-product-summary-2-x-productName").first.text_content()
-        if not nombre or nombre.strip().lower() in ["agregar", ""]:
-            nombre = await item.locator("a span").first.text_content()
-        if not nombre or nombre.strip().lower() in ["agregar", ""]:
-            nombre = await item.inner_text()
-
-        nombre = nombre.strip() if nombre else "N/A"
-
-        precio = await item.locator("[class*=price]").first.text_content()
-        link = await item.locator("a").first.get_attribute("href")
-
-        productos.append({
-            "nombre": nombre,
-            "precio": precio.strip().replace("₡", "").replace(",", "") if precio else "N/A",
-            "sku": "N/A",
-            "url": f"https://www.walmart.co.cr{link}" if link else "N/A"
-        })
     return productos
+    # 
 
 async def guardar_csv(productos):
     archivo_existente = Path(ARCHIVO_CSV).exists()
@@ -130,11 +115,11 @@ async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
-
+        visto_urls = set()
         for pagina in range(ultima_pagina_exitosa, MAX_PAGINAS + 1):
             try:
                 print(f"🌀 Página {pagina}")
-                productos = await extraer_productos(page, pagina)
+                productos = await extraer_productos(page, pagina, visto_urls)
                 print(f"✅ Productos extraídos: {len(productos)}")
                 await guardar_csv(productos)
 
