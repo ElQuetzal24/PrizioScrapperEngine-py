@@ -4,14 +4,17 @@ from playwright.async_api import async_playwright
 from pathlib import Path
 from datetime import datetime
 from urllib.parse import urlparse
+import re
+
+from repositorio.sql_server import guardar_en_bd
 
 ARCHIVO_CSV = "productos.csv"
 CATEGORIAS = [
-    "articulos-para-el-hogar",
-    "abarrotes",
-    "juguetes",
-    "electrodomesticos",
-    "ferreteria",
+    #"articulos-para-el-hogar",
+    #"abarrotes",
+    #"juguetes",
+   # "electrodomesticos",
+    #"ferreteria",
     "mascotas"
 ]
 
@@ -68,11 +71,47 @@ async def procesar_categoria(page, categoria, visto_urls):
                 break
 
             print(f"✅ Productos extraídos: {len(productos)}")
-            await guardar_csv(productos)
+            guardar_en_bd(productos)
+ 
 
         except Exception as e:
             print(f"❌ Error en la página {pagina}: {e}")
             break
+
+
+async def safe_text_content(node):
+    if node is None:
+        return ""
+    try:
+        return await node.text_content()
+    except Exception as e:
+        print(f"⚠️ Error al obtener text_content: {e}")
+        return ""
+
+
+def extraer_precios(texto):
+    """
+    Extrae precio_actual y precio_anterior del texto si existen dos precios.
+    Si hay solo uno, ambos campos serán iguales.
+    """
+    # Extraer todos los valores numéricos con ₡ incluido
+    precios = re.findall(r"₡\s*\d[\d\.]*", texto)
+
+    # Normalizar: quitar ₡ y puntos de miles, dejar solo coma decimal si existiera
+    normalizados = []
+    for p in precios:
+        p = p.replace("₡", "").replace(".", "").replace(",", ".").strip()
+        try:
+            normalizados.append(float(p))
+        except:
+            pass
+
+    if len(normalizados) >= 2:
+        return normalizados[1], normalizados[0]  # nuevo, anterior
+    elif len(normalizados) == 1:
+        return normalizados[0], normalizados[0]
+    else:
+        return 0.0, 0.0
 
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
     await page.goto(url_categoria, timeout=60000)
@@ -120,20 +159,32 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
         nombre = nombre.strip() if nombre and isinstance(nombre, str) else "N/A"
 
 
+        # Obtener nodo del precio y extraer precios
         precio_node = await item.query_selector("[class*=price]")
-        precio = await precio_node.text_content() if precio_node else None
+        if precio_node:
+            texto_precio = await precio_node.text_content()
+            precio_actual, precio_anterior = extraer_precios(texto_precio)
+        else:
+            precio_actual = precio_anterior = 0.0
+
+
 
         productos.append({
             "nombre": nombre,
-            "precio": precio.strip().replace("₡", "").replace(",", "") if precio else "N/A",
+            "precio": precio_actual,
+            "precio_anterior": precio_anterior,
             "sku": "N/A",
             "url": url,
             "fecha": fecha_hoy,
             "imagen": img_url,
             "categoria": categoria
         })
+
     return productos
     # 
+
+ 
+
 
 async def guardar_csv(productos):
     archivo_existente = Path(ARCHIVO_CSV).exists()
@@ -148,10 +199,10 @@ async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         tareas = []
-
+        visto_urls = set()
         for categoria in CATEGORIAS:
             page = await browser.new_page()
-            visto_urls = set()
+
             tareas.append(procesar_categoria(page, categoria, visto_urls))
 
         await asyncio.gather(*tareas)
