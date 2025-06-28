@@ -53,9 +53,40 @@ async def extraer_productos(page, pagina):
     items = page.locator(".vtex-search-result-3-x-galleryItem")
     total = await items.count()
     productos = []
+    visto_urls = set()
 
     for i in range(total):
         item = items.nth(i)
+
+        # Obtener URL única
+        link = await item.locator("a").first.get_attribute("href")
+        if not link:
+            continue
+        url = f"https://www.walmart.co.cr{link}"
+
+        if url in visto_urls:
+            continue  # producto duplicado en esta página
+        visto_urls.add(url)
+
+        # Extraer nombre robusto
+        nombre = await item.locator(".vtex-product-summary-2-x-productBrand").first.text_content()
+        if not nombre or nombre.strip().lower() in ["agregar", ""]:
+            nombre = await item.locator(".vtex-product-summary-2-x-productName").first.text_content()
+        if not nombre or nombre.strip().lower() in ["agregar", ""]:
+            nombre = await item.locator("a span").first.text_content()
+        if not nombre or nombre.strip().lower() in ["agregar", ""]:
+            nombre = await item.inner_text()
+        nombre = nombre.strip() if nombre else "N/A"
+
+        precio = await item.locator("[class*=price]").first.text_content()
+
+        productos.append({
+            "nombre": nombre,
+            "precio": precio.strip().replace("₡", "").replace(",", "") if precio else "N/A",
+            "sku": "N/A",
+            "url": url
+        })
+
 
         # Nombre robusto: varios intentos
         nombre = await item.locator(".vtex-product-summary-2-x-productBrand").first.text_content()
