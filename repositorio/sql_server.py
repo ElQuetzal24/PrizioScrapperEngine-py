@@ -29,8 +29,8 @@ def guardar_en_bd2(productos):
                 modelo = ""
 
                 #if url_existente(url):
-                    #print(f"⏭️ [{i}] Producto ya existe por URL: {url}")
-                    #continue
+                  #  print(f"⏭️ [{i}] Producto ya existe por URL: {url}")
+                 #   continue
 
                 print(f"\n🧪 [{i}] Procesando:")
                 print(f"   Nombre: {nombre}")
@@ -215,8 +215,7 @@ def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, c
             print(f"Revisando producto: {nombre} [{fuente}]")
 
             cursor.execute(
-                "SELECT ProductoId FROM Producto WHERE Nombre = ? AND Fuente = ?",
-                nombre, fuente
+                "SELECT ProductoId FROM Producto WHERE Nombre = ? AND UrlCompra = ?", nombre, enlace
             )
             fila = cursor.fetchone()
 
