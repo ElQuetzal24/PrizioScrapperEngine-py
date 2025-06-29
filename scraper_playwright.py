@@ -60,24 +60,23 @@ async def procesar_categoria(page, categoria, visto_urls, semaforo):
     async with semaforo:
         print(f"\n🔵 Procesando categoría: {categoria}")
 
-    for pagina in range(1, MAX_PAGINAS + 1):
-        try:
-            url_categoria = f"https://www.walmart.co.cr/{categoria}?page={pagina}"
-            print(f"🌀 Página {pagina} → {url_categoria}")
-            productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
+        for pagina in range(1, MAX_PAGINAS + 1):
+            try:
+                url_categoria = f"https://www.walmart.co.cr/{categoria}?page={pagina}"
+                print(f"🌀 Página {pagina} → {url_categoria}")
+                productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
 
-            
-            if not productos:
-                print(f"⚠️ No se extrajeron productos de {categoria} en la página {pagina}.")
-                break  # ← rompe la paginación si no se cargó nada
+                if not productos:
+                    print(f"⚠️ No se extrajeron productos de {categoria} en la página {pagina}.")
+                    break
 
-            print(f"✅ Productos extraídos: {len(productos)}")
-            guardar_en_bd2(productos)
- 
+                print(f"✅ Productos extraídos: {len(productos)}")
+                guardar_en_bd2(productos)
 
-        except Exception as e:
-            print(f"❌ Error en la página {pagina}: {e}")
-            break
+            except Exception as e:
+                print(f"❌ Error en la página {pagina}: {e}")
+                break
+
         
 
 
@@ -262,11 +261,11 @@ async def main():
         browser = await p.chromium.launch(headless=True)
         tareas = []
         visto_urls = set()
-        semaforo = asyncio.Semaphore(3)  # 👈 máximo 3 tareas concurrentes
+        semaforo = asyncio.Semaphore(2)  # 👈 máximo 3 tareas concurrentes
         for categoria in CATEGORIAS:
             page = await browser.new_page()
 
-            tareas.append(procesar_categoria(page, categoria, visto_urls))
+            tareas.append(procesar_categoria(page, categoria, visto_urls,semaforo))
     
         await asyncio.gather(*tareas)
         await browser.close()
