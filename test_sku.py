@@ -1,27 +1,51 @@
 import asyncio
 from playwright.async_api import async_playwright
-import re
 
-async def obtener_sku(url):
+URL = "https://tienda.pequenomundo.com/hogar/fiesta.html?product_list_limit=all"
+
+async def run():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        await page.goto(url)
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"]
+        )
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 800},
+            locale="es-CR"
+        )
 
-        # Esperamos unos segundos a que cargue todo el contenido JS
-        await page.wait_for_timeout(3000)
+        page = await context.new_page()
+        await page.goto(URL, timeout=60000)
 
-        # Obtener TODO el texto visible de la página
-        texto_completo = await page.text_content('body')
+        # Scroll profundo para cargar todos los productos
+        for _ in range(5):
+            await page.mouse.wheel(0, 4000)
+            await page.wait_for_timeout(1000)
 
-        # Buscar el patrón del SKU
-        match = re.search(r'SKU\s*[:\s]*([0-9]{6,})', texto_completo, re.IGNORECASE)
-        if match:
-            return match.group(1)
+        try:
+            await page.wait_for_selector("li.product-item", timeout=30000)
+        except:
+            print("❌ No se encontraron productos después de esperar.")
+            await browser.close()
+            return
 
-        return None
+        productos = await page.query_selector_all("li.product-item")
+        print(f"\n✅ Total productos encontrados: {len(productos)}\n")
+
+        for producto in productos:
+            nombre_el = await producto.query_selector("a.product-item-link")
+            precio_el = await producto.query_selector("span.price")
+            img_el = await producto.query_selector("img.product-image-photo")
+
+            nombre = (await nombre_el.text_content()).strip() if nombre_el else "N/A"
+            precio = (await precio_el.text_content()).strip() if precio_el else "N/A"
+            url = await nombre_el.get_attribute("href") if nombre_el else "N/A"
+            img_url = await img_el.get_attribute("src") if img_el else "N/A"
+
+            print(f"🛍️ {nombre} | {precio} | {url} | 🖼️ {img_url}")
+
+        await browser.close()
 
 if __name__ == "__main__":
-    url = "https://tienda.pequenomundo.com/batidora-pedestal-westinghouse.html"
-    sku = asyncio.run(obtener_sku(url))
-    print("✅ SKU extraído:", sku if sku else "No encontrado")
+    asyncio.run(run())
