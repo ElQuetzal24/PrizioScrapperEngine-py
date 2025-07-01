@@ -5,7 +5,7 @@ URL = "https://tienda.pequenomundo.com/hogar/fiesta.html?product_list_limit=all"
 
 async def run():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)  # Ponelo en True para producción
+        browser = await p.chromium.launch(headless=True)  # Ponelo en True para producción
         page = await browser.new_page()
         await page.goto(URL, timeout=60000)
 
