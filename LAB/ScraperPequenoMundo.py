@@ -103,8 +103,8 @@ def guardar_productos_scrapeados(productos: list):
 
     for p in productos:
         cursor.execute("""
-            INSERT INTO ProductosScrapeadosSimple (Nombre, Precio, Url, Slug)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO ProductosScrapeadosSimple (Nombre, Precio, Url, Slug,Categoria)
+            VALUES (?, ?, ?, ?, ?)
         """, 
         p["nombre"],
         p.get("precio",""),
@@ -166,7 +166,9 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
                     "nombre": nombre,
                     "precio": precio,
                     "url": url_final,
-                    "Slug": slug
+                    "Slug": slug,
+                    "categoria": ruta
+                    
                      
                 })
 
