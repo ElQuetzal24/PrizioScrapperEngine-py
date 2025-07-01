@@ -5,16 +5,24 @@ URL = "https://tienda.pequenomundo.com/hogar/fiesta.html?product_list_limit=all"
 
 async def run():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)  # Ponelo en True para producción
-        page = await browser.new_page()
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"]
+        )
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 800},
+            locale="es-CR"
+        )
+
+        page = await context.new_page()
         await page.goto(URL, timeout=60000)
 
-        # Scroll varias veces para forzar renderizado
+        # Scroll profundo para disparar renderizado
         for _ in range(5):
-            await page.mouse.wheel(0, 3000)
+            await page.mouse.wheel(0, 4000)
             await page.wait_for_timeout(1000)
 
-        # Esperar hasta que haya al menos 1 producto visible
         try:
             await page.wait_for_selector("li.product-item", timeout=30000)
         except:
@@ -31,7 +39,6 @@ async def run():
             nombre = (await nombre_el.text_content()).strip() if nombre_el else "N/A"
             precio = (await precio_el.text_content()).strip() if precio_el else "N/A"
             url = await nombre_el.get_attribute("href") if nombre_el else "N/A"
-
             print(f"🛍️ {nombre} | {precio} | {url}")
 
         await browser.close()
