@@ -1,50 +1,43 @@
 import asyncio
+import json
 from playwright.async_api import async_playwright
 
-async def obtener_categorias():
-    categorias = set()
+URL = "https://tienda.pequenomundo.com/"
+BASE = "https://tienda.pequenomundo.com"
+
+async def run():
+    categorias = []
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        await page.goto("https://www.walmart.co.cr/", timeout=60000)
+        browser = await p.chromium.launch(headless=False)
+        context = await browser.new_context()
+        page = await context.new_page()
+        await page.goto(URL, timeout=60000)
+        await page.wait_for_timeout(2000)
 
-        # Hacer clic en el botón de menú hamburguesa
-        try:
-            await page.click("button[id='burger-menu']")  # Ajuste si no encuentra ese ID exacto
-            await page.wait_for_timeout(2000)  # tiempo para que cargue el menú
-        except:
-            print("⚠️ No se pudo abrir el menú lateral.")
+        # Selector general del menú principal
+        menu_items = await page.query_selector_all("ul#menu-nav > li.level0")
 
-        # Capturar todos los enlaces visibles después de abrir el menú
-        enlaces = await page.query_selector_all("a[href]")
+        for item in menu_items:
+            await item.hover()
+            await page.wait_for_timeout(800)
 
-        for enlace in enlaces:
-            if not enlace:
-                continue
+            # Buscar todos los enlaces dentro del submenu
+            links = await item.query_selector_all("ul.level1 li.level1 a")
 
-            try:
-                href = await enlace.get_attribute("href")
-            except:
-                continue
+            for link in links:
+                href = await link.get_attribute("href")
+                if href and BASE in href:
+                    rel = "/" + "/".join(href.split("/")[3:]).replace(".html", "").strip("/")
+                    categorias.append(rel)
 
-            if not href:
-                continue
+        categorias = sorted(set(categorias))
+        with open("categorias.json", "w", encoding="utf-8") as f:
+            json.dump(categorias, f, ensure_ascii=False, indent=2)
 
-            # Filtrar rutas que parezcan categorías principales
-            if (
-                href.startswith("/") and
-                not any(x in href for x in ["#", "login", "carrito", "search", "p", "account", "tienda", "wishlist"])
-                and len(href.strip("/").split("/")) <= 2
-            ):
-                categorias.add(href.strip("/"))
+        print(f"\n✅ {len(categorias)} rutas exportadas a categorias.json")
 
         await browser.close()
 
-    return sorted(categorias)
-
 if __name__ == "__main__":
-    categorias = asyncio.run(obtener_categorias())
-    print("📁 Categorías encontradas:")
-    for c in categorias:
-        print(f"- {c}")
+    asyncio.run(run())
