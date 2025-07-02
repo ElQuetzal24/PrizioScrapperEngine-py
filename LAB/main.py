@@ -3,8 +3,7 @@ import sys
 import json
 
 # 🔧 Configuración
-TODAS_CATEGORIAS =  [
-  "/abarrotes/aceites",
+TODAS_CATEGORIAS =  ["/abarrotes/aceites",
   "/abarrotes/articulos-de-papel",
   "/abarrotes/bebidas",
   "/abarrotes/cafe-y-te",

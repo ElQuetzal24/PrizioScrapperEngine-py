@@ -109,7 +109,8 @@ def guardar_productos_scrapeados(productos: list):
         p["nombre"],
         p.get("precio",""),
         p.get("url", ""),
-        p.get("slug", "")
+        p.get("slug", ""),
+         p.get("categoria", "")
         )
 
     conn.commit()
@@ -166,7 +167,7 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
                     "nombre": nombre,
                     "precio": precio,
                     "url": url_final,
-                    "Slug": slug,
+                    "slug": slug,
                     "categoria": ruta
                     
                      
