@@ -176,6 +176,11 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
                         valor = await imagen_el.get_attribute(attr) or ""
                         if valor and "pixel.jpg" not in valor and valor.startswith("http"):
                             imagen_url = valor.strip()
+                            if "/cache/" in imagen_url:
+                                partes = imagen_url.split("/cache/")
+                                if len(partes) > 1:
+                                    imagen_url = "/".join(partes[0:1]) + "/" + "/".join(partes[1].split("/")[1:])
+
                             break
 
                     # Filtro final: si sigue siendo pixel, se descarta
