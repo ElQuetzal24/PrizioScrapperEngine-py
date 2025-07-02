@@ -102,20 +102,22 @@ def guardar_productos_scrapeados(productos: list):
     cursor = conn.cursor()
 
     registros = [
-        (
-            p["nombre"],
-            p.get("precio", ""),
-            p.get("url", ""),
-            p.get("slug", ""),
-            p.get("categoria", "")
-        )
-        for p in productos
+    (
+        p["nombre"],
+        p.get("precio", ""),
+        p.get("url", ""),
+        p.get("slug", ""),
+        p.get("categoria", ""),
+        p.get("imagen", "")
+    )
+    for p in productos
     ]
 
     cursor.executemany("""
-        INSERT INTO ProductosScrapeadosSimple (Nombre, Precio, Url, Slug, Categoria)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO ProductosScrapeadosSimple (Nombre, Precio, Url, Slug, Categoria, ImagenUrl)
+        VALUES (?, ?, ?, ?, ?, ?)
     """, registros)
+
 
     conn.commit()
     cursor.close()
@@ -164,6 +166,25 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
                 url_final = href if href.startswith("http") else BASE + href
                 slug = href.strip().split("/")[-1].replace(".html", "") if href else "N/A"
 
+                imagen_el = await producto.query_selector("img.product-image-photo")
+
+                imagen_url = ""
+                if imagen_el:
+                    # Probar múltiples atributos
+                    posibles_atributos = ["src", "data-src", "data-original", "data-srcset", "data-image-src"]
+                    for attr in posibles_atributos:
+                        valor = await imagen_el.get_attribute(attr) or ""
+                        if valor and "pixel.jpg" not in valor and valor.startswith("http"):
+                            imagen_url = valor.strip()
+                            break
+
+                    # Filtro final: si sigue siendo pixel, se descarta
+                    if "pixel.jpg" in imagen_url or not imagen_url.endswith(".jpg"):
+                        imagen_url = ""
+
+
+
+
                 print("─────────────")
                 print("🛍️ NOMBRE:", nombre)
                 print("💵 PRECIO:", precio)
@@ -175,7 +196,8 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
                     "precio": precio,
                     "url": url_final,
                     "slug": slug,
-                    "categoria": ruta
+                    "categoria": ruta,
+                    "imagen": imagen_url
                     
                      
                 })
