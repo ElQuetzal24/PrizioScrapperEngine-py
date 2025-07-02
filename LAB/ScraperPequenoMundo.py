@@ -1,196 +1,195 @@
-import re
+import sys
+import json
 import asyncio
 from playwright.async_api import async_playwright
-from datetime import datetime
 import pyodbc
+from datetime import datetime
 
-# Configuración de SQL Server
-DB_CONFIG = {
-    "driver": "{ODBC Driver 17 for SQL Server}",
-    "server": "localhost",
-    "database": "TuBase",
-    "uid": "TuUsuario",
-    "pwd": "TuPassword"
-}
+# Leer argumentos desde línea de comandos
+if len(sys.argv) < 3:
+    print("❌ Debes pasar la lista de categorías y la concurrencia como argumentos.")
+    sys.exit(1)
 
-BASE_URL = "https://tienda.pequenomundo.com"
+try:
+    RUTAS = json.loads(sys.argv[1])  # lista como string JSON
+    CONCURRENCY = int(sys.argv[2])
+except Exception as e:
+    print(f"❌ Error leyendo argumentos: {e}")
+    sys.exit(1)
 
-def get_db_connection():
-    return pyodbc.connect(
-        f"DRIVER={DB_CONFIG['driver']};"
-        f"SERVER={DB_CONFIG['server']};"
-        f"DATABASE={DB_CONFIG['database']};"
-        f"UID={DB_CONFIG['uid']};"
-        f"PWD={DB_CONFIG['pwd']}"
+BASE = "https://tienda.pequenomundo.com"
+
+async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
+    url = f"{BASE}/{ruta}.html?product_list_limit=all"
+    async with sem:
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            context = await browser.new_context(
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+                viewport={"width": 1280, "height": 800},
+                locale="es-CR"
+            )
+            page = await context.new_page()
+            print(f"\n🌐 Procesando: /{ruta}")
+            try:
+                await page.goto(url, timeout=60000)
+                for _ in range(5):
+                    await page.mouse.wheel(0, 4000)
+                    await page.wait_for_timeout(1000)
+
+                await page.wait_for_selector("li.product-item", timeout=20000)
+            except Exception as e:
+                print(f"❌ Sin productos o error en /{ruta} → {e}")
+                await browser.close()
+                return
+
+            productos = await page.query_selector_all("li.product-item")
+            print(f"✅ {len(productos)} productos en /{ruta}")
+
+            for producto in productos:
+                nombre_el = await producto.query_selector("a.product-item-link")
+                precio_el = await producto.query_selector("span.price")
+
+                nombre = (await nombre_el.text_content()).strip() if nombre_el else "N/A"
+                precio = (await precio_el.text_content()).strip() if precio_el else "N/A"
+
+                href = await nombre_el.get_attribute("href") if nombre_el else ""
+                url_final = href if href.startswith("http") else BASE + href
+                slug = href.strip().split("/")[-1].replace(".html", "") if href else "N/A"
+
+                print("─────────────")
+                print("🛍️ NOMBRE:", nombre)
+                print("💵 PRECIO:", precio)
+                print("🔗 URL   :", url_final)
+                print("🔖 SLUG  :", slug)
+
+            await browser.close()
+
+async def main():
+    sem = asyncio.Semaphore(CONCURRENCY)
+    await asyncio.gather(*(procesar_categoria(ruta, sem) for ruta in RUTAS))
+
+if __name__ == "__main__":
+    asyncio.run(main())
+import sys
+import json
+import asyncio
+from playwright.async_api import async_playwright
+
+# Leer argumentos desde línea de comandos
+if len(sys.argv) < 3:
+    print("❌ Debes pasar la lista de categorías y la concurrencia como argumentos.")
+    sys.exit(1)
+
+try:
+    RUTAS = json.loads(sys.argv[1])  # lista como string JSON
+    CONCURRENCY = int(sys.argv[2])
+except Exception as e:
+    print(f"❌ Error leyendo argumentos: {e}")
+    sys.exit(1)
+
+BASE = "https://tienda.pequenomundo.com"
+
+
+def guardar_productos_scrapeados(productos: list):
+    conn = pyodbc.connect(
+        "DRIVER={ODBC Driver 17 for SQL Server};"
+        "SERVER=DESKTOP-S5C78JU;"
+        "DATABASE=Scrap_db;"
+        "UID=sa;"
+        "PWD=ABC123xyz;"
     )
-
-def guardar_productos_en_db(productos, conn):
-    if not productos:
-        return
     cursor = conn.cursor()
-    rows = [(p["nombre"], p["precio"], p["url"], p["slug"], p["categoria"]) for p in productos]
+
+    registros = [
+        (
+            p["nombre"],
+            p.get("precio", ""),
+            p.get("url", ""),
+            p.get("slug", ""),
+            p.get("categoria", "")
+        )
+        for p in productos
+    ]
+
     cursor.executemany("""
         INSERT INTO ProductosScrapeadosSimple (Nombre, Precio, Url, Slug, Categoria)
         VALUES (?, ?, ?, ?, ?)
-    """, rows)
+    """, registros)
+
     conn.commit()
-    print(f"💾 Guardados {len(rows)} productos en la base de datos.")
     cursor.close()
-
-async def procesar_categoria(ruta, page):
-    url = f"{BASE_URL}/{ruta}.html?product_list_limit=all"
-    productos_data = []
-
-    try:
-        await page.goto(url, timeout=60000)
-        for _ in range(5):
-            await page.mouse.wheel(0, 4000)
-            await page.wait_for_timeout(1000)
-
-        await page.wait_for_selector("li.product-item", timeout=20000)
-        productos = await page.query_selector_all("li.product-item")
-
-        for producto in productos:
-            nombre_el = await producto.query_selector("a.product-item-link")
-            precio_el = await producto.query_selector("span.price")
-
-            if not nombre_el or not precio_el:
-                continue
-
-            nombre = (await nombre_el.text_content()).strip()
-            precio_txt = (await precio_el.text_content()).strip().replace("₡", "").replace(",", "")
-            try:
-                precio = float(precio_txt)
-            except:
-                precio = 0.0
-
-            href = await nombre_el.get_attribute("href")
-            if not href:
-                continue
-
-            url_final = href if href.startswith("http") else BASE_URL + href
-            slug = re.sub(r'\.html$', '', url_final.split("/")[-1])
-
-            productos_data.append({
-                "nombre": nombre,
-                "precio": precio,
-                "url": url_final,
-                "slug": slug,
-                "categoria": ruta
-            })
-
-        print(f"✅ {len(productos_data)} productos extraídos de /{ruta}")
-        return productos_data
-
-    except Exception as e:
-        print(f"❌ Error en {ruta}: {e}")
-        return []
-
-async def main(rutas, concurrency=2):
-    conn = get_db_connection()
-
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context()
-        page = await context.new_page()
-
-        for i in range(0, len(rutas), concurrency):
-            bloque = rutas[i:i+concurrency]
-            tareas = [procesar_categoria(r, page) for r in bloque]
-            resultados = await asyncio.gather(*tareas)
-
-            for productos in resultados:
-                guardar_productos_en_db(productos, conn)
-
-        await browser.close()
     conn.close()
 
+    print(f"💾 Guardados {len(productos)} productos en la base de datos.")
+
+
+
+async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
+    url = f"{BASE}/{ruta}.html?product_list_limit=all"
+    async with sem:
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            context = await browser.new_context(
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+                viewport={"width": 1280, "height": 800},
+                locale="es-CR"
+            )
+            page = await context.new_page()
+            print(f"\n🌐 Procesando: /{ruta}")
+            try:
+                await page.goto(url, timeout=60000)
+                for _ in range(5):
+                    await page.mouse.wheel(0, 4000)
+                    await page.wait_for_timeout(1000)
+
+                await page.wait_for_selector("li.product-item", timeout=20000)
+            except Exception as e:
+                print(f"❌ Sin productos o error en /{ruta} → {e}")
+                await browser.close()
+                return
+
+            productos = await page.query_selector_all("li.product-item")
+            print(f"✅ {len(productos)} productos en /{ruta}")
+
+            productos_data = []
+            for producto in productos:
+                nombre_el = await producto.query_selector("a.product-item-link")
+                precio_el = await producto.query_selector("span.price")
+
+                nombre = (await nombre_el.text_content()).strip() if nombre_el else "N/A"
+                precio = (await precio_el.text_content()).strip() if precio_el else "N/A"
+
+                href = await nombre_el.get_attribute("href") if nombre_el else ""
+                url_final = href if href.startswith("http") else BASE + href
+                slug = href.strip().split("/")[-1].replace(".html", "") if href else "N/A"
+
+                print("─────────────")
+                print("🛍️ NOMBRE:", nombre)
+                print("💵 PRECIO:", precio)
+                print("🔗 URL   :", url_final)
+                print("🔖 SLUG  :", slug)
+
+                productos_data.append({
+                    "nombre": nombre,
+                    "precio": precio,
+                    "url": url_final,
+                    "slug": slug,
+                    "categoria": ruta
+                    
+                     
+                })
+
+
+            await browser.close()
+
+            if productos_data:
+                guardar_productos_scrapeados(productos_data)
+
+
+async def main():
+    sem = asyncio.Semaphore(CONCURRENCY)
+    await asyncio.gather(*(procesar_categoria(ruta, sem) for ruta in RUTAS))
+
 if __name__ == "__main__":
-    rutas = [
-        "/abarrotes/aceites",
-  "/abarrotes/articulos-de-papel",
-  "/abarrotes/bebidas",
-  "/abarrotes/cafe-y-te",
-  "/abarrotes/cereales",
-  "/abarrotes/chocolates",
-  "/abarrotes/condimentos",
-  "/abarrotes/confites",
-  "/abarrotes/cuidado-personal",
-  "/abarrotes/desechables",
-  "/abarrotes/enlatados",
-  "/abarrotes/envolturas",
-  "/abarrotes/galletas",
-  "/abarrotes/granos",
-  "/abarrotes/harinas",
-  "/abarrotes/jaleas",
-  "/abarrotes/lacteo",
-  "/abarrotes/libre-de-gluten",
-  "/abarrotes/licores",
-  "/abarrotes/limpieza",
-  "/abarrotes/pastas",
-  "/abarrotes/salsas",
-  "/abarrotes/siropes",
-  "/abarrotes/snacks",
-  "/abarrotes/sopas-y-consomes",
-  "/abarrotes/suplementos",
-  "/electrodomesticos",
-  "/ferreteria/acabados",
-  "/ferreteria/accesorios-de-ferreteria",
-  "/ferreteria/articulos-carro",
-  "/ferreteria/articulos-electricos",
-  "/ferreteria/articulos-para-motocicletas",
-  "/ferreteria/construccion",
-  "/ferreteria/herramientas",
-  "/ferreteria/iluminacion",
-  "/ferreteria/jardineria",
-  "/ferreteria/seguridad",
-  "/hogar/adornos-decoracion",
-  "/hogar/alfombras",
-  "/hogar/articulos-deportivos",
-  "/hogar/ba-o",
-  "/hogar/bebes-y-damas",
-  "/hogar/camping-e-inflables",
-  "/hogar/canastas",
-  "/hogar/candelas-y-candelabros",
-  "/hogar/ceramica",
-  "/hogar/cocina",
-  "/hogar/cortinas",
-  "/hogar/cristaleria",
-  "/hogar/dormitorio",
-  "/hogar/electrodomesticos",
-  "/hogar/equipo-medico",
-  "/hogar/escolar-y-oficina",
-  "/hogar/espejos",
-  "/hogar/fiesta",
-  "/hogar/juguetes-1",
-  "/hogar/lavanderia",
-  "/hogar/maletas",
-  "/hogar/navidad",
-  "/hogar/plastico",
-  "/hogar/portarretratos",
-  "/hogar/temporada-lluviosa",
-  "/mascotas-varias/gatos",
-  "/mascotas-varias/perros",
-  "/muebles/bancos",
-  "/muebles/camas-camarotes-y-colchones",
-  "/muebles/estantes",
-  "/muebles/mesas-decorativas",
-  "/muebles/mesas-industriales",
-  "/muebles/muebles-de-cocina",
-  "/muebles/muebles-de-dormitorio",
-  "/muebles/muebles-de-jardin",
-  "/muebles/muebles-de-tv",
-  "/muebles/muebles-infantiles",
-  "/muebles/muebles-plegables",
-  "/muebles/oficina",
-  "/muebles/ottoman",
-  "/muebles/repisas",
-  "/muebles/sillas-basicas",
-  "/muebles/sillon",
-  "/muebles/zapateras",
-  "/vacaciones",
-  "/liquidaciones",
-  "/mallas-construccion",
-   "/mi-negocio-limpio"
-    ]
-    asyncio.run(main(rutas, concurrency=2))
+    asyncio.run(main())
