@@ -72,7 +72,7 @@ class WalmartScraper(IScraper):
                     except:
                         continue
 
-                    print(f"📤 Insertando en SQL: {nombre} | Precio: {precio_valor}")
+                    print(f" Insertando en SQL: {nombre} | Precio: {precio_valor}")
                     await asyncio.to_thread(
                         insertar_o_actualizar_producto,
                         nombre, imagen, sku, marca, "", url_producto, categoria, precio_valor, "WalmartAPI"

@@ -38,7 +38,7 @@ async def scroll_hasta_cargar_todos(page):
 
         # Mostrar solo si hay cambio o cada 5 ciclos
         if productos_actuales != productos_previos or ciclo % 5 == 0:
-            print(f"🔄 Scroll {ciclo+1}: {productos_actuales} productos visibles")
+            print(f" Scroll {ciclo+1}: {productos_actuales} productos visibles")
 
         # Control de cambio
         if productos_actuales == productos_previos:
@@ -49,32 +49,32 @@ async def scroll_hasta_cargar_todos(page):
 
         # Salir si se estanca
         if ciclos_sin_cambio >= max_sin_cambio:
-            print(f"✅ Scroll finalizado: {productos_actuales} productos cargados (sin cambios en {max_sin_cambio} ciclos)")
+            print(f" Scroll finalizado: {productos_actuales} productos cargados (sin cambios en {max_sin_cambio} ciclos)")
             break
 
     else:
-        print(f"⚠️ Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
+        print(f" Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
 
 
 async def procesar_categoria(page, categoria, visto_urls, semaforo):
     async with semaforo:
-        print(f"\n🔵 Procesando categoría: {categoria}")
+        print(f"\n Procesando categoría: {categoria}")
 
         for pagina in range(1, MAX_PAGINAS + 1):
             try:
                 url_categoria = f"https://www.walmart.co.cr/{categoria}?page={pagina}"
-                print(f"🌀 Página {pagina} → {url_categoria}")
+                print(f" Página {pagina} → {url_categoria}")
                 productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
 
                 if not productos:
-                    print(f"⚠️ No se extrajeron productos de {categoria} en la página {pagina}.")
+                    print(f" No se extrajeron productos de {categoria} en la página {pagina}.")
                     break
 
-                print(f"✅ Productos extraídos: {len(productos)}")
+                print(f" Productos extraídos: {len(productos)}")
                 guardar_en_bd2(productos)
 
             except Exception as e:
-                print(f"❌ Error en la página {pagina}: {e}")
+                print(f" Error en la página {pagina}: {e}")
                 break
 
         
@@ -86,7 +86,7 @@ async def safe_text_content(node):
     try:
         return await node.text_content()
     except Exception as e:
-        print(f"⚠️ Error al obtener text_content: {e}")
+        print(f" Error al obtener text_content: {e}")
         return ""
 
 
@@ -133,7 +133,7 @@ async def extraer_marca_detallada(page, url_producto):
                 td_text = await safe_text_content(td)
                 marca = td_text.strip()
                 if marca:
-                    print(f"🔍 Marca desde tabla: {marca}")
+                    print(f" Marca desde tabla: {marca}")
                     return marca
 
         # Otra posible estructura: definición <dt>Marca</dt><dd>Sony</dd>
@@ -144,12 +144,12 @@ async def extraer_marca_detallada(page, url_producto):
                 dd = await dt.evaluate_handle("el => el.nextElementSibling")
                 marca = await safe_text_content(dd)
                 if marca:
-                    print(f"🔍 Marca desde definiciones: {marca}")
+                    print(f" Marca desde definiciones: {marca}")
                     return marca.strip()
 
         return "N/A"
     except Exception as e:
-        print(f"⚠️ Error extrayendo marca en detalle: {e}")
+        print(f" Error extrayendo marca en detalle: {e}")
         return "N/A"
 
 
@@ -231,7 +231,7 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
 
         productos.append({
             "nombre": nombre,
-            "marca": marca,  # 👈 nuevo campo
+            "marca": marca,  #  nuevo campo
             "precio": precio_actual,
             "precio_anterior": precio_anterior,
             "sku": "N/A",
@@ -261,7 +261,7 @@ async def main():
         browser = await p.chromium.launch(headless=True)
         tareas = []
         visto_urls = set()
-        semaforo = asyncio.Semaphore(2)  # 👈 máximo 3 tareas concurrentes
+        semaforo = asyncio.Semaphore(2)  #  máximo 3 tareas concurrentes
         for categoria in CATEGORIAS:
             page = await browser.new_page()
 

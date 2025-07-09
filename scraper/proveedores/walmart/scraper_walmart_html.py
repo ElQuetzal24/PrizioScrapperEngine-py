@@ -21,11 +21,11 @@ class WalmartHTMLScraper(IScraper):
 
         for categoria in categorias:
             url_categoria = f"{base_url}{categoria}"
-            print(f"🔍 Procesando categoría: {categoria}")
+            print(f" Procesando categoría: {categoria}")
             try:
                 res = requests.get(url_categoria, headers=headers, timeout=10)
                 if res.status_code != 200:
-                    print(f"❌ Error HTTP {res.status_code} en {url_categoria}")
+                    print(f" Error HTTP {res.status_code} en {url_categoria}")
                     continue
 
                 soup = BeautifulSoup(res.text, "html.parser")
@@ -51,7 +51,7 @@ class WalmartHTMLScraper(IScraper):
                         precio_valor=float(precio),
                         fuente="WalmartHTML"
                     )
-                    print(f"✅ {nombre} | ₡{precio}")
+                    print(f" {nombre} | ₡{precio}")
                     time.sleep(0.1)
             except Exception as e:
-                print(f"❌ Error en categoría {categoria}: {e}")
+                print(f" Error en categoría {categoria}: {e}")

@@ -5,16 +5,16 @@ from playwright.async_api import async_playwright
 import pyodbc
 from datetime import datetime
 
-# Leer argumentos desde línea de comandos
+ 
 if len(sys.argv) < 3:
-    print("❌ Debes pasar la lista de categorías y la concurrencia como argumentos.")
+    print(" Debes pasar la lista de categorías y la concurrencia como argumentos.")
     sys.exit(1)
 
 try:
-    RUTAS = json.loads(sys.argv[1])  # lista como string JSON
+    RUTAS = json.loads(sys.argv[1])  
     CONCURRENCY = int(sys.argv[2])
 except Exception as e:
-    print(f"❌ Error leyendo argumentos: {e}")
+    print(f" Error leyendo argumentos: {e}")
     sys.exit(1)
 
 BASE = "https://tienda.pequenomundo.com"
@@ -23,14 +23,14 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
     url = f"{BASE}/{ruta}.html?product_list_limit=all"
     async with sem:
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(headless=False)
             context = await browser.new_context(
                 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
                 viewport={"width": 1280, "height": 800},
                 locale="es-CR"
             )
             page = await context.new_page()
-            print(f"\n🌐 Procesando: /{ruta}")
+            print(f"\n Procesando: /{ruta}")
             try:
                 await page.goto(url, timeout=60000)
                 for _ in range(5):
@@ -39,12 +39,12 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
 
                 await page.wait_for_selector("li.product-item", timeout=20000)
             except Exception as e:
-                print(f"❌ Sin productos o error en /{ruta} → {e}")
+                print(f" Sin productos o error en /{ruta} → {e}")
                 await browser.close()
                 return
 
             productos = await page.query_selector_all("li.product-item")
-            print(f"✅ {len(productos)} productos en /{ruta}")
+            print(f" {len(productos)} productos en /{ruta}")
 
             for producto in productos:
                 nombre_el = await producto.query_selector("a.product-item-link")
@@ -58,10 +58,10 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
                 slug = href.strip().split("/")[-1].replace(".html", "") if href else "N/A"
 
                 print("─────────────")
-                print("🛍️ NOMBRE:", nombre)
-                print("💵 PRECIO:", precio)
-                print("🔗 URL   :", url_final)
-                print("🔖 SLUG  :", slug)
+                print(" NOMBRE:", nombre)
+                print(" PRECIO:", precio)
+                print(" URL   :", url_final)
+                print(" SLUG  :", slug)
 
             await browser.close()
 
@@ -76,16 +76,16 @@ import json
 import asyncio
 from playwright.async_api import async_playwright
 
-# Leer argumentos desde línea de comandos
+ 
 if len(sys.argv) < 3:
-    print("❌ Debes pasar la lista de categorías y la concurrencia como argumentos.")
+    print(" Debes pasar la lista de categorías y la concurrencia como argumentos.")
     sys.exit(1)
 
 try:
     RUTAS = json.loads(sys.argv[1])  # lista como string JSON
     CONCURRENCY = int(sys.argv[2])
 except Exception as e:
-    print(f"❌ Error leyendo argumentos: {e}")
+    print(f" Error leyendo argumentos: {e}")
     sys.exit(1)
 
 BASE = "https://tienda.pequenomundo.com"
@@ -123,7 +123,7 @@ def guardar_productos_scrapeados(productos: list):
     cursor.close()
     conn.close()
 
-    print(f"💾 Guardados {len(productos)} productos en la base de datos.")
+    print(f"Guardados {len(productos)} productos en la base de datos.")
 
 
 
@@ -138,7 +138,7 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
                 locale="es-CR"
             )
             page = await context.new_page()
-            print(f"\n🌐 Procesando: /{ruta}")
+            print(f"\n Procesando: /{ruta}")
             try:
                 await page.goto(url, timeout=60000)
                 for _ in range(5):
@@ -147,12 +147,12 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
 
                 await page.wait_for_selector("li.product-item", timeout=20000)
             except Exception as e:
-                print(f"❌ Sin productos o error en /{ruta} → {e}")
+                print(f" Sin productos o error en /{ruta} → {e}")
                 await browser.close()
                 return
 
             productos = await page.query_selector_all("li.product-item")
-            print(f"✅ {len(productos)} productos en /{ruta}")
+            print(f" {len(productos)} productos en /{ruta}")
 
             productos_data = []
             for producto in productos:
@@ -191,10 +191,10 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
 
 
                 print("─────────────")
-                print("🛍️ NOMBRE:", nombre)
-                print("💵 PRECIO:", precio)
-                print("🔗 URL   :", url_final)
-                print("🔖 SLUG  :", slug)
+                print(" NOMBRE:", nombre)
+                print(" PRECIO:", precio)
+                print(" URL   :", url_final)
+                print(" SLUG  :", slug)
 
                 productos_data.append({
                     "nombre": nombre,
