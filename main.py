@@ -2,12 +2,12 @@ import argparse
 import asyncio
 import csv
 
-from scraper.proveedores.pequeno_mundo.scraper import PequenoMundoScraper
-from scraper.proveedores.walmart.scraper import WalmartScraper
-from scraper.proveedores.walmart.scraper_api_v2 import WalmartApiV2Scraper
-from scraper.proveedores.walmart.scraper_walmart_html import WalmartHTMLScraper
+from scrapers.sitios.pequeno_mundo.scraper import PequenoMundoScraper
+from scrapers.sitios.walmart.scraper import WalmartScraper
+from scrapers.sitios.walmart.scraper_api_v2 import WalmartApiV2Scraper
+ 
 
-from scraper.worker import worker
+from scrapers.worker import worker
 
 async def main(args):
     queue = asyncio.Queue()
@@ -44,5 +44,4 @@ if __name__ == "__main__":
 
     asyncio.run(main(args))
 
-
-scrapers.append(WalmartHTMLScraper())
+ 

@@ -1,6 +1,6 @@
-from scraper.base_scraper import IScraper
-from scraper.proveedores.pequeno_mundo. extractor import procesar_categorias
-from scraper.proveedores.pequeno_mundo.navegador import crear_driver
+from scrapers.base_scraper import IScraper
+from scrapers.sitios.pequeno_mundo. extractor import procesar_categorias
+from scrapers.sitios.pequeno_mundo.navegador import crear_driver
 import asyncio
 
 # Categorías como URLs reales, no selectores CSS

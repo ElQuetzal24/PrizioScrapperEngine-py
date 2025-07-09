@@ -1,5 +1,5 @@
 
-from scraper.base_scraper import IScraper
+from scrapers.base_scraper import IScraper
 import requests
 import asyncio
 from repositorio.sql_server import insertar_o_actualizar_producto
@@ -46,7 +46,7 @@ class WalmartScraper(IScraper):
                     with open(log_file, "a", encoding="utf-8") as log:
                         log.write(mensaje + "\n")
                     errores += 1
-                    if errores > 5:
+                    if errores > 15:
                         final_msg = "Fin del Catálogo. Finalizando scraping."
                         print(final_msg)
                         with open(log_file, "a", encoding="utf-8") as log:

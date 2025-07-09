@@ -29,10 +29,10 @@ def guardar_en_bd2(productos):
                 modelo = ""
 
                 #if url_existente(url):
-                  #  print(f"⏭️ [{i}] Producto ya existe por URL: {url}")
+                  #  print(f"⏭ [{i}] Producto ya existe por URL: {url}")
                  #   continue
 
-                print(f"\n🧪 [{i}] Procesando:")
+                print(f"\n [{i}] Procesando:")
                 print(f"   Nombre: {nombre}")
                 print(f"   Marca: {marca}")
                 print(f"   Precio: {precio}")
@@ -59,9 +59,9 @@ def guardar_en_bd2(productos):
                             INSERT INTO PrecioProducto (ProductoId, Precio, FechaRegistro) 
                             VALUES (?, ?, GETDATE())
                         """, producto_id, precio)
-                        print(f"📈 Precio actualizado: {precio}")
+                        print(f" Precio actualizado: {precio}")
                     else:
-                        print(f"⏳ Precio sin cambios: {precio}")
+                        print(f" Precio sin cambios: {precio}")
                 else:
                     # Insertar producto nuevo
                     cursor.execute("""
@@ -76,7 +76,7 @@ def guardar_en_bd2(productos):
                         INSERT INTO PrecioProducto (ProductoId, Precio, FechaRegistro) 
                         VALUES (?, ?, GETDATE())
                     """, producto_id, precio)
-                    print(f"🆕 Producto y precio insertados.")
+                    print(f" Producto y precio insertados.")
 
                 # 2. Insertar en ProductosScrapeados con ProductoId
 
@@ -88,18 +88,18 @@ def guardar_en_bd2(productos):
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, producto_id, nombre, marca, precio, precio_anterior, sku, url, fecha, imagen, categoria)
 
-                print(f"📥 Registro en ProductosScrapeados OK")
+                print(f" Registro en ProductosScrapeados OK")
 
             except Exception as e:
-                print(f"❌ Error en producto [{i}]: {e}")
-                print(f"⛔ Producto con error: {p}")
+                print(f" Error en producto [{i}]: {e}")
+                print(f" Producto con error: {p}")
 
         conn.commit()
         conn.close()
-        print("✅ Todos los productos procesados.")
+        print(" Todos los productos procesados.")
 
     except Exception as e:
-        print(f"❌ Error de conexión BD: {e}")
+        print(f" Error de conexión BD: {e}")
 
 def guardar_en_bd(productos):
     try:
@@ -198,7 +198,7 @@ def url_existente(url):
         conn.close()
         return existe
     except Exception as e:
-        print(f"❌ Error verificando existencia de URL en BD: {e}")
+        print(f" Error verificando existencia de URL en BD: {e}")
         return False
 
 def insertar_o_actualizar_producto(nombre, imagen, sku, marca, modelo, enlace, categoria, precio_valor, fuente):

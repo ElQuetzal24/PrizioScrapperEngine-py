@@ -90,7 +90,6 @@ except Exception as e:
 
 BASE = "https://tienda.pequenomundo.com"
 
-
 def guardar_productos_scrapeados(productos: list):
     conn = pyodbc.connect(
         "DRIVER={ODBC Driver 17 for SQL Server};"
@@ -124,8 +123,6 @@ def guardar_productos_scrapeados(productos: list):
     conn.close()
 
     print(f"Guardados {len(productos)} productos en la base de datos.")
-
-
 
 async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
     url = f"{BASE}/{ruta}.html?product_list_limit=all"
@@ -212,7 +209,6 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
 
             if productos_data:
                 guardar_productos_scrapeados(productos_data)
-
 
 async def main():
     sem = asyncio.Semaphore(CONCURRENCY)

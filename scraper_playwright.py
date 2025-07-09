@@ -55,7 +55,6 @@ async def scroll_hasta_cargar_todos(page):
     else:
         print(f" Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
 
-
 async def procesar_categoria(page, categoria, visto_urls, semaforo):
     async with semaforo:
         print(f"\n Procesando categoría: {categoria}")
@@ -77,9 +76,6 @@ async def procesar_categoria(page, categoria, visto_urls, semaforo):
                 print(f" Error en la página {pagina}: {e}")
                 break
 
-        
-
-
 async def safe_text_content(node):
     if node is None:
         return ""
@@ -88,7 +84,6 @@ async def safe_text_content(node):
     except Exception as e:
         print(f" Error al obtener text_content: {e}")
         return ""
-
 
 def extraer_precios(texto):
     """
@@ -113,7 +108,6 @@ def extraer_precios(texto):
         return normalizados[0], normalizados[0]
     else:
         return 0.0, 0.0
-
 
 async def extraer_marca_detallada(page, url_producto):
     try:
@@ -151,8 +145,6 @@ async def extraer_marca_detallada(page, url_producto):
     except Exception as e:
         print(f" Error extrayendo marca en detalle: {e}")
         return "N/A"
-
-
 
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
     await page.goto(url_categoria, timeout=30000)
@@ -243,9 +235,6 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
 
     return productos
     # 
-
- 
-
 
 async def guardar_csv(productos):
     archivo_existente = Path(ARCHIVO_CSV).exists()

@@ -1,2 +1,5 @@
 pip install playwright
 playwright install
+
+# Windows (CMD o PowerShell)
+.\.venv\Scripts\activate

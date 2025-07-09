@@ -44,7 +44,7 @@ async def run():
         with open("categorias.json", "w", encoding="utf-8") as f:
             json.dump(rutas_ordenadas, f, ensure_ascii=False, indent=2)
 
-        print(f"\n✅ {len(rutas_ordenadas)} rutas exportadas a categorias.json")
+        print(f"\n {len(rutas_ordenadas)} rutas exportadas a categorias.json")
         await browser.close()
 
 if __name__ == "__main__":

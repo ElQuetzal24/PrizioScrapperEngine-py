@@ -4,7 +4,7 @@ import time
 import requests
 import urllib3
 
-from scraper.base_scraper import IScraper
+from scrapers.base_scraper import IScraper
 from repositorio.sql_server import insertar_o_actualizar_producto
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -14,7 +14,7 @@ class WalmartApiV2Scraper(IScraper):
         return "WalmartAPIv2"
 
     async def extraer(self, queue):
-        print("🧭 Ejecutando Walmart API v2...")
+        print(" Ejecutando Walmart API v2...")
 
         categorias = [
             "electrodomesticos",
@@ -35,7 +35,7 @@ class WalmartApiV2Scraper(IScraper):
         ]
 
         for categoria in categorias:
-            print(f"\n📂 Categoría: {categoria}")
+            print(f"\n Categoría: {categoria}")
             pagina = 0
             errores_consecutivos = 0
             vacios_consecutivos = 0
@@ -54,28 +54,28 @@ class WalmartApiV2Scraper(IScraper):
                     "Accept": "application/json"
                 }
 
-                print(f"🔍 Página {pagina} → {_from}-{_to}")
+                print(f" Página {pagina} → {_from}-{_to}")
                 try:
                     res = requests.get(url, headers=headers, timeout=10, verify=False)
 
                     if res.status_code == 206:
-                        print("⚠️ 206 Partial Content. Reintentando con backoff...")
+                        print(" 206 Partial Content. Reintentando con backoff...")
                         errores_consecutivos += 1
                         await asyncio.sleep(2 * errores_consecutivos)
                         if errores_consecutivos > 3:
-                            print("🚫 Demasiados errores 206. Siguiente categoría.")
+                            print(" Demasiados errores 206. Siguiente categoría.")
                             break
                         continue
 
                     if res.status_code != 200:
-                        print(f"❌ HTTP {res.status_code}. Deteniendo categoría.")
+                        print(f" HTTP {res.status_code}. Deteniendo categoría.")
                         break
 
                     productos = res.json()
                     if not productos:
                         vacios_consecutivos += 1
                         if vacios_consecutivos >= 2:
-                            print("✅ Fin de productos en esta categoría.")
+                            print(" Fin de productos en esta categoría.")
                             break
                         else:
                             pagina += 1
@@ -105,7 +105,7 @@ class WalmartApiV2Scraper(IScraper):
                                 "fuente": "WalmartAPI"
                             })
                         except Exception as e:
-                            print(f"⚠️ Error interno al procesar producto: {e}")
+                            print(f" Error interno al procesar producto: {e}")
 
                     pagina += 1
                     errores_consecutivos = 0
@@ -113,9 +113,9 @@ class WalmartApiV2Scraper(IScraper):
                     await asyncio.sleep(random.uniform(0.5, 1.5))
 
                 except requests.RequestException as e:
-                    print(f"❌ RequestException: {e}")
+                    print(f" RequestException: {e}")
                     errores_consecutivos += 1
                     await asyncio.sleep(2 * errores_consecutivos)
                     if errores_consecutivos > 3:
-                        print("🚫 Demasiados errores seguidos. Siguiente categoría.")
+                        print(" Demasiados errores seguidos. Siguiente categoría.")
                         break

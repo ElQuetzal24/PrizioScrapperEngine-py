@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 import re, os, asyncio
 from datetime import datetime
 
-from scraper.proveedores.pequeno_mundo.normalizador import obtener_marca_con_renderizado
+from scrapers.sitios.pequeno_mundo.normalizador import obtener_marca_con_renderizado
 from helpers.sku_extractor import extraer_sku_desde_url
 
 
