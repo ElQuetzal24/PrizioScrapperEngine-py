@@ -2,15 +2,10 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import re
-import os
-import asyncio
+import re, os, asyncio
 from datetime import datetime
 
-
-from scraper.normalizador import obtener_marca_con_renderizado, obtener_sku_renderizado
-from repositorio.sql_server import insertar_o_actualizar_producto
-
+from scraper.proveedores.pequeno_mundo.normalizador import obtener_marca_con_renderizado
 from helpers.sku_extractor import extraer_sku_desde_url
 
 
@@ -24,7 +19,7 @@ CATEGORIA_SELECTORES = [
     "/mi-negocio-limpio.html"
 ]
 
-def procesar_categorias(driver):
+async def procesar_categorias(categorias, driver, queue):
     cambios_detectados = []
 
     visitados_path = "logs/productos_visitados.txt"
@@ -37,7 +32,7 @@ def procesar_categorias(driver):
     errores_log = open("logs/error_scraping.log", "a", encoding="utf-8")
     productos_visitados_log = open(visitados_path, "a", encoding="utf-8")
 
-    for categoria_url in CATEGORIA_SELECTORES:
+    for categoria_url in categorias:
         categoria = categoria_url.replace(".html", "").replace("-", " ").capitalize()
         pagina = 1
         while True:
@@ -49,7 +44,7 @@ def procesar_categorias(driver):
                     EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li.product-item'))
                 )
             except:
-                print(f"⚠ No se encontraron productos en {url}")
+                print(f"No se encontraron productos en {url}")
                 break
 
             soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -93,29 +88,22 @@ def procesar_categorias(driver):
                     ).strip()
                     if imagen_detalle.startswith("https://tienda.pequenomundo.com/media/catalog/product/"):
                         imagen = imagen_detalle
-
-                    sku = asyncio.run(extraer_sku_desde_url(enlace))
+                    sku = await extraer_sku_desde_url(enlace)
 
                     marca = obtener_marca_con_renderizado(driver, enlace)
                     modelo = re.sub(re.escape(marca), "", nombre, flags=re.IGNORECASE).strip() if marca else nombre
 
                     print(f"🔍 {nombre} | ₡{precio_valor} | SKU: {sku} | Marca: {marca} | Img: {imagen}")
 
-                    fue_insertado = insertar_o_actualizar_producto(
-                        nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor
-                    )
-                    if fue_insertado:
-                        print(f"✅ Insertado: {nombre}")
-                        cambios_detectados.append([nombre, precio_valor, marca, categoria, enlace, imagen])
-                    else:
-                        print(f"➖ Sin cambios o error al insertar: {nombre}")
+                    await queue.put((nombre, imagen, sku or "", marca or "", modelo, enlace, categoria, precio_valor, "PequenoMundo"))
+                    cambios_detectados.append([nombre, precio_valor, marca, categoria, enlace, imagen])
 
                 except Exception as e:
                     errores_log.write(f"{datetime.now()} | Error en {enlace}: {e}\n")
-                    print(f"❌ Error procesando producto: {e}")
+                    print(f"Error procesando producto: {e}")
                     continue
 
-            print(f"📄 Página {pagina} de {categoria} procesada.")
+            print(f" Página {pagina} de {categoria} procesada.")
             if nuevos == 0:
                 break
             pagina += 1

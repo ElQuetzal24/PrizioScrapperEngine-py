@@ -16,5 +16,5 @@ async def extraer_sku_desde_url(url):
             await browser.close()
             return match.group(1) if match else "SKUGENERICO"
     except Exception as e:
-        print(f"❌ Error con Playwright al extraer SKU de {url}: {e}")
+        print(f"Error con Playwright al extraer SKU de {url}: {e}")
         return "SKUGENERICO"

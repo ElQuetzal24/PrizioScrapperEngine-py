@@ -1,20 +1,48 @@
-from scraper.navegador import crear_driver
-from scraper.extractor import procesar_categorias
+import argparse
+import asyncio
+import csv
 
-def main():
-    driver = crear_driver()
-    cambios = procesar_categorias(driver)
-    driver.quit()
+from scraper.proveedores.pequeno_mundo.scraper import PequenoMundoScraper
+from scraper.proveedores.walmart.scraper import WalmartScraper
+from scraper.proveedores.walmart.scraper_api_v2 import WalmartApiV2Scraper
+from scraper.proveedores.walmart.scraper_walmart_html import WalmartHTMLScraper
 
-    if cambios:
-        from datetime import datetime
-        import csv
-        with open("recursos/cambios_pm.csv", "a", newline="", encoding="utf-8-sig") as f:
-            writer = csv.writer(f)
-            writer.writerow(["Nombre", "Precio", "Marca", "Categoria", "UrlCompra", "Imagen"])
-            writer.writerows(cambios)
+from scraper.worker import worker
 
-    print(f"🎯 Proceso finalizado. Total productos con cambios: {len(cambios)}")
+async def main(args):
+    queue = asyncio.Queue()
+
+    # Lanzar 5 workers numeradoss
+    for i in range(5):
+        asyncio.create_task(worker(queue, worker_id=i+1))
+
+    scrapers = []
+    if args.pm:
+        scrapers.append(PequenoMundoScraper())
+    if args.walmart:
+        scrapers.append(WalmartScraper())
+    if args.walmart_api_v2:
+        scrapers.append(WalmartApiV2Scraper())
+
+
+    for scraper in scrapers:
+        print(f"Ejecutando scraper: {scraper.nombre()}")
+        await scraper.extraer(queue)
+
+    # Enviar señal de parada a cada worker
+    for _ in range(5):
+        await queue.put(None)
+
+    await asyncio.sleep(3)  # Esperar cierre de workers
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--pm", action="store_true")
+    parser.add_argument("--walmart", action="store_true")
+    parser.add_argument("--walmart_api_v2", action="store_true")
+    args = parser.parse_args()
+
+    asyncio.run(main(args))
+
+
+scrapers.append(WalmartHTMLScraper())

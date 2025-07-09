@@ -18,18 +18,7 @@ def obtener_marca_con_renderizado(driver, url_producto):
                     return partes[1].strip()
         return "Marca no encontrada"
     except Exception as e:
-        print(f"❌ Error renderizando marca desde {url_producto}: {e}")
+        print(f"Error renderizando marca desde {url_producto}: {e}")
         return "Error al renderizar"
 
-def obtener_sku_renderizado(driver):
-    try:
-        soup = BeautifulSoup(driver.page_source, "html.parser")
-        posibles = soup.find_all(string=re.compile("SKU", re.IGNORECASE))
-        for texto in posibles:
-            match = re.search(r"SKU[:\s]*([0-9]+)", texto)
-            if match:
-                return match.group(1)
-        return None
-    except Exception as e:
-        print(f"❌ Error extrayendo SKU: {e}")
-        return None
+ 
