@@ -1,3 +1,4 @@
+
 from scrapers.base_scraper import IScraper
 import requests
 import asyncio
@@ -15,7 +16,13 @@ class WalmartScraper(IScraper):
     async def extraer(self, _):
         cambios = []
         categorias = [
-            "/Abarrotes/Enlatados y Conservas/Frijoles instantáneos/"
+            "electrodomesticos",
+            "hogar",
+            "juguetes",
+            "abarrotes",
+            "mascotas",
+            "electronica",
+            "cuidado-personal"
         ]
         user_agents = [
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
@@ -25,22 +32,23 @@ class WalmartScraper(IScraper):
             "Mozilla/5.0 (Android 11; Mobile)"
         ]
 
-        log_file = "logs/walmart_fusionado.log"
+        log_file = "logs/walmart_simple.log"
         with open(log_file, "a", encoding="utf-8") as log:
             log.write(f"\n===== INICIO DE EJECUCIÓN {datetime.now()} =====\n")
 
         for categoria in categorias:
             print(f"\nCategoría: {categoria}")
             pagina = 0
-            errores_consecutivos = 0
-            vacios_consecutivos = 0
 
             while True:
-                _from = pagina * 40
-                _to = _from + 39
+                _from = pagina * 50
+                _to = _from + 49
+                if _to > 2500:
+                    break
+
                 url = (
-                    f"https://www.walmart.co.cr/api/catalog_system/pub/products/search?"
-                    f"fq=C:/{categoria}/&_from={_from}&_to={_to}"
+                    f"https://www.walmart.co.cr/api/catalog_system/pub/products/search/{categoria}"
+                    f"?_from={_from}&_to={_to}&O=OrderByNameASC&sc=1"
                 )
                 headers = {
                     "User-Agent": random.choice(user_agents),
@@ -50,29 +58,14 @@ class WalmartScraper(IScraper):
                 print(f" Página {pagina} → {_from}-{_to}")
                 try:
                     res = requests.get(url, headers=headers, timeout=10, verify=False)
-
-                    if res.status_code == 206:
-                        print(" 206 Partial Content. Reintentando...")
-                        errores_consecutivos += 1
-                        await asyncio.sleep(2 * errores_consecutivos)
-                        if errores_consecutivos > 3:
-                            print(" Demasiados errores. Saltando categoría.")
-                            break
-                        continue
-
                     if res.status_code != 200:
                         print(f" Error HTTP {res.status_code}. Saltando categoría.")
                         break
 
                     productos = res.json()
                     if not productos:
-                        vacios_consecutivos += 1
-                        if vacios_consecutivos >= 2:
-                            print(" Fin de productos en esta categoría.")
-                            break
-                        else:
-                            pagina += 1
-                            continue
+                        print(" Fin de productos en esta categoría.")
+                        break
 
                     for p in productos:
                         try:
@@ -82,6 +75,9 @@ class WalmartScraper(IScraper):
                             categoria_wm = p.get("categories", [""])[0].strip()
                             imagen = p.get("items", [{}])[0].get("images", [{}])[0].get("imageUrl", "")
                             precio = p.get("items", [{}])[0].get("sellers", [{}])[0].get("commertialOffer", {}).get("Price", 0)
+                            precio_lista = p.get("items", [{}])[0].get("sellers", [{}])[0].get("commertialOffer", {}).get("ListPrice", 0)
+                            stock = p.get("items", [{}])[0].get("sellers", [{}])[0].get("commertialOffer", {}).get("AvailableQuantity", 0)
+                            ean = p.get("items", [{}])[0].get("ean", "")
                             link_text = p.get("linkText", "")
                             url_producto = f"https://www.walmart.co.cr/{link_text.strip()}/p" if link_text else ""
 
@@ -89,34 +85,39 @@ class WalmartScraper(IScraper):
                                 continue
 
                             precio_valor = float(precio)
+                            precio_original = float(precio_lista) if precio_lista else precio_valor
 
                             print(f" Insertando: {nombre} | Precio: {precio_valor}")
                             await asyncio.to_thread(
                                 insertar_o_actualizar_producto,
-                                nombre, imagen, sku, marca, "", url_producto, categoria_wm, precio_valor, "WalmartAPI"
+                                nombre, imagen, sku, marca, ean, url_producto, categoria_wm,
+                                precio_valor, "WalmartAPI"
                             )
-                            cambios.append([nombre, precio_valor, marca, categoria_wm, url_producto, imagen])
+                            cambios.append({
+                                "nombre": nombre,
+                                "sku": sku,
+                                "marca": marca,
+                                "precio": precio_valor,
+                                "precio_original": precio_original,
+                                "stock": stock,
+                                "imagen": imagen,
+                                "url": url_producto,
+                                "categoria": categoria_wm
+                            })
                         except Exception as e:
-                            mensaje = f" Error procesando producto: {e}"
-                            print(mensaje)
+                            print(f" Error procesando producto: {e}")
                             with open(log_file, "a", encoding="utf-8") as log:
-                                log.write(mensaje + "\n")
+                                log.write(f" Error procesando producto: {e}\n")
                             continue
 
                     pagina += 1
-                    errores_consecutivos = 0
-                    vacios_consecutivos = 0
-                    await asyncio.sleep(random.uniform(0.5, 1.5))
+                    await asyncio.sleep(random.uniform(0.5, 1.2))
 
                 except requests.RequestException as e:
-                    mensaje = f" RequestException: {e}"
-                    print(mensaje)
+                    print(f" RequestException: {e}")
                     with open(log_file, "a", encoding="utf-8") as log:
-                        log.write(mensaje + "\n")
-                    errores_consecutivos += 1
-                    await asyncio.sleep(2 * errores_consecutivos)
-                    if errores_consecutivos > 3:
-                        break
+                        log.write(f" RequestException: {e}\n")
+                    break
 
         with open(log_file, "a", encoding="utf-8") as log:
             log.write(f"===== FIN DE EJECUCIÓN {datetime.now()} =====\n")
