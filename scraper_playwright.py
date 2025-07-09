@@ -5,16 +5,19 @@ from pathlib import Path
 from datetime import datetime
 from urllib.parse import urlparse
 import re
+from loguru import logger
 
 from repositorio.sql_server import guardar_en_bd
 from repositorio.sql_server import guardar_en_bd2   
+
 
 ARCHIVO_CSV = "productos.csv"
 CATEGORIAS = [
     "articulos-para-el-hogar"
     ,"juguetes","deportes","ropa-y-zapateria","lo-nuevo","electronica","limpieza","abarrotes","higiene-y-belleza"
     ,"bebes-y-ninos","lacteos","jugos-y-bebidas","carnes-y-pescados","cervezas-vinos-y-licores","embutidos","panaderia-y-tortilleria"
-    ,"alimentos-congelados","frutas-y-verduras","mascota","farmacia","rebajas"
+    ,"alimentos-congelados","frutas-y-verduras","mascota","farmacia"
+    #,"rebajas"
 ]
 
 
@@ -24,13 +27,14 @@ async def scroll_hasta_cargar_todos(page):
     productos_previos = -1
     ciclos_sin_cambio = 0
     max_sin_cambio = 4
-    max_ciclos = 20 # máximo de intentos para evitar bucles infinitos
-    velocidad_scroll = 800  # milisegundos entre ciclos
+    max_ciclos = 40 # máximo de intentos para evitar bucles infinitos
+    velocidad_scroll = 400  # milisegundos entre ciclos
 
     for ciclo in range(max_ciclos):
         # Scroll fuerte al fondo (como "End")
         await page.keyboard.press("End")
         await page.evaluate("window.scrollBy(0, window.innerHeight * 2)")
+        await page.mouse.wheel(0, 2000)
         await page.wait_for_timeout(velocidad_scroll)
 
         # Contar productos actuales
@@ -38,7 +42,7 @@ async def scroll_hasta_cargar_todos(page):
 
         # Mostrar solo si hay cambio o cada 5 ciclos
         if productos_actuales != productos_previos or ciclo % 5 == 0:
-            print(f" Scroll {ciclo+1}: {productos_actuales} productos visibles")
+            logger.debug(f"Scroll {ciclo+1}: {productos_actuales} productos visibles")
 
         # Control de cambio
         if productos_actuales == productos_previos:
@@ -57,8 +61,7 @@ async def scroll_hasta_cargar_todos(page):
 
 async def procesar_categoria(page, categoria, visto_urls, semaforo):
     async with semaforo:
-        print(f"\n Procesando categoría: {categoria}")
-
+        logger.info(f"Procesando categoría: {categoria}")
         for pagina in range(1, MAX_PAGINAS + 1):
             try:
                 url_categoria = f"https://www.walmart.co.cr/{categoria}?page={pagina}"
@@ -75,6 +78,21 @@ async def procesar_categoria(page, categoria, visto_urls, semaforo):
             except Exception as e:
                 print(f" Error en la página {pagina}: {e}")
                 break
+
+async def procesar_categoria_scroll(page, categoria, visto_urls, semaforo):
+    async with semaforo:
+        url_categoria = f"https://www.walmart.co.cr/{categoria}"
+        print(f"\n Procesando categoría: {categoria}")
+        try:
+            productos = await extraer_productos(page, url_categoria, categoria, visto_urls)
+            if productos:
+                print(f" Productos extraídos: {len(productos)}")
+                guardar_en_bd2(productos)
+            else:
+                print(" No se extrajeron productos")
+        except Exception as e:
+            logger.error(f"Error en categoría {categoria}: {e}")
+
 
 async def safe_text_content(node):
     if node is None:
@@ -143,7 +161,7 @@ async def extraer_marca_detallada(page, url_producto):
 
         return "N/A"
     except Exception as e:
-        print(f" Error extrayendo marca en detalle: {e}")
+        logger.exception("Error extrayendo marca en detalle")
         return "N/A"
 
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
@@ -254,7 +272,7 @@ async def main():
         for categoria in CATEGORIAS:
             page = await browser.new_page()
 
-            tareas.append(procesar_categoria(page, categoria, visto_urls,semaforo))
+            tareas.append(procesar_categoria_scroll(page, categoria, visto_urls,semaforo))
     
         await asyncio.gather(*tareas)
         await browser.close()
