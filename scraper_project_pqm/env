@@ -1,0 +1,4 @@
+SQL_SERVER=localhost
+SQL_DATABASE=Scrap_db
+SQL_USER=sa
+SQL_PASSWORD=ABC123xyz

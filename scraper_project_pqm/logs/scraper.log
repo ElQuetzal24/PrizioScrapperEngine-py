@@ -1,0 +1,58 @@
+2025-07-13 14:12:37.045 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:12:37.046 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 85 categorías (concurrencia 3)
+2025-07-13 14:12:37.047 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /hogar/maletas
+2025-07-13 14:12:37.047 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /abarrotes/desechables
+2025-07-13 14:12:37.047 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /hogar/bebes-y-damas
+2025-07-13 14:13:01.218 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /abarrotes/suplementos
+2025-07-13 14:13:01.219 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /hogar/navidad
+2025-07-13 14:18:04.605 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:18:04.606 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:18:04.606 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /hogar/maletas
+2025-07-13 14:25:12.602 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:25:12.603 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:25:12.603 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /abarrotes/aceites
+2025-07-13 14:28:44.444 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:28:44.444 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:28:44.444 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /abarrotes/aceites
+2025-07-13 14:29:16.021 | WARNING  | navegador:procesar_categoria:23 - No se encontró el selector en https://tienda.pequenomundo.com/abarrotes/aceites: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".product-item-info") to be visible
+
+2025-07-13 14:29:16.309 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 14:29:16.310 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 14:29:16.310 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 14:34:13.407 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:34:13.407 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:34:13.408 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /abarrotes/aceites
+2025-07-13 14:34:45.884 | ERROR    | navegador:procesar_categoria:41 - Error procesando categoría /abarrotes/aceites: Page.wait_for_selector: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("li.product-item") to be visible
+
+2025-07-13 14:34:45.884 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 14:34:45.884 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 14:34:45.884 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 14:38:26.214 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:38:26.214 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:38:26.215 | INFO     | navegador:procesar_categoria:11 - Procesando categoría: /abarrotes/aceites
+2025-07-13 14:38:39.313 | INFO     | navegador:procesar_categoria:37 - Se encontraron 20 elementos en /abarrotes/aceites
+2025-07-13 14:38:39.313 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.314 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.315 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.315 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.316 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.316 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.317 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.317 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.318 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.318 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.318 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.318 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.318 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.319 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.319 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.319 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.319 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.320 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.320 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:39.320 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
+2025-07-13 14:38:54.473 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
