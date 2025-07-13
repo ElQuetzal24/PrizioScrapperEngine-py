@@ -3,3 +3,5 @@ playwright install
 
 # Windows (CMD o PowerShell)
 .\.venv\Scripts\activate
+
+pip install loguru

@@ -1,0 +1,22 @@
+CATEGORIAS = [
+    "articulos-para-el-hogar",
+    "juguetes",
+    "deportes",
+    "ropa-y-zapateria",
+    "lo-nuevo",
+    "electronica",
+    "limpieza",
+    "abarrotes",
+    "higiene-y-belleza",
+    "bebes-y-ninos",
+    "lacteos",
+    "jugos-y-bebidas",
+    "carnes-y-pescados",
+    "cervezas-vinos-y-licores",
+    "embutidos",
+    "panaderia-y-tortilleria",
+    "alimentos-congelados",
+    "frutas-y-verduras",
+    "mascota",
+    "farmacia"
+]

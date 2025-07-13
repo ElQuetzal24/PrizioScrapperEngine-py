@@ -26,38 +26,63 @@ MAX_PAGINAS = 50
 async def scroll_hasta_cargar_todos(page):
     productos_previos = -1
     ciclos_sin_cambio = 0
-    max_sin_cambio = 4
-    max_ciclos = 40 # máximo de intentos para evitar bucles infinitos
-    velocidad_scroll = 400  # milisegundos entre ciclos
+    max_sin_cambio = 5 # máximo 4 ciclos sin cambios
+    max_ciclos = 100    # máximo 20 ciclos de scroll
+    velocidad_scroll = 1000  # 800 milisegundos entre scrolls
+    umbral_maximo = 2000     # máximo de productos a cargar
+
+    logger.info("Iniciando scroll profundo para carga completa de productos...")
 
     for ciclo in range(max_ciclos):
-        # Scroll fuerte al fondo (como "End")
-        await page.keyboard.press("End")
-        await page.evaluate("window.scrollBy(0, window.innerHeight * 2)")
-        await page.mouse.wheel(0, 2000)
+        # 1. Scroll hacia el último producto visible (más confiable que scrollBy solo)
+        try:
+            ultimo = await page.query_selector(".vtex-search-result-3-x-galleryItem:last-child")
+            if ultimo:
+                await ultimo.scroll_into_view_if_needed(timeout=5000)
+        except Exception:
+            pass  # en caso de que no exista aún
+
+        # 2. Alternar entre métodos de scroll
+        if ciclo % 2 == 0:
+            await page.keyboard.press("End")
+        else:
+            await page.mouse.wheel(0, 3000)
+
+        # 3. Esperar carga de red si hay más productos cargándose
+        try:
+            await page.wait_for_load_state("networkidle", timeout=8000)
+        except:
+            pass
+
         await page.wait_for_timeout(velocidad_scroll)
 
-        # Contar productos actuales
-        productos_actuales = await page.locator(".vtex-search-result-3-x-galleryItem").count()
+        # 4. Contar productos actualmente visibles
+        try:
+            productos_actuales = await page.locator(".vtex-search-result-3-x-galleryItem").count()
+        except:
+            productos_actuales = -1
 
-        # Mostrar solo si hay cambio o cada 5 ciclos
         if productos_actuales != productos_previos or ciclo % 5 == 0:
             logger.debug(f"Scroll {ciclo+1}: {productos_actuales} productos visibles")
 
-        # Control de cambio
+        # 5. Lógica de corte por estancamiento
         if productos_actuales == productos_previos:
             ciclos_sin_cambio += 1
         else:
             ciclos_sin_cambio = 0
             productos_previos = productos_actuales
 
-        # Salir si se estanca
         if ciclos_sin_cambio >= max_sin_cambio:
-            print(f" Scroll finalizado: {productos_actuales} productos cargados (sin cambios en {max_sin_cambio} ciclos)")
+            logger.success(f"Scroll finalizado: {productos_actuales} productos cargados (sin cambios en {max_sin_cambio} ciclos)")
+            break
+
+        if productos_actuales >= umbral_maximo and ciclos_sin_cambio >= 2:
+            logger.success(f"Scroll detenido por umbral máximo de productos alcanzado: {productos_actuales}")
             break
 
     else:
-        print(f" Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
+        logger.warning(f"Fin de scroll por límite de ciclos ({max_ciclos}). Productos detectados: {productos_actuales}")
+
 
 async def procesar_categoria(page, categoria, visto_urls, semaforo):
     async with semaforo:
@@ -272,7 +297,7 @@ async def main():
         for categoria in CATEGORIAS:
             page = await browser.new_page()
 
-            tareas.append(procesar_categoria_scroll(page, categoria, visto_urls,semaforo))
+            tareas.append(procesar_categoria(page, categoria, visto_urls,semaforo))
     
         await asyncio.gather(*tareas)
         await browser.close()
