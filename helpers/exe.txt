@@ -5,3 +5,22 @@ playwright install
 .\.venv\Scripts\activate
 
 pip install loguru
+
+construir el docker
+docker build -t scraper-wm .
+
+Ejecutar el container localmente
+docker run --env-file .env scraper-wm
+
+docker run --env-file .env scraper-wm
+--- 
+1:
+az acr login --name prizioacr
+
+2:
+docker tag scraper-wm prizioacr.azurecr.io/scraper-wm:latest
+docker tag scraper-pqm prizioacr.azurecr.io/scraper-pqm:latest
+
+3:
+docker push prizioacr.azurecr.io/scraper-wm:latest
+docker push prizioacr.azurecr.io/scraper-pqm:latest

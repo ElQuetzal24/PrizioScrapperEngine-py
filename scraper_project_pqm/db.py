@@ -1,19 +1,23 @@
 import pyodbc
-from loguru import logger
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+from loguru import logger
 
-load_dotenv()  # Cargar variables del .env local
+load_dotenv()
+
+def obtener_conexion_sql():
+    return pyodbc.connect(
+        "DRIVER={ODBC Driver 17 for SQL Server};"
+        f"SERVER={os.getenv('SQL_SERVER')};"
+        f"DATABASE={os.getenv('SQL_DATABASE')};"
+        f"UID={os.getenv('SQL_USER')};"
+        f"PWD={os.getenv('SQL_PASSWORD')};"
+    )
 
 def guardar_productos_scrapeados(productos: list):
     try:
-        conn = pyodbc.connect(
-            f"DRIVER={{ODBC Driver 17 for SQL Server}};"
-            f"SERVER={os.getenv('SQL_SERVER')};"
-            f"DATABASE={os.getenv('SQL_DATABASE')};"
-            f"UID={os.getenv('SQL_USER')};"
-            f"PWD={os.getenv('SQL_PASSWORD')};"
-        )
+        logger.debug(f"SQL_SERVER desde .env: {os.getenv('SQL_SERVER')}")
+        conn = obtener_conexion_sql()
         cursor = conn.cursor()
 
         registros = [

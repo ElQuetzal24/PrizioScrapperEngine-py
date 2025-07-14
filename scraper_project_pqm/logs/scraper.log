@@ -56,3 +56,1425 @@ Call log:
 2025-07-13 14:38:39.320 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
 2025-07-13 14:38:39.320 | ERROR    | extractor:extraer_datos_producto:32 - Error al parsear producto: 'ElementHandle' object has no attribute 'query_selector_eval'
 2025-07-13 14:38:54.473 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 14:52:26.144 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:52:26.145 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:52:26.903 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 14:52:36.885 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 14:52:36.934 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:36.934 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 14:52:36.934 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 14:52:36.934 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 14:52:36.935 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 14:52:36.979 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:36.980 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 14:52:36.980 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 14:52:36.980 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 14:52:36.980 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 14:52:37.026 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.026 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 14:52:37.026 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 14:52:37.026 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 14:52:37.027 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 14:52:37.067 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.067 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 14:52:37.068 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 14:52:37.068 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 14:52:37.068 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 14:52:37.105 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.106 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 14:52:37.106 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 14:52:37.106 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 14:52:37.106 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 14:52:37.139 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.139 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 14:52:37.139 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 14:52:37.139 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 14:52:37.140 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 14:52:37.175 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.176 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 14:52:37.176 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 14:52:37.176 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 14:52:37.176 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 14:52:37.212 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.212 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 14:52:37.212 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 14:52:37.213 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 14:52:37.213 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 14:52:37.246 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.247 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 14:52:37.247 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 14:52:37.247 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 14:52:37.248 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 14:52:37.281 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.282 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 14:52:37.282 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 14:52:37.282 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 14:52:37.282 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 14:52:37.317 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.317 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 14:52:37.317 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 14:52:37.318 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 14:52:37.318 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 14:52:37.351 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.351 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 14:52:37.352 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 14:52:37.352 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 14:52:37.352 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 14:52:37.392 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.392 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 14:52:37.392 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 14:52:37.393 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 14:52:37.393 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 14:52:37.435 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.435 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 14:52:37.436 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 14:52:37.436 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 14:52:37.436 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 14:52:37.478 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.478 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 14:52:37.479 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 14:52:37.479 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 14:52:37.479 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 14:52:37.521 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.522 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 14:52:37.522 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 14:52:37.522 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 14:52:37.522 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 14:52:37.556 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.556 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 14:52:37.557 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 14:52:37.557 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 14:52:37.557 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 14:52:37.590 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.591 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 14:52:37.591 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 14:52:37.591 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 14:52:37.591 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 14:52:37.625 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.625 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 14:52:37.625 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 14:52:37.625 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 14:52:37.626 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 14:52:37.660 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:52:37.660 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 14:52:37.660 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 14:52:37.660 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 14:52:37.661 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 14:52:52.781 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 14:52:52.782 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 14:52:52.794 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 14:52:52.795 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 14:52:52.795 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 14:53:31.134 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:53:31.134 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:53:31.869 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 14:53:41.097 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 14:53:41.149 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.149 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 14:53:41.149 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 14:53:41.150 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 14:53:41.150 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 14:53:41.188 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.189 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 14:53:41.189 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 14:53:41.189 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 14:53:41.189 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 14:53:41.226 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.227 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 14:53:41.227 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 14:53:41.227 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 14:53:41.227 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 14:53:41.264 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.264 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 14:53:41.264 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 14:53:41.265 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 14:53:41.265 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 14:53:41.299 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.299 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 14:53:41.299 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 14:53:41.299 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 14:53:41.300 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 14:53:41.334 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.334 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 14:53:41.334 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 14:53:41.335 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 14:53:41.335 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 14:53:41.372 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.372 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 14:53:41.372 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 14:53:41.373 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 14:53:41.373 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 14:53:41.407 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.408 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 14:53:41.408 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 14:53:41.408 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 14:53:41.408 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 14:53:41.442 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.442 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 14:53:41.442 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 14:53:41.442 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 14:53:41.443 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 14:53:41.477 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.477 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 14:53:41.477 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 14:53:41.478 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 14:53:41.478 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 14:53:41.512 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.513 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 14:53:41.513 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 14:53:41.513 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 14:53:41.513 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 14:53:41.554 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.554 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 14:53:41.555 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 14:53:41.555 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 14:53:41.555 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 14:53:41.595 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.595 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 14:53:41.596 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 14:53:41.596 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 14:53:41.596 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 14:53:41.640 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.640 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 14:53:41.640 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 14:53:41.640 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 14:53:41.641 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 14:53:41.682 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.683 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 14:53:41.683 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 14:53:41.683 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 14:53:41.683 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 14:53:41.725 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.726 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 14:53:41.726 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 14:53:41.726 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 14:53:41.726 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 14:53:41.760 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.760 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 14:53:41.761 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 14:53:41.761 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 14:53:41.761 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 14:53:41.791 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.791 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 14:53:41.792 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 14:53:41.792 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 14:53:41.792 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 14:53:41.824 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.824 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 14:53:41.824 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 14:53:41.825 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 14:53:41.825 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 14:53:41.859 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:53:41.859 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 14:53:41.859 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 14:53:41.859 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 14:53:41.860 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 14:53:56.949 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 14:53:56.950 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 14:53:56.991 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 14:53:56.991 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 14:53:56.992 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 14:57:28.751 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 14:57:28.752 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 14:57:29.563 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 14:57:39.244 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 14:57:39.293 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.293 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 14:57:39.293 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 14:57:39.294 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 14:57:39.294 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 14:57:39.339 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.340 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 14:57:39.340 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 14:57:39.340 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 14:57:39.341 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 14:57:39.383 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.384 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 14:57:39.384 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 14:57:39.384 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 14:57:39.385 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 14:57:39.428 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.429 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 14:57:39.429 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 14:57:39.429 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 14:57:39.429 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 14:57:39.473 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.473 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 14:57:39.474 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 14:57:39.474 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 14:57:39.474 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 14:57:39.521 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.522 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 14:57:39.522 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 14:57:39.522 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 14:57:39.522 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 14:57:39.566 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.566 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 14:57:39.566 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 14:57:39.567 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 14:57:39.567 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 14:57:39.608 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.608 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 14:57:39.608 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 14:57:39.609 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 14:57:39.609 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 14:57:39.647 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.648 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 14:57:39.648 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 14:57:39.648 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 14:57:39.649 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 14:57:39.691 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.691 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 14:57:39.691 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 14:57:39.692 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 14:57:39.692 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 14:57:39.732 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.733 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 14:57:39.733 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 14:57:39.734 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 14:57:39.734 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 14:57:39.777 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.778 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 14:57:39.778 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 14:57:39.778 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 14:57:39.778 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 14:57:39.828 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.828 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 14:57:39.829 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 14:57:39.829 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 14:57:39.829 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 14:57:39.881 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.881 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 14:57:39.881 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 14:57:39.882 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 14:57:39.882 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 14:57:39.934 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.934 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 14:57:39.934 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 14:57:39.935 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 14:57:39.935 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 14:57:39.987 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:39.988 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 14:57:39.988 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 14:57:39.988 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 14:57:39.988 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 14:57:40.031 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:40.032 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 14:57:40.032 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 14:57:40.032 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 14:57:40.033 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 14:57:40.076 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:40.076 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 14:57:40.076 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 14:57:40.077 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 14:57:40.077 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 14:57:40.120 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:40.121 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 14:57:40.121 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 14:57:40.121 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 14:57:40.122 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 14:57:40.164 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 14:57:40.165 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 14:57:40.165 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 14:57:40.165 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 14:57:40.165 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 14:57:55.292 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 14:57:55.293 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 14:57:55.307 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 14:57:55.307 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 14:57:55.307 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:04:37.993 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:04:37.994 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:04:38.772 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:04:50.963 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:04:51.000 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.000 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:04:51.001 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:04:51.001 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:04:51.001 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:04:51.037 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.038 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:04:51.038 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:04:51.038 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:04:51.038 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:04:51.072 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.073 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:04:51.073 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:04:51.073 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:04:51.073 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:04:51.109 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.109 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:04:51.109 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:04:51.109 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:04:51.110 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:04:51.141 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.141 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:04:51.141 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:04:51.142 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:04:51.142 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:04:51.174 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.174 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:04:51.174 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:04:51.175 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:04:51.175 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:04:51.208 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.208 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:04:51.208 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:04:51.208 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:04:51.209 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:04:51.240 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.241 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:04:51.241 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:04:51.241 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:04:51.241 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:04:51.273 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.273 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:04:51.274 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:04:51.274 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:04:51.274 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:04:51.309 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.309 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:04:51.309 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:04:51.309 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:04:51.310 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:04:51.348 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.349 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:04:51.349 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:04:51.349 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:04:51.349 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:04:51.383 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.384 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:04:51.384 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:04:51.384 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:04:51.385 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:04:51.455 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.456 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:04:51.456 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:04:51.456 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:04:51.456 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:04:51.501 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.501 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:04:51.501 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:04:51.501 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:04:51.502 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:04:51.543 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.543 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:04:51.544 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:04:51.544 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:04:51.544 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:04:51.585 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.585 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:04:51.586 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:04:51.586 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:04:51.586 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:04:51.620 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.620 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:04:51.621 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:04:51.621 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:04:51.621 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:04:51.655 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.655 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:04:51.655 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:04:51.655 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:04:51.655 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:04:51.687 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.688 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:04:51.688 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:04:51.688 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:04:51.688 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:04:51.721 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:04:51.721 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:04:51.721 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:04:51.721 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:04:51.722 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:05:06.845 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:05:06.846 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:05:06.868 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:05:06.868 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:05:06.869 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:06:06.044 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:06:06.044 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:06:07.176 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:06:16.935 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:06:16.981 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:16.982 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:06:16.982 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:06:16.982 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:06:16.982 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:06:17.022 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.022 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:06:17.022 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:06:17.023 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:06:17.023 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:06:17.063 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.063 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:06:17.064 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:06:17.064 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:06:17.064 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:06:17.105 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.105 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:06:17.105 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:06:17.105 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:06:17.105 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:06:17.142 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.143 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:06:17.143 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:06:17.143 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:06:17.143 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:06:17.247 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.248 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:06:17.248 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:06:17.249 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:06:17.249 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:06:17.288 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.289 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:06:17.289 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:06:17.289 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:06:17.290 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:06:17.325 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.325 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:06:17.326 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:06:17.326 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:06:17.326 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:06:17.360 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.361 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:06:17.361 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:06:17.361 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:06:17.361 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:06:17.398 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.399 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:06:17.399 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:06:17.399 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:06:17.399 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:06:17.433 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.433 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:06:17.433 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:06:17.434 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:06:17.434 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:06:17.472 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.473 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:06:17.473 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:06:17.473 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:06:17.474 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:06:17.516 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.516 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:06:17.516 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:06:17.516 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:06:17.516 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:06:17.561 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.561 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:06:17.562 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:06:17.562 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:06:17.562 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:06:17.604 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.604 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:06:17.604 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:06:17.605 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:06:17.605 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:06:17.647 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.647 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:06:17.648 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:06:17.648 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:06:17.648 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:06:17.683 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.683 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:06:17.683 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:06:17.683 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:06:17.684 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:06:17.718 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.718 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:06:17.718 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:06:17.718 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:06:17.719 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:06:17.751 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.751 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:06:17.751 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:06:17.752 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:06:17.752 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:06:17.786 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:06:17.786 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:06:17.786 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:06:17.787 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:06:17.787 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:06:32.882 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:06:32.884 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:06:32.919 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:06:32.919 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:06:32.920 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:08:28.154 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:08:28.154 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:08:28.925 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:08:38.746 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:08:38.789 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:38.790 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:08:38.790 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:08:38.790 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:08:38.790 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:08:38.827 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:38.827 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:08:38.827 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:08:38.827 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:08:38.828 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:08:38.864 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:38.864 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:08:38.864 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:08:38.865 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:08:38.865 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:08:38.898 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:38.899 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:08:38.899 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:08:38.899 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:08:38.899 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:08:38.935 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:38.936 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:08:38.936 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:08:38.936 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:08:38.936 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:08:38.969 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:38.970 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:08:38.970 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:08:38.970 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:08:38.970 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:08:39.003 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.004 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:08:39.004 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:08:39.004 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:08:39.005 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:08:39.038 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.039 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:08:39.039 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:08:39.039 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:08:39.039 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:08:39.074 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.075 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:08:39.075 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:08:39.075 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:08:39.075 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:08:39.108 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.109 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:08:39.109 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:08:39.109 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:08:39.109 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:08:39.142 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.142 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:08:39.142 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:08:39.143 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:08:39.143 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:08:39.177 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.178 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:08:39.178 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:08:39.178 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:08:39.178 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:08:39.217 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.217 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:08:39.218 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:08:39.218 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:08:39.218 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:08:39.259 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.259 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:08:39.260 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:08:39.260 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:08:39.260 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:08:39.301 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.301 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:08:39.301 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:08:39.302 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:08:39.302 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:08:39.343 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.343 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:08:39.343 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:08:39.344 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:08:39.344 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:08:39.377 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.377 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:08:39.377 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:08:39.377 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:08:39.377 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:08:39.410 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.411 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:08:39.411 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:08:39.411 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:08:39.411 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:08:39.444 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.444 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:08:39.445 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:08:39.445 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:08:39.445 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:08:39.478 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:08:39.478 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:08:39.478 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:08:39.478 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:08:39.478 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:08:54.608 | ERROR    | db:guardar_productos_scrapeados:42 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:08:54.609 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:08:54.645 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:08:54.645 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:08:54.646 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:15:28.257 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:15:28.257 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:15:29.032 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:15:38.623 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:15:38.688 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:38.688 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:15:38.688 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:15:38.689 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:15:38.689 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:15:38.739 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:38.739 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:15:38.740 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:15:38.740 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:15:38.740 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:15:38.782 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:38.782 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:15:38.783 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:15:38.783 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:15:38.783 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:15:38.841 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:38.842 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:15:38.842 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:15:38.842 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:15:38.843 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:15:38.907 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:38.907 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:15:38.908 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:15:38.908 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:15:38.908 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:15:38.963 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:38.964 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:15:38.964 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:15:38.965 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:15:38.965 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:15:39.027 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.028 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:15:39.028 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:15:39.029 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:15:39.030 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:15:39.111 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.112 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:15:39.112 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:15:39.113 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:15:39.113 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:15:39.190 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.191 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:15:39.191 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:15:39.192 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:15:39.192 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:15:39.249 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.249 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:15:39.249 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:15:39.250 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:15:39.250 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:15:39.334 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.334 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:15:39.335 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:15:39.335 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:15:39.336 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:15:39.395 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.395 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:15:39.396 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:15:39.396 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:15:39.397 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:15:39.462 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.463 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:15:39.463 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:15:39.464 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:15:39.464 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:15:39.531 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.531 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:15:39.531 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:15:39.532 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:15:39.532 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:15:39.596 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.596 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:15:39.597 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:15:39.597 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:15:39.597 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:15:39.663 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.664 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:15:39.665 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:15:39.666 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:15:39.666 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:15:39.750 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.750 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:15:39.751 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:15:39.751 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:15:39.751 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:15:39.807 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.807 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:15:39.808 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:15:39.808 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:15:39.809 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:15:39.882 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.883 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:15:39.884 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:15:39.884 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:15:39.884 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:15:39.935 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:15:39.935 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:15:39.936 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:15:39.936 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:15:39.936 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:15:55.109 | ERROR    | db:guardar_productos_scrapeados:45 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:15:55.110 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:15:55.134 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:15:55.134 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:15:55.135 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:16:02.007 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:16:02.007 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:16:02.862 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:16:12.602 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:16:12.641 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.642 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:16:12.642 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:16:12.642 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:16:12.642 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:16:12.676 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.676 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:16:12.676 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:16:12.676 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:16:12.677 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:16:12.718 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.719 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:16:12.719 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:16:12.719 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:16:12.719 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:16:12.752 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.752 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:16:12.752 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:16:12.752 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:16:12.753 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:16:12.789 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.789 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:16:12.789 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:16:12.789 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:16:12.790 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:16:12.823 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.823 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:16:12.824 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:16:12.824 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:16:12.824 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:16:12.857 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.858 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:16:12.858 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:16:12.858 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:16:12.858 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:16:12.889 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.890 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:16:12.890 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:16:12.890 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:16:12.890 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:16:12.922 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.922 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:16:12.922 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:16:12.923 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:16:12.923 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:16:12.955 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.955 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:16:12.955 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:16:12.956 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:16:12.956 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:16:12.989 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:12.989 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:16:12.990 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:16:12.990 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:16:12.990 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:16:13.026 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.027 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:16:13.027 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:16:13.027 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:16:13.028 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:16:13.069 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.069 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:16:13.070 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:16:13.070 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:16:13.070 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:16:13.113 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.114 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:16:13.114 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:16:13.114 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:16:13.115 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:16:13.155 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.155 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:16:13.155 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:16:13.155 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:16:13.155 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:16:13.197 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.198 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:16:13.198 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:16:13.198 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:16:13.199 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:16:13.229 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.229 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:16:13.229 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:16:13.230 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:16:13.230 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:16:13.262 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.263 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:16:13.263 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:16:13.263 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:16:13.263 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:16:13.295 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.296 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:16:13.296 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:16:13.296 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:16:13.297 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:16:13.330 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:16:13.330 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:16:13.330 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:16:13.331 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:16:13.331 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:16:28.493 | ERROR    | db:guardar_productos_scrapeados:45 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:16:28.494 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:16:28.510 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:16:28.518 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:16:28.518 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:16:49.225 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:16:49.225 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:16:49.995 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:17:54.769 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:17:54.770 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:17:55.493 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:18:04.792 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:18:04.832 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:04.832 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:18:04.832 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:18:04.832 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:18:04.832 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:18:04.871 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:04.871 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:18:04.872 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:18:04.872 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:18:04.872 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:18:04.911 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:04.911 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:18:04.912 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:18:04.912 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:18:04.912 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:18:04.952 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:04.953 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:18:04.953 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:18:04.953 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:18:04.953 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:18:04.987 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:04.987 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:18:04.987 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:18:04.988 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:18:04.988 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:18:05.023 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.023 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:18:05.024 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:18:05.024 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:18:05.024 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:18:05.059 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.059 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:18:05.059 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:18:05.059 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:18:05.060 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:18:05.095 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.095 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:18:05.095 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:18:05.096 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:18:05.096 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:18:05.131 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.132 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:18:05.132 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:18:05.132 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:18:05.132 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:18:05.169 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.169 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:18:05.170 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:18:05.170 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:18:05.170 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:18:05.208 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.209 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:18:05.209 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:18:05.209 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:18:05.210 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:18:05.246 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.246 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:18:05.247 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:18:05.247 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:18:05.247 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:18:05.289 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.289 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:18:05.290 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:18:05.290 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:18:05.290 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:18:05.333 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.333 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:18:05.334 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:18:05.334 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:18:05.334 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:18:05.375 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.376 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:18:05.376 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:18:05.376 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:18:05.376 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:18:05.419 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.420 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:18:05.420 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:18:05.420 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:18:05.420 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:18:05.453 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.454 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:18:05.454 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:18:05.455 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:18:05.455 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:18:05.489 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.489 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:18:05.490 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:18:05.490 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:18:05.490 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:18:05.523 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.524 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:18:05.524 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:18:05.524 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:18:05.525 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:18:05.561 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:18:05.561 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:18:05.562 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:18:05.562 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:18:05.562 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:18:20.689 | ERROR    | db:guardar_productos_scrapeados:45 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:18:20.691 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:18:20.729 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:18:20.730 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:18:20.730 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:22:58.048 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:22:58.048 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:22:58.788 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:23:08.621 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:23:08.663 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.663 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:23:08.664 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:23:08.664 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:23:08.664 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:23:08.700 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.701 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:23:08.701 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:23:08.701 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:23:08.702 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:23:08.737 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.737 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:23:08.737 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:23:08.738 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:23:08.738 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:23:08.773 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.774 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:23:08.774 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:23:08.775 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:23:08.775 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:23:08.814 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.814 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:23:08.814 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:23:08.815 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:23:08.815 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:23:08.850 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.850 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:23:08.850 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:23:08.851 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:23:08.851 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:23:08.897 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.897 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:23:08.898 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:23:08.898 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:23:08.899 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:23:08.957 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:08.958 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:23:08.959 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:23:08.960 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:23:08.960 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:23:09.012 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.013 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:23:09.013 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:23:09.013 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:23:09.013 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:23:09.050 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.050 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:23:09.051 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:23:09.051 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:23:09.051 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:23:09.087 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.087 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:23:09.088 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:23:09.088 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:23:09.088 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:23:09.122 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.123 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:23:09.123 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:23:09.123 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:23:09.124 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:23:09.163 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.163 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:23:09.163 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:23:09.163 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:23:09.163 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:23:09.203 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.204 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:23:09.204 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:23:09.204 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:23:09.204 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:23:09.246 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.246 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:23:09.247 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:23:09.247 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:23:09.247 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:23:09.290 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.290 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:23:09.291 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:23:09.291 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:23:09.291 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:23:09.345 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.345 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:23:09.345 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:23:09.346 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:23:09.346 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:23:09.381 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.381 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:23:09.381 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:23:09.382 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:23:09.382 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:23:09.414 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.414 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:23:09.415 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:23:09.415 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:23:09.415 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:23:09.447 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:23:09.447 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:23:09.447 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:23:09.447 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:23:09.448 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:23:24.609 | ERROR    | db:guardar_productos_scrapeados:45 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:23:24.610 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:23:24.638 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:23:24.638 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:23:24.639 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:24:54.476 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:24:54.476 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:24:55.229 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:25:05.154 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:25:05.198 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.198 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:25:05.199 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:25:05.199 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:25:05.199 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:25:05.233 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.234 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:25:05.234 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:25:05.234 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:25:05.235 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:25:05.272 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.272 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:25:05.272 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:25:05.273 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:25:05.273 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:25:05.309 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.310 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:25:05.310 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:25:05.310 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:25:05.311 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:25:05.349 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.349 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:25:05.350 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:25:05.350 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:25:05.350 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:25:05.390 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.391 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:25:05.391 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:25:05.391 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:25:05.392 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:25:05.429 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.430 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:25:05.430 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:25:05.430 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:25:05.430 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:25:05.467 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.467 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:25:05.468 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:25:05.468 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:25:05.469 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:25:05.502 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.503 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:25:05.503 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:25:05.503 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:25:05.503 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:25:05.540 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.540 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:25:05.541 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:25:05.541 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:25:05.541 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:25:05.580 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.580 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:25:05.580 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:25:05.580 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:25:05.580 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:25:05.615 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.615 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:25:05.616 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:25:05.616 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:25:05.616 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:25:05.658 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.658 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:25:05.658 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:25:05.658 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:25:05.659 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:25:05.699 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.699 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:25:05.699 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:25:05.700 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:25:05.700 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:25:05.743 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.744 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:25:05.744 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:25:05.744 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:25:05.744 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:25:05.787 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.787 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:25:05.787 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:25:05.788 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:25:05.788 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:25:05.822 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.822 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:25:05.822 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:25:05.823 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:25:05.823 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:25:05.855 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.855 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:25:05.855 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:25:05.856 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:25:05.856 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:25:05.891 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.891 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:25:05.892 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:25:05.892 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:25:05.892 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:25:05.926 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:25:05.926 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:25:05.927 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:25:05.927 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:25:05.927 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:25:21.083 | ERROR    | db:guardar_productos_scrapeados:45 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:25:21.085 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:25:21.131 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:25:21.131 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:25:21.132 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:27:54.469 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:27:54.470 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:27:55.210 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:28:03.148 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:28:03.188 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.188 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:28:03.188 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:28:03.189 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:28:03.189 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:28:03.227 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.227 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:28:03.227 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:28:03.228 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:28:03.228 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:28:03.264 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.264 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:28:03.264 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:28:03.265 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:28:03.265 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:28:03.301 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.302 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:28:03.302 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:28:03.302 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:28:03.302 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:28:03.334 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.334 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:28:03.334 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:28:03.335 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:28:03.335 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:28:03.367 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.368 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:28:03.368 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:28:03.368 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:28:03.368 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:28:03.430 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.431 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:28:03.431 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:28:03.431 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:28:03.432 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:28:03.489 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.489 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:28:03.489 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:28:03.490 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:28:03.490 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:28:03.528 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.528 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:28:03.529 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:28:03.529 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:28:03.529 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:28:03.565 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.565 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:28:03.565 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:28:03.566 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:28:03.566 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:28:03.603 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.603 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:28:03.603 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:28:03.604 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:28:03.604 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:28:03.640 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.640 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:28:03.640 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:28:03.641 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:28:03.641 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:28:03.689 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.689 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:28:03.689 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:28:03.690 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:28:03.690 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:28:03.733 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.733 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:28:03.733 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:28:03.734 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:28:03.734 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:28:03.779 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.779 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:28:03.780 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:28:03.780 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:28:03.780 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:28:03.823 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.823 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:28:03.823 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:28:03.824 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:28:03.824 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:28:03.855 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.856 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:28:03.856 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:28:03.856 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:28:03.856 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:28:03.887 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.887 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:28:03.887 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:28:03.888 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:28:03.888 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:28:03.919 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.919 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:28:03.919 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:28:03.919 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:28:03.920 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:28:03.952 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:28:03.952 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:28:03.953 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:28:03.953 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:28:03.953 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:28:04.041 | DEBUG    | db:guardar_productos_scrapeados:19 - SQL_SERVER desde .env: None
+2025-07-13 15:28:19.089 | ERROR    | db:guardar_productos_scrapeados:46 - Error al guardar productos en la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-07-13 15:28:19.091 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:28:19.128 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:28:19.129 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:28:19.129 | INFO     | __main__:main:10 - Procesadas 1 categorías
+2025-07-13 15:34:24.333 | INFO     | __main__:main:7 - Lanzando scraper de Pequeño Mundo
+2025-07-13 15:34:24.334 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-13 15:34:25.068 | INFO     | navegador:procesar_categoria:19 - Procesando: //abarrotes/aceites
+2025-07-13 15:34:34.614 | INFO     | navegador:procesar_categoria:33 - 20 productos en //abarrotes/aceites
+2025-07-13 15:34:34.660 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.660 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite aguacate Mueloliva 1lt
+2025-07-13 15:34:34.661 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.900,00
+2025-07-13 15:34:34.661 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-aguacate-mueloliva-1l.html
+2025-07-13 15:34:34.661 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-aguacate-mueloliva-1l
+2025-07-13 15:34:34.699 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.700 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 3lt
+2025-07-13 15:34:34.700 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:34:34.700 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-3lt.html
+2025-07-13 15:34:34.701 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-3lt
+2025-07-13 15:34:34.744 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.744 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola Abril 5lt
+2025-07-13 15:34:34.744 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡6.300,00
+2025-07-13 15:34:34.745 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-abril-5lt.html
+2025-07-13 15:34:34.745 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-abril-5lt
+2025-07-13 15:34:34.784 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.785 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite canola spray Montali 170g
+2025-07-13 15:34:34.785 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.100,00
+2025-07-13 15:34:34.785 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-canola-spray-montali-170g.html
+2025-07-13 15:34:34.785 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-canola-spray-montali-170g
+2025-07-13 15:34:34.826 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.827 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco aguacate spray Chosen Foods 134ml
+2025-07-13 15:34:34.827 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.700,00
+2025-07-13 15:34:34.827 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-aguacate-spray-chosen-foods-134ml.html
+2025-07-13 15:34:34.827 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-aguacate-spray-chosen-foods-134ml
+2025-07-13 15:34:34.864 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.865 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco extravirgen Rish 1lt
+2025-07-13 15:34:34.865 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.900,00
+2025-07-13 15:34:34.865 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-virgen-rish-1l.html
+2025-07-13 15:34:34.865 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-virgen-rish-1l
+2025-07-13 15:34:34.904 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.904 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite coco spray Montali 141g
+2025-07-13 15:34:34.905 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:34:34.905 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-coco-spray-montali-141g.html
+2025-07-13 15:34:34.905 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-coco-spray-montali-141g
+2025-07-13 15:34:34.943 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.944 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Abril 1lt
+2025-07-13 15:34:34.944 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.300,00
+2025-07-13 15:34:34.944 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-abril-1lt.html
+2025-07-13 15:34:34.944 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-abril-1lt
+2025-07-13 15:34:34.983 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:34.984 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 3lt
+2025-07-13 15:34:34.984 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.250,00
+2025-07-13 15:34:34.984 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-3lt.html
+2025-07-13 15:34:34.984 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-3lt
+2025-07-13 15:34:35.023 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.024 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 5lt
+2025-07-13 15:34:35.024 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.400,00
+2025-07-13 15:34:35.025 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-5lt.html
+2025-07-13 15:34:35.025 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-5lt
+2025-07-13 15:34:35.065 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.066 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite girasol Zade 900ml
+2025-07-13 15:34:35.066 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.050,00
+2025-07-13 15:34:35.066 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-girasol-zade-900ml.html
+2025-07-13 15:34:35.067 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-girasol-zade-900ml
+2025-07-13 15:34:35.108 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.108 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extra light Mueloliva 2lt
+2025-07-13 15:34:35.108 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡7.450,00
+2025-07-13 15:34:35.109 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extra-light-2-litros.html
+2025-07-13 15:34:35.109 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extra-light-2-litros
+2025-07-13 15:34:35.156 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.156 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 1lt
+2025-07-13 15:34:35.157 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡4.600,00
+2025-07-13 15:34:35.157 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-mueloliva-1-l.html
+2025-07-13 15:34:35.157 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-mueloliva-1-l
+2025-07-13 15:34:35.203 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.204 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen Mueloliva 3lt
+2025-07-13 15:34:35.204 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.700,00
+2025-07-13 15:34:35.204 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-virgen-extra-3-litros.html
+2025-07-13 15:34:35.204 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-virgen-extra-3-litros
+2025-07-13 15:34:35.252 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.252 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva extravirgen spray Montali 170g
+2025-07-13 15:34:35.253 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1.600,00
+2025-07-13 15:34:35.253 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-extravirgen-spray-montali-170g.html
+2025-07-13 15:34:35.253 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-extravirgen-spray-montali-170g
+2025-07-13 15:34:35.317 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.317 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva orujo Mueloliva 1lt
+2025-07-13 15:34:35.317 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:34:35.317 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-orujo-mueloliva-1lt.html
+2025-07-13 15:34:35.318 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-orujo-mueloliva-1lt
+2025-07-13 15:34:35.355 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.356 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite oliva puro Zade 3lt
+2025-07-13 15:34:35.356 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡13.400,00
+2025-07-13 15:34:35.356 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-oliva-puro-zade-3lt.html
+2025-07-13 15:34:35.357 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-oliva-puro-zade-3lt
+2025-07-13 15:34:35.399 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.400 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite pepita uva Mueloliva 1lt
+2025-07-13 15:34:35.400 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3.600,00
+2025-07-13 15:34:35.400 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-pepita-uva-mueloliva-1lt.html
+2025-07-13 15:34:35.401 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-pepita-uva-mueloliva-1lt
+2025-07-13 15:34:35.435 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.436 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Aceite soya  5lt
+2025-07-13 15:34:35.436 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5.000,00
+2025-07-13 15:34:35.436 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/aceite-soya-5lt.html
+2025-07-13 15:34:35.436 | INFO     | navegador:procesar_categoria:69 -  SLUG  : aceite-soya-5lt
+2025-07-13 15:34:35.468 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-13 15:34:35.469 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vinagre manzana orgánico Carandini 1lt
+2025-07-13 15:34:35.469 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2.450,00
+2025-07-13 15:34:35.469 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vinagre-manzana-organico-carandini-1lt.html
+2025-07-13 15:34:35.470 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vinagre-manzana-organico-carandini-1lt
+2025-07-13 15:34:35.539 | DEBUG    | db:guardar_productos_scrapeados:19 - SQL_SERVER desde .env: localhost
+2025-07-13 15:34:35.711 | INFO     | db:guardar_productos_scrapeados:44 - Guardados 20 productos en la base de datos.
+2025-07-13 15:34:35.711 | INFO     | navegador:procesar_categoria:86 - 20 productos guardados de /abarrotes/aceites
+2025-07-13 15:34:35.728 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-13 15:34:35.728 | INFO     | __main__:main:9 - Proceso finalizado
+2025-07-13 15:34:35.729 | INFO     | __main__:main:10 - Procesadas 1 categorías

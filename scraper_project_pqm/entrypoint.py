@@ -1,6 +1,6 @@
 import asyncio
 from categorias import CATEGORIAS
-from scraper import ejecutar_scraper
+from scraper_project_wm.scraper import ejecutar_scraper
 from logger import logger
 
 async def main():
