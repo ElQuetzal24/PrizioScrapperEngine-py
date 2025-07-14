@@ -3,6 +3,7 @@ from datetime import datetime
 from navegador import scroll_hasta_cargar_todos, safe_text_content
 from db import guardar_productos_scrapeados
 from loguru import logger
+import asyncio
 
 def extraer_precios(texto):
     precios = re.findall(r"₡\s*\d[\d\.]*", texto)
@@ -56,7 +57,11 @@ async def extraer_marca_detallada(page, url_producto):
 async def extraer_productos(page, url_categoria, categoria, visto_urls):
     await page.goto(url_categoria, timeout=30000)
     await page.wait_for_selector(".vtex-search-result-3-x-galleryItem", timeout=10000)
-    await scroll_hasta_cargar_todos(page)
+    try:
+        await asyncio.wait_for(scroll_hasta_cargar_todos(page), timeout=90)
+    except asyncio.TimeoutError:
+        logger.error("⏱️ Timeout: scroll se detuvo por exceder 90 segundos")
+        return []
 
     productos = []
     elements = await page.query_selector_all(".vtex-search-result-3-x-galleryItem")
