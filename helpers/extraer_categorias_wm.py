@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 import time
 
-def extraer_menu_corregido():
+def extraer_tres_niveles():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
@@ -9,7 +9,6 @@ def extraer_menu_corregido():
         page.wait_for_load_state("domcontentloaded")
         time.sleep(2)
 
-        # Abrir menú lateral
         try:
             menu_button = page.locator("div.walmartcr-mega-menu-1-x-openIconContainer")
             menu_button.wait_for(timeout=10000)
@@ -21,10 +20,8 @@ def extraer_menu_corregido():
             return
 
         time.sleep(2)
-
         resultados = []
 
-        # Seleccionar todos los elementos de categorías visibles del primer nivel
         categorias = page.locator("a.walmartcr-mega-menu-1-x-link")
         count = categorias.count()
         print(f"🔍 {count} categorías principales encontradas.")
@@ -35,35 +32,46 @@ def extraer_menu_corregido():
                 nombre = categoria.inner_text().strip()
                 if not nombre:
                     continue
-
-                print(f"🟦 Categoría: {nombre}")
+                print(f"🟦 {nombre}")
                 resultados.append(nombre)
                 categoria.hover()
-                time.sleep(1.5)
+                time.sleep(1.2)
 
-                # Buscar subcategorías si aparecen
+                # Subcategorías visibles
                 subcategorias = page.locator("ul.walmartcr-mega-menu-1-x-subMenuColumn li")
-                for j in range(subcategorias.count()):
+                subcount = subcategorias.count()
+                for j in range(subcount):
                     subcat = subcategorias.nth(j)
                     try:
-                        subnombre = subcat.inner_text().strip()
-                        if subnombre:
-                            print(f"    └── {subnombre}")
-                            resultados.append(f"    └── {subnombre}")
+                        nombre_sub = subcat.inner_text().strip()
+                        if not nombre_sub:
+                            continue
+                        print(f"    └── {nombre_sub}")
+                        resultados.append(f"    └── {nombre_sub}")
+                        subcat.hover()
+                        time.sleep(1)
+
+                        # Sub-subcategorías visibles dentro de columna a la derecha
+                        subsub = page.locator("ul.walmartcr-mega-menu-1-x-menu > li > span")
+                        subsubcount = subsub.count()
+                        for k in range(subsubcount):
+                            item = subsub.nth(k)
+                            nombre_subsub = item.inner_text().strip()
+                            if nombre_subsub:
+                                print(f"        └── {nombre_subsub}")
+                                resultados.append(f"        └── {nombre_subsub}")
                     except:
                         continue
-
             except Exception as e:
-                print(f"⚠️ Error al procesar categoría: {e}")
+                print(f"⚠️ Error en categoría {i}: {e}")
                 continue
 
-        # Guardar en archivo
-        with open("categorias_walmart.txt", "w", encoding="utf-8") as f:
+        with open("categorias_walmart_3niveles.txt", "w", encoding="utf-8") as f:
             for linea in resultados:
                 f.write(linea + "\n")
 
-        print("✅ Menú exportado a 'categorias_walmart.txt'")
+        print("✅ Exportado a 'categorias_walmart_3niveles.txt'")
         browser.close()
 
 if __name__ == "__main__":
-    extraer_menu_corregido()
+    extraer_tres_niveles()
