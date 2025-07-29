@@ -1,6 +1,0 @@
-pyodbc
-requests
-selenium
-webdriver-manager
-beautifulsoup4
-tqdm==4.67.1

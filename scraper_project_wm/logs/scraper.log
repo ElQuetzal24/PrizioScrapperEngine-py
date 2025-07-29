@@ -1,0 +1,252 @@
+2025-07-13 17:58:50.111 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 17:58:51.170 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /juguetes
+2025-07-13 17:58:51.213 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /deportes
+2025-07-13 17:58:51.234 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /articulos-para-el-hogar
+2025-07-13 17:58:59.013 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /articulos-para-el-hogar: name 'logger' is not defined
+2025-07-13 17:58:59.371 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /deportes: name 'logger' is not defined
+2025-07-13 17:58:59.427 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /juguetes: name 'logger' is not defined
+2025-07-13 17:59:00.777 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 17:59:00.817 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /electronica
+2025-07-13 17:59:00.847 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /ropa-y-zapateria
+2025-07-13 17:59:05.220 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /ropa-y-zapateria: name 'logger' is not defined
+2025-07-13 17:59:06.090 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /electronica: name 'logger' is not defined
+2025-07-13 17:59:06.161 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /lo-nuevo: name 'logger' is not defined
+2025-07-13 18:00:08.400 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:00:09.392 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /juguetes
+2025-07-13 18:00:09.413 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /deportes
+2025-07-13 18:00:09.445 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /articulos-para-el-hogar
+2025-07-13 18:00:12.282 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /juguetes: name 'logger' is not defined
+2025-07-13 18:00:12.463 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /deportes: name 'logger' is not defined
+2025-07-13 18:00:12.790 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /articulos-para-el-hogar: name 'logger' is not defined
+2025-07-13 18:00:13.966 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /ropa-y-zapateria
+2025-07-13 18:00:14.016 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 18:00:14.224 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /electronica
+2025-07-13 18:03:38.024 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:03:38.981 | INFO     | scraper:procesar_categoria:19 - Procesando categoría: /deportes
+2025-07-13 18:03:38.996 | INFO     | scraper:procesar_categoria:19 - Procesando categoría: /articulos-para-el-hogar
+2025-07-13 18:03:39.073 | INFO     | scraper:procesar_categoria:19 - Procesando categoría: /juguetes
+2025-07-13 18:03:41.993 | ERROR    | scraper:procesar_categoria:24 - Error al cargar la categoría /juguetes: name 'logger' is not defined
+2025-07-13 18:03:41.996 | ERROR    | scraper:procesar_categoria:24 - Error al cargar la categoría /articulos-para-el-hogar: name 'logger' is not defined
+2025-07-13 18:03:42.213 | ERROR    | scraper:procesar_categoria:24 - Error al cargar la categoría /deportes: name 'logger' is not defined
+2025-07-13 18:03:43.387 | INFO     | scraper:procesar_categoria:19 - Procesando categoría: /ropa-y-zapateria
+2025-07-13 18:03:43.510 | INFO     | scraper:procesar_categoria:19 - Procesando categoría: /lo-nuevo
+2025-07-13 18:03:43.651 | INFO     | scraper:procesar_categoria:19 - Procesando categoría: /electronica
+2025-07-13 18:03:46.526 | ERROR    | scraper:procesar_categoria:24 - Error al cargar la categoría /ropa-y-zapateria: name 'logger' is not defined
+2025-07-13 18:06:24.543 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:06:25.286 | INFO     | scraper:procesar_categoria:19 - Procesando categoría: /lo-nuevo
+2025-07-13 18:06:27.944 | ERROR    | scraper:procesar_categoria:24 - Error al cargar la categoría /lo-nuevo: name 'logger' is not defined
+2025-07-13 18:06:28.047 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 18:06:28.047 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 18:06:28.048 | INFO     | __main__:main:16 - Tiempo total: 3.5 segundos
+2025-07-13 18:07:56.406 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:07:57.193 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 18:08:00.427 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /lo-nuevo: name 'logger' is not defined
+2025-07-13 18:08:00.516 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 18:08:00.516 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 18:08:00.516 | INFO     | __main__:main:16 - Tiempo total: 4.11 segundos
+2025-07-13 18:08:25.335 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:08:26.083 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 18:08:28.360 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /lo-nuevo: name 'logger' is not defined
+2025-07-13 18:08:28.453 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 18:08:28.453 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 18:08:28.454 | INFO     | __main__:main:16 - Tiempo total: 3.12 segundos
+2025-07-13 18:11:14.081 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:11:14.866 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 18:11:17.867 | INFO     | navegador:scroll_hasta_cargar_todos:14 - Iniciando scroll profundo para carga completa de productos...
+2025-07-13 18:11:27.416 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 1: 28 productos visibles
+2025-07-13 18:11:36.546 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 2: 38 productos visibles
+2025-07-13 18:11:40.897 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 3: 48 productos visibles
+2025-07-13 18:11:42.112 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 4: 58 productos visibles
+2025-07-13 18:11:43.461 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 5: 68 productos visibles
+2025-07-13 18:11:47.652 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 6: 78 productos visibles
+2025-07-13 18:11:48.739 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 7: 88 productos visibles
+2025-07-13 18:11:50.946 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 8: 98 productos visibles
+2025-07-13 18:11:56.046 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 9: 108 productos visibles
+2025-07-13 18:11:57.136 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 10: 118 productos visibles
+2025-07-13 18:11:58.791 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 11: 128 productos visibles
+2025-07-13 18:12:04.856 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 12: 138 productos visibles
+2025-07-13 18:12:05.972 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 13: 148 productos visibles
+2025-07-13 18:12:15.692 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 15: 168 productos visibles
+2025-07-13 18:12:21.206 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 16: 178 productos visibles
+2025-07-13 18:12:28.967 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 18: 196 productos visibles
+2025-07-13 18:12:30.128 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 19: 198 productos visibles
+2025-07-13 18:12:38.770 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 20: 218 productos visibles
+2025-07-13 18:12:39.854 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 21: 218 productos visibles
+2025-07-13 18:12:45.730 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 23: 228 productos visibles
+2025-07-13 18:12:51.670 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 24: 238 productos visibles
+2025-07-13 18:12:53.861 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 26: 248 productos visibles
+2025-07-13 18:13:01.804 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 27: 258 productos visibles
+2025-07-13 18:13:02.914 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 28: 260 productos visibles
+2025-07-13 18:13:04.166 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 29: 268 productos visibles
+2025-07-13 18:13:05.409 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 30: 278 productos visibles
+2025-07-13 18:13:12.510 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 31: 288 productos visibles
+2025-07-13 18:13:14.717 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 33: 298 productos visibles
+2025-07-13 18:13:22.342 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 34: 308 productos visibles
+2025-07-13 18:13:24.627 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 36: 318 productos visibles
+2025-07-13 18:13:27.827 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 37: 325 productos visibles
+2025-07-13 18:13:38.310 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 41: 325 productos visibles
+2025-07-13 18:13:39.419 | SUCCESS  | navegador:scroll_hasta_cargar_todos:56 - Scroll finalizado: 325 productos cargados (sin cambios en 5 ciclos)
+2025-07-13 18:13:39.440 | INFO     | extractor:extraer_productos:41 - 🛒 0 productos encontrados en /lo-nuevo
+2025-07-13 18:13:39.597 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 18:13:39.597 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 18:13:39.597 | INFO     | __main__:main:16 - Tiempo total: 145.52 segundos
+2025-07-13 18:14:26.523 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:14:27.325 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 18:14:30.206 | INFO     | navegador:scroll_hasta_cargar_todos:14 - Iniciando scroll profundo para carga completa de productos...
+2025-07-13 18:14:35.354 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 1: 28 productos visibles
+2025-07-13 18:14:36.640 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 2: 38 productos visibles
+2025-07-13 18:14:38.007 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 3: 48 productos visibles
+2025-07-13 18:14:43.033 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 4: 58 productos visibles
+2025-07-13 18:14:44.277 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 5: 68 productos visibles
+2025-07-13 18:14:46.149 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 6: 78 productos visibles
+2025-07-13 18:14:52.633 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 7: 88 productos visibles
+2025-07-13 18:14:53.795 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 8: 98 productos visibles
+2025-07-13 18:14:56.179 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 9: 108 productos visibles
+2025-07-13 18:15:02.691 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 10: 118 productos visibles
+2025-07-13 18:15:03.753 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 11: 120 productos visibles
+2025-07-13 18:15:11.097 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 12: 138 productos visibles
+2025-07-13 18:15:16.164 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 13: 148 productos visibles
+2025-07-13 18:15:25.979 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 15: 168 productos visibles
+2025-07-13 18:15:27.125 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 16: 168 productos visibles
+2025-07-13 18:15:29.412 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 17: 178 productos visibles
+2025-07-13 18:15:37.265 | ERROR    | scraper:procesar_categoria:23 - Error al cargar la categoría /lo-nuevo: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-07-13 18:17:34.174 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:17:34.937 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 18:17:37.155 | INFO     | navegador:scroll_hasta_cargar_todos:14 - Iniciando scroll profundo para carga completa de productos...
+2025-07-13 18:17:46.434 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 1: 28 productos visibles
+2025-07-13 18:17:55.534 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 2: 38 productos visibles
+2025-07-13 18:18:04.607 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 3: 48 productos visibles
+2025-07-13 18:18:13.684 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 4: 58 productos visibles
+2025-07-13 18:18:20.135 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 5: 68 productos visibles
+2025-07-13 18:18:21.415 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 6: 78 productos visibles
+2025-07-13 18:18:22.724 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 7: 88 productos visibles
+2025-07-13 18:18:27.134 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 8: 98 productos visibles
+2025-07-13 18:18:28.484 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 9: 108 productos visibles
+2025-07-13 18:18:33.264 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 10: 118 productos visibles
+2025-07-13 18:18:34.376 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 11: 128 productos visibles
+2025-07-13 18:18:36.514 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 12: 138 productos visibles
+2025-07-13 18:18:42.220 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 13: 148 productos visibles
+2025-07-13 18:18:43.483 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 14: 158 productos visibles
+2025-07-13 18:18:46.167 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 15: 168 productos visibles
+2025-07-13 18:18:53.180 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 16: 178 productos visibles
+2025-07-13 18:18:54.338 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 17: 188 productos visibles
+2025-07-13 18:19:01.085 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 18: 198 productos visibles
+2025-07-13 18:19:02.141 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 19: 208 productos visibles
+2025-07-13 18:19:09.254 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 20: 218 productos visibles
+2025-07-13 18:19:10.332 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 21: 228 productos visibles
+2025-07-13 18:19:18.010 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 22: 238 productos visibles
+2025-07-13 18:19:19.095 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 23: 248 productos visibles
+2025-07-13 18:19:27.439 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 24: 258 productos visibles
+2025-07-13 18:19:28.547 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 25: 260 productos visibles
+2025-07-13 18:19:30.108 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 26: 268 productos visibles
+2025-07-13 18:19:36.261 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 27: 278 productos visibles
+2025-07-13 18:19:39.698 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 29: 280 productos visibles
+2025-07-13 18:19:46.840 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 30: 298 productos visibles
+2025-07-13 18:19:47.949 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 31: 298 productos visibles
+2025-07-13 18:19:49.262 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 32: 300 productos visibles
+2025-07-13 18:19:57.302 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 34: 318 productos visibles
+2025-07-13 18:19:58.391 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 35: 320 productos visibles
+2025-07-13 18:19:59.763 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 36: 325 productos visibles
+2025-07-13 18:20:05.940 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 41: 325 productos visibles
+2025-07-13 18:20:05.940 | SUCCESS  | navegador:scroll_hasta_cargar_todos:56 - Scroll finalizado: 325 productos cargados (sin cambios en 5 ciclos)
+2025-07-13 18:20:05.954 | INFO     | extractor:extraer_productos:41 - 🛒 0 productos encontrados en /lo-nuevo
+2025-07-13 18:20:06.068 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 18:20:06.069 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 18:20:06.069 | INFO     | __main__:main:16 - Tiempo total: 151.89 segundos
+2025-07-13 18:22:21.220 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:22:21.994 | INFO     | scraper:procesar_categoria:18 - Procesando categoría: /lo-nuevo
+2025-07-13 18:22:24.397 | INFO     | navegador:scroll_hasta_cargar_todos:14 - Iniciando scroll profundo para carga completa de productos...
+2025-07-13 18:22:33.608 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 1: 28 productos visibles
+2025-07-13 18:22:42.724 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 2: 38 productos visibles
+2025-07-13 18:22:47.461 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 3: 48 productos visibles
+2025-07-13 18:22:48.650 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 4: 58 productos visibles
+2025-07-13 18:22:50.312 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 5: 68 productos visibles
+2025-07-13 18:22:55.221 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 6: 78 productos visibles
+2025-07-13 18:22:56.827 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 7: 88 productos visibles
+2025-07-13 18:22:58.529 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 8: 98 productos visibles
+2025-07-13 18:23:05.341 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 9: 100 productos visibles
+2025-07-13 18:23:06.717 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 10: 108 productos visibles
+2025-07-13 18:23:17.041 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 11: 124 productos visibles
+2025-07-13 18:23:26.122 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 12: 138 productos visibles
+2025-07-13 18:23:32.528 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 13: 148 productos visibles
+2025-07-13 18:23:33.676 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 14: 158 productos visibles
+2025-07-13 18:23:44.491 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 16: 176 productos visibles
+2025-07-13 18:23:50.106 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 17: 188 productos visibles
+2025-07-13 18:23:51.228 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 18: 198 productos visibles
+2025-07-13 18:23:58.312 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 19: 208 productos visibles
+2025-07-13 18:23:59.424 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 20: 218 productos visibles
+2025-07-13 18:24:07.089 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 21: 228 productos visibles
+2025-07-13 18:24:08.240 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 22: 238 productos visibles
+2025-07-13 18:24:16.074 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 23: 248 productos visibles
+2025-07-13 18:24:19.376 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 25: 258 productos visibles
+2025-07-13 18:24:25.092 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 26: 268 productos visibles
+2025-07-13 18:24:26.164 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 27: 278 productos visibles
+2025-07-13 18:24:33.094 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 29: 288 productos visibles
+2025-07-13 18:24:35.299 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 31: 288 productos visibles
+2025-07-13 18:24:44.382 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 32: 316 productos visibles
+2025-07-13 18:24:45.459 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 33: 318 productos visibles
+2025-07-13 18:24:49.691 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 34: 325 productos visibles
+2025-07-13 18:24:51.808 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 36: 325 productos visibles
+2025-07-13 18:25:02.996 | SUCCESS  | navegador:scroll_hasta_cargar_todos:56 - Scroll finalizado: 325 productos cargados (sin cambios en 5 ciclos)
+2025-07-13 18:25:03.011 | INFO     | extractor:extraer_productos:41 - 🛒 0 productos encontrados en /lo-nuevo
+2025-07-13 18:25:03.156 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 18:25:03.157 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 18:25:03.157 | INFO     | __main__:main:16 - Tiempo total: 161.94 segundos
+2025-07-13 18:42:54.045 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:42:54.922 | INFO     | scraper:procesar_categoria:20 - Procesando categoría: /lo-nuevo
+2025-07-13 18:43:03.078 | INFO     | navegador:scroll_hasta_cargar_todos:14 - Iniciando scroll profundo para carga completa de productos...
+2025-07-13 18:43:03.878 | ERROR    | scraper:procesar_categoria:25 - Error al cargar la categoría /lo-nuevo: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-07-13 18:43:40.036 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 18:43:40.750 | INFO     | scraper:procesar_categoria:20 - Procesando categoría: /lo-nuevo
+2025-07-13 18:43:43.256 | INFO     | navegador:scroll_hasta_cargar_todos:14 - Iniciando scroll profundo para carga completa de productos...
+2025-07-13 18:43:52.272 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 1: 28 productos visibles
+2025-07-13 18:44:01.233 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 2: 38 productos visibles
+2025-07-13 18:44:07.033 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 3: 56 productos visibles
+2025-07-13 18:44:08.014 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 4: 68 productos visibles
+2025-07-13 18:44:09.304 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 5: 78 productos visibles
+2025-07-13 18:44:13.504 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 6: 88 productos visibles
+2025-07-13 18:44:14.395 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 7: 98 productos visibles
+2025-07-13 18:44:16.243 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 8: 108 productos visibles
+2025-07-13 18:44:20.907 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 9: 118 productos visibles
+2025-07-13 18:44:21.842 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 10: 128 productos visibles
+2025-07-13 18:44:23.941 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 11: 138 productos visibles
+2025-07-13 18:44:29.509 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 12: 148 productos visibles
+2025-07-13 18:44:30.371 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 13: 158 productos visibles
+2025-07-13 18:44:32.706 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 15: 168 productos visibles
+2025-07-13 18:44:39.592 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 16: 178 productos visibles
+2025-07-13 18:44:40.473 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 17: 188 productos visibles
+2025-07-13 18:44:46.662 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 18: 198 productos visibles
+2025-07-13 18:44:47.503 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 19: 200 productos visibles
+2025-07-13 18:44:54.843 | DEBUG    | navegador:scroll_hasta_cargar_todos:46 - Scroll 20: 218 productos visibles
+2025-07-13 18:44:54.846 | WARNING  | navegador:scroll_hasta_cargar_todos:64 - Fin de scroll por límite de ciclos (20). Productos detectados: 218
+2025-07-13 18:44:55.079 | INFO     | extractor:extraer_productos:41 - 🛒 0 productos encontrados en /lo-nuevo
+2025-07-13 18:44:55.226 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 18:44:55.226 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 18:44:55.227 | INFO     | __main__:main:16 - Tiempo total: 75.19 segundos
+2025-07-13 20:11:38.266 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 20:11:38.266 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-13 20:11:39.052 | INFO     | extractor:procesar_categoria:133 - Procesando categoría: lo-nuevo
+2025-07-13 20:12:45.567 | DEBUG    | db:guardar_productos_scrapeados:19 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-13 20:12:46.028 | INFO     | db:guardar_productos_scrapeados:44 - Guardados 232 productos en la base de datos.
+2025-07-13 20:12:46.153 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-13 20:12:46.154 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 20:12:46.154 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 20:12:46.154 | INFO     | __main__:main:16 - Tiempo total: 67.89 segundos
+2025-07-13 20:16:16.589 | INFO     | __main__:main:8 - Lanzando scraper de Walmart
+2025-07-13 20:16:16.589 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-13 20:16:17.342 | INFO     | extractor:procesar_categoria:133 - Procesando categoría: lo-nuevo
+2025-07-13 20:17:52.313 | DEBUG    | db:guardar_productos_scrapeados:19 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-13 20:17:52.696 | INFO     | db:guardar_productos_scrapeados:44 - Guardados 294 productos en la base de datos.
+2025-07-13 20:17:52.804 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-13 20:17:52.804 | INFO     | __main__:main:14 - Scraping finalizado correctamente
+2025-07-13 20:17:52.804 | INFO     | __main__:main:15 - Procesadas 1 categorías
+2025-07-13 20:17:52.804 | INFO     | __main__:main:16 - Tiempo total: 96.21 segundos
+2025-07-13 20:19:56.725 | INFO     | __main__:main:9 - Lanzando scraper de Walmart
+2025-07-13 20:19:56.726 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-13 20:19:57.465 | INFO     | extractor:procesar_categoria:133 - Procesando categoría: lo-nuevo
+2025-07-13 20:21:20.676 | DEBUG    | db:guardar_productos_scrapeados:19 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-13 20:21:21.020 | INFO     | db:guardar_productos_scrapeados:44 - Guardados 296 productos en la base de datos.
+2025-07-13 20:21:21.120 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-13 20:21:21.121 | INFO     | __main__:main:16 - Scraping finalizado correctamente
+2025-07-13 20:21:21.121 | INFO     | __main__:main:17 - Procesadas 1 categorías
+2025-07-13 20:21:21.121 | INFO     | __main__:main:18 - Tiempo total: 84.39 segundos
