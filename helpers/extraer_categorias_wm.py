@@ -20,7 +20,6 @@ def extraer_rutas_completas(page):
         if not nombre1:
             continue
 
-        # Hover sobre categoría principal
         box = cat1.bounding_box()
         if not box:
             continue
@@ -29,7 +28,9 @@ def extraer_rutas_completas(page):
         page.mouse.move(x, y)
         time.sleep(1.0)
 
-        # Buscar panel visible (childrenContainer)
+        if nombre1 == "Electrónica":
+            print("🧪 DEBUG: Hover sobre Electrónica confirmado")
+
         containers = page.locator("div.walmartcr-mega-menu-1-x-childrenContainer").all()
         subcats_lvl2 = None
         for cont in containers:
@@ -48,14 +49,15 @@ def extraer_rutas_completas(page):
             if not nombre2:
                 continue
 
-            # Hover sobre subcategoría
+            if nombre1 == "Electrónica":
+                print(f"🔍 DEBUG: Subcategoría encontrada: {nombre2}")
+
             box2 = subcat2.bounding_box()
             if not box2:
                 continue
             page.mouse.move(box2["x"] + box2["width"]/2, box2["y"] + box2["height"]/2)
             time.sleep(0.5)
 
-            # Buscar panel adicional para nivel 3
             containers_lvl3 = page.locator("div.walmartcr-mega-menu-1-x-childrenContainer").all()
             subcats_lvl3 = None
             for cont3 in containers_lvl3:
@@ -87,7 +89,7 @@ if __name__ == "__main__":
         page = browser.new_page()
         if abrir_menu(page):
             rutas = extraer_rutas_completas(page)
-            with open("categorias_completas.txt", "w", encoding="utf-8") as f:
+            with open("categorias_debug.txt", "w", encoding="utf-8") as f:
                 for r in rutas:
                     f.write(r + "\n")
         browser.close()
