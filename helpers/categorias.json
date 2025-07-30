@@ -44,7 +44,6 @@
   "/hogar/alfombras",
   "/hogar/articulos-deportivos",
   "/hogar/ba-o",
-  "/hogar/bebes-y-damas",
   "/hogar/camping-e-inflables",
   "/hogar/canastas",
   "/hogar/candelas-y-candelabros",
@@ -90,5 +89,15 @@
   "/muebles/sillas",
   "/muebles/sillon",
   "/muebles/zapateras",
+  "/textil",
+  "/textil/articulos-de-bebe",
+  "/textil/coches",
+  "/textil/conjuntos",
+  "/textil/damas",
+  "/textil/infantil",
+  "/textil/mamelucos",
+  "/textil/pijamas",
+  "/textil/sillas-para-carro",
+  "/textil/trajes-bano",
   "/vacaciones"
 ]
