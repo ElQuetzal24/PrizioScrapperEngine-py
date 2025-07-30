@@ -1,0 +1,577 @@
+REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+Lo Nuevo
+    └── REBAJAS
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+Prichos
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+Electrónica
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Celulares
+    └── Electrodomésticos
+    └── Línea Blanca
+    └── Televisores
+    └── Computación
+    └── Audio
+    └── Videojuegos
+Artículos para el hogar
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Accesorios para mesa
+    └── Accesorios para cocina
+    └── Camas, Colchones y Blancos
+    └── Papelería
+    └── Jardinería y Exteriores
+    └── Organización y Almacenamiento
+    └── Decoración y Muebles
+    └── Autos
+    └── Ferretería
+    └── Escritorios y Muebles de Oficina
+    └── Pintura
+    └── Salas y Centro de entretenimiento
+    └── Comedores y Muebles de Cocina
+    └── Libros y Revista
+Limpieza
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Desechables
+    └── Limpieza del hogar
+    └── Detergente
+    └── Papel Higiénico
+    └── Lavaplatos
+    └── Accesorios para limpieza
+    └── Suavizante
+    └── Aromatizantes
+    └── Jabón de lavandería
+    └── Quitamanchas para ropa
+    └── Colorantes y Almidones
+Abarrotes
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Enlatados y Conservas
+    └── Pastas
+    └── Galletas
+    └── Arroz, Frijol y Semillas
+    └── Snacks y Fruta Seca
+    └── Café, Té y Sustitutos
+    └── Especias y Sazonadores
+    └── Harinas y Repostería
+    └── Azúcar y Postres
+    └── Salsa, Aderezos y Vinagre
+    └── Cereales y Barras
+    └── Alimentos Instantáneos
+    └── Dulces y Chocolates
+    └── Aceites de cocina
+    └── Mermeladas y Miel
+    └── Productos Vegetales y Veganos
+Higiene y Belleza
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Higiene y cuidado corporal
+    └── Cuidado Bucal
+    └── Cuidado del cabello
+    └── Cuidado Intimo
+    └── Higiene y cuidado para manos
+    └── Afeitado
+    └── Cuidado Facial
+    └── Cosméticos
+    └── Pañuelos desechables
+    └── Cuidado para pies
+Bebés y Niños
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Pañales y toallitas húmedas
+    └── Comida para bebé y lactancia
+    └── Baño y cuidado del bebé
+    └── Cunas, coches y accesorios
+    └── Juguetes para bebé y estimulación temprana
+Lácteos y Huevos
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Leche
+    └── Yogurt
+    └── Queso
+    └── Mantequillas y margarinas
+    └── Huevo
+    └── Crema o Natilla
+Jugos y Bebidas
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Gaseosas
+    └── Polvo y Líquidos Concentrados
+    └── Agua
+    └── Energizantes e Hidratantes
+    └── Té preparado
+    └── Jugos y Néctares
+Carnes y Pescados
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Pollo y Pavo
+    └── Cerdo
+    └── Res
+    └── Mariscos y Pescados
+Cervezas, Vinos y Licores
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Cervezas
+    └── Vinos
+    └── Licores
+    └── Digestivos
+    └── Coolers
+Embutidos
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Panadería y tortillería
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Mascotas
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Farmacia
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Alimentos Congelados
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Frutas y Verduras
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Juguetes
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Juguetes
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Deportes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Deportes
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Ropa y Zapatería
+    └── Carnes frías
+Ropa y Zapatería
+    └── REBAJAS
+    └── Lo Nuevo
+    └── Prichos
+    └── Electrónica
+    └── Artículos para el hogar
+    └── Limpieza
+    └── Abarrotes
+    └── Higiene y Belleza
+    └── Bebés y Niños
+    └── Lácteos y Huevos
+    └── Jugos y Bebidas
+    └── Carnes y Pescados
+    └── Cervezas, Vinos y Licores
+    └── Embutidos
+    └── Panadería y tortillería
+    └── Mascotas
+    └── Farmacia
+    └── Alimentos Congelados
+    └── Frutas y Verduras
+    └── Juguetes
+    └── Deportes
+    └── Carnes frías
