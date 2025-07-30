@@ -1,36 +1,112 @@
-[
-  "",
-  "abarrotes",
-  "alimentos-congelados",
-  "articulos-para-el-hogar",
-  "audifonos?map=ft&_q=audifonos",
-  "bebes-y-ninos",
-  "carnes-y-pescados",
-  "celulares?map=ft&_q=celulares",
-  "cervezas-vinos-y-licores",
-  "colchon?map=ft&_q=colchon",
-  "como-comprar",
-  "electronica",
-  "embutidos",
-  "exclusivas",
-  "farmacia",
-  "frutas-y-verduras",
-  "higiene-y-belleza",
-  "iphone?map=ft&_q=iphone",
-  "jugos-y-bebidas",
-  "juguetes",
-  "lacteos",
-  "lash%20sensatiional%20firework?map=ft&_q=lash sensatiional firework",
-  "lavadora?map=ft&_q=lavadora",
-  "limpieza",
-  "marcas-propias-nueva",
-  "mascota",
-  "microondas?map=ft&_q=microondas",
-  "muebles?map=ft&_q=muebles",
-  "mundo-deportes",
-  "panaderia-y-tortilleria",
-  "pantallas?map=ft&_q=pantallas",
-  "parrilleros",
-  "rebajas",
-  "refrigerador?map=ft&_q=refrigerador"
-]
+from playwright.sync_api import sync_playwright
+import time
+
+def abrir_menu(page):
+    page.goto("https://www.walmart.co.cr/", timeout=60000)
+    page.wait_for_load_state("domcontentloaded")
+    time.sleep(2)
+
+    try:
+        page.locator("div.walmartcr-mega-menu-1-x-openIconContainer").click()
+        print("✅ Menú abierto")
+        page.wait_for_selector("a.walmartcr-mega-menu-1-x-link", timeout=10000)
+        time.sleep(2)
+
+        # Cursor visual rojo
+        page.evaluate("""
+        (() => {
+            const cursor = document.createElement('div');
+            cursor.id = 'fake-cursor';
+            Object.assign(cursor.style, {
+                position: 'fixed',
+                top: '0px',
+                left: '0px',
+                width: '12px',
+                height: '12px',
+                background: 'red',
+                borderRadius: '50%',
+                zIndex: 9999999,
+                pointerEvents: 'none',
+                transition: 'top 0.07s linear, left 0.07s linear'
+            });
+            document.body.appendChild(cursor);
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+            });
+        })();
+        """)
+        return True
+    except Exception as e:
+        print("❌ No se pudo abrir el menú:", e)
+        return False
+
+def extraer_categorias(page):
+    resultados = []
+    categorias = page.locator("a.walmartcr-mega-menu-1-x-link")
+    total = categorias.count()
+    print(f"🔍 {total} enlaces de menú detectados")
+
+    ya_vistos = set()
+
+    for i in range(total):
+        cat = categorias.nth(i)
+        nombre_cat = cat.inner_text().strip()
+        if not nombre_cat or nombre_cat in ya_vistos:
+            continue
+        ya_vistos.add(nombre_cat)
+
+        box = cat.bounding_box()
+        if not box:
+            continue
+
+        # Mover al centro de la categoría
+        x_inicial = box['x'] + box['width'] / 2
+        y_inicial = box['y'] + box['height'] / 2
+        page.mouse.move(x_inicial, y_inicial)
+        print(f"🟦 {nombre_cat}")
+        resultados.append(f"🟦 {nombre_cat}")
+
+        # Esperar que el panel lateral aparezca
+        selector_panel = f"ul.walmartcr-mega-menu-1-x-menu[aria-label='{nombre_cat}']"
+        try:
+            page.wait_for_selector(selector_panel, timeout=3000)
+            print(f"✅ Panel detectado para '{nombre_cat}'")
+        except:
+            print(f"⚠️ Panel no apareció para '{nombre_cat}'")
+            continue
+
+        # AHORA SÍ: mover a la derecha para activar visualmente subcategorías
+        x_derecha = x_inicial + 350
+        y_derecha = y_inicial + 10
+        print(f"🧭 Moviendo a derecha visible: {nombre_cat}")
+        page.mouse.move(x_derecha, y_derecha, steps=30)
+        time.sleep(1)
+
+        # Leer subcategorías
+        try:
+            panel = page.locator(selector_panel)
+            sublinks = panel.locator("a.walmartcr-mega-menu-1-x-link")
+            for j in range(sublinks.count()):
+                sub = sublinks.nth(j)
+                nombre_sub = sub.inner_text().strip()
+                if nombre_sub and nombre_sub != nombre_cat:
+                    print(f"   └── {nombre_cat}/{nombre_sub}")
+                    resultados.append(f"   └── {nombre_cat}/{nombre_sub}")
+        except:
+            print(f"⚠️ No se pudieron leer subcategorías de '{nombre_cat}'")
+
+        time.sleep(0.5)
+
+    with open("categorias_walmart_completo.txt", "w", encoding="utf-8") as f:
+        for r in resultados:
+            f.write(r + "\n")
+    print("✅ Exportado a 'categorias_walmart_completo.txt'")
+
+if __name__ == "__main__":
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False, slow_mo=40)
+        page = browser.new_page()
+        if abrir_menu(page):
+            extraer_categorias(page)
+        browser.close()

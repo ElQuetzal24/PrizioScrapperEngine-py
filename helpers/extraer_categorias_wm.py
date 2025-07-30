@@ -5,71 +5,64 @@ def abrir_menu(page):
     page.goto("https://www.walmart.co.cr/", timeout=60000)
     page.wait_for_load_state("domcontentloaded")
     time.sleep(2)
-
-    try:
-        page.locator("div.walmartcr-mega-menu-1-x-openIconContainer").click()
-        print("✅ Menú abierto")
-        time.sleep(2)
-        return True
-    except Exception as e:
-        print("❌ No se pudo abrir el menú:", e)
-        return False
+    page.locator("div.walmartcr-mega-menu-1-x-openIconContainer").click()
+    page.wait_for_selector("a.walmartcr-mega-menu-1-x-link", timeout=10000)
+    return True
 
 def extraer_categorias(page):
-    resultados = []
     categorias = page.locator("a.walmartcr-mega-menu-1-x-link")
-    total_categorias = categorias.count()
-    print(f"🔍 {total_categorias} enlaces de menú detectados")
+    total = categorias.count()
+    print(f"🔍 Detectadas {total} categorías")
 
-    for i in range(total_categorias):
-        categoria = categorias.nth(i)
-        nombre_cat = categoria.inner_text().strip()
-        href = categoria.get_attribute("href")
+    ya_vistos = set()
+    resultados = []
 
-        if not nombre_cat or not href:
+    for i in range(total):
+        cat = categorias.nth(i)
+        nombre_cat = cat.inner_text().strip()
+        if not nombre_cat or nombre_cat in ya_vistos:
+            continue
+        ya_vistos.add(nombre_cat)
+
+        box = cat.bounding_box()
+        if not box:
             continue
 
-        box_cat = categoria.bounding_box()
-        if not box_cat:
-            continue
+        x = box['x'] + box['width'] / 2
+        y = box['y'] + box['height'] / 2
 
-        print(f"🟦 {nombre_cat}")
-        resultados.append(nombre_cat)
+        print(f"\n🟦 {nombre_cat}")
 
-        # Hover sobre la categoría
-        x_cat = box_cat["x"] + box_cat["width"] / 2
-        y_cat = box_cat["y"] + box_cat["height"] / 2
-        page.mouse.move(x_cat, y_cat)
-        time.sleep(1.3)
+        # 🟡 Hover sobre la categoría
+        page.mouse.move(x, y)
+        time.sleep(0.6)
 
-        # Extraer subcategorías visibles en columnas
-        columnas_submenu = page.locator("ul.walmartcr-mega-menu-1-x-menu")
-        col_count = columnas_submenu.count()
+        # 🔴 Movimiento lateral como un humano al panel
+        page.mouse.move(x + 300, y, steps=30)
+        time.sleep(1.2)
 
-        for j in range(col_count):
-            columna = columnas_submenu.nth(j)
-            sublinks = columna.locator("a.walmartcr-mega-menu-1-x-link")
-            subcount = sublinks.count()
+        try:
+            panel = page.locator("ul.walmartcr-mega-menu-1-x-menu").first
+            links = panel.locator("a.walmartcr-mega-menu-1-x-link")
+            for j in range(links.count()):
+                subcat = links.nth(j).inner_text().strip()
+                if subcat and subcat != nombre_cat:
+                    print(f"   └── {nombre_cat}/{subcat}")
+                    resultados.append(f"{nombre_cat}/{subcat}")
+        except Exception as e:
+            print(f"⚠️ Panel no visible para {nombre_cat}: {e}")
 
-            for k in range(subcount):
-                subcat = sublinks.nth(k)
-                nombre_sub = subcat.inner_text().strip()
-                href_sub = subcat.get_attribute("href")
-                if nombre_sub and href_sub and nombre_sub != nombre_cat:
-                    print(f"    └── {nombre_sub}")
-                    resultados.append(f"    └── {nombre_sub}")
-
-        time.sleep(1)
+        time.sleep(0.4)
 
     with open("categorias_walmart_completo.txt", "w", encoding="utf-8") as f:
         for r in resultados:
             f.write(r + "\n")
 
-    print("✅ Exportado a 'categorias_walmart_completo.txt'")
+    print("\n✅ Exportado a 'categorias_walmart_completo.txt'")
 
 if __name__ == "__main__":
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=70)
+        browser = p.chromium.launch(headless=False, slow_mo=50)
         page = browser.new_page()
         if abrir_menu(page):
             extraer_categorias(page)
