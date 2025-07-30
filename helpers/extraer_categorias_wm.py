@@ -1,4 +1,3 @@
-
 from playwright.sync_api import sync_playwright
 import time
 
@@ -26,7 +25,7 @@ def extraer_categorias():
             nombre = cat.inner_text().strip()
             print(f"\n🟨 Procesando: {nombre}")
 
-            # Hover suave + trayecto realista
+            # Hover suave
             box = cat.bounding_box()
             if box:
                 x = box["x"] + box["width"] / 2
@@ -37,9 +36,8 @@ def extraer_categorias():
                     page.mouse.move(x + offset, y)
                     time.sleep(0.05)
 
-            time.sleep(1.2)  # esperar render del childrenContainer
+            time.sleep(1.2)
 
-            # Buscar subcategorías con childrenContainer si está visible
             submenu = page.locator("div.walmartcr-mega-menu-1-x-childrenContainer:visible")
             if submenu.count() > 0:
                 enlaces = submenu.locator("a:visible")
@@ -50,15 +48,42 @@ def extraer_categorias():
 
             for j in range(enlaces.count()):
                 enlace = enlaces.nth(j)
-                texto = enlace.inner_text().strip()
-                href = enlace.get_attribute("href")
-                if texto and href and not href.startswith("https://www.walmart.com"):
-                    ruta = f"{nombre} / {texto} | {href}"
-                    if ruta not in rutas:
-                        rutas.add(ruta)
-                        print(f"   🟩 {ruta}")
+                texto_2 = enlace.inner_text().strip()
+                href_2 = enlace.get_attribute("href")
 
-        # Guardar
+                # Hover sobre subcategoría
+                box2 = enlace.bounding_box()
+                if box2:
+                    x2 = box2["x"] + box2["width"] / 2
+                    y2 = box2["y"] + box2["height"] / 2
+                    page.mouse.move(x2, y2)
+                    time.sleep(0.3)
+                    for offset in range(0, 250, 30):
+                        page.mouse.move(x2 + offset, y2)
+                        time.sleep(0.05)
+
+                time.sleep(1)
+
+                # Buscar nivel 3
+                subsubmenu = page.locator("div.walmartcr-mega-menu-1-x-childrenContainer:visible").nth(1)
+                if subsubmenu and subsubmenu.locator("a:visible").count() > 0:
+                    for k in range(subsubmenu.locator("a:visible").count()):
+                        enlace_3 = subsubmenu.locator("a:visible").nth(k)
+                        texto_3 = enlace_3.inner_text().strip()
+                        href_3 = enlace_3.get_attribute("href")
+                        if texto_3 and href_3:
+                            ruta = f"{nombre} / {texto_2} / {texto_3} | {href_3}"
+                            if ruta not in rutas:
+                                rutas.add(ruta)
+                                print(f"      🟦 {ruta}")
+                else:
+                    if texto_2 and href_2:
+                        ruta = f"{nombre} / {texto_2} | {href_2}"
+                        if ruta not in rutas:
+                            rutas.add(ruta)
+                            print(f"   🟩 {ruta}")
+
+        # Guardar resultados
         with open("categorias_completas.txt", "w", encoding="utf-8") as f:
             for r in sorted(rutas):
                 f.write(r + "\n")
