@@ -1,6 +1,3 @@
-2025/07/29-22:26:32.443 1e94 Reusing MANIFEST C:\Users\dfern\source\repos\PrizioScrapperEngine-py\helpers\chrome_profile\Default\IndexedDB\https_www.walmart.co.cr_0.indexeddb.leveldb/MANIFEST-000001
-2025/07/29-22:26:32.444 1e94 Recovering log #3
-2025/07/29-22:26:32.480 1e94 Reusing old log C:\Users\dfern\source\repos\PrizioScrapperEngine-py\helpers\chrome_profile\Default\IndexedDB\https_www.walmart.co.cr_0.indexeddb.leveldb/000003.log 
-2025/07/29-22:26:32.559 1e94 Level-0 table #5: started
-2025/07/29-22:26:32.583 1e94 Level-0 table #5: 666103 bytes OK
-2025/07/29-22:26:32.587 1e94 Delete type=0 #3
+2025/07/29-22:31:10.020 4994 Reusing MANIFEST C:\Users\dfern\source\repos\PrizioScrapperEngine-py\helpers\chrome_profile\Default\IndexedDB\https_www.walmart.co.cr_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/29-22:31:10.022 4994 Recovering log #4
+2025/07/29-22:31:10.038 4994 Reusing old log C:\Users\dfern\source\repos\PrizioScrapperEngine-py\helpers\chrome_profile\Default\IndexedDB\https_www.walmart.co.cr_0.indexeddb.leveldb/000004.log 
