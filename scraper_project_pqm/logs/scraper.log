@@ -5029,3 +5029,240 @@ Call log:
 2025-07-31 08:20:58.861 | INFO     | __main__:main:38 - Scraping finalizado correctamente
 2025-07-31 08:20:58.862 | INFO     | __main__:main:39 - Procesadas 1 categorías
 2025-07-31 08:20:58.862 | INFO     | __main__:main:40 - Tiempo total: 25.35 segundos
+2025-07-31 09:11:01.198 | INFO     | __main__:main:9 - Lanzando scraper de pqm...
+2025-07-31 09:11:01.198 | INFO     | __main__:main:14 - CATEGORIAS recibidas desde el orquestador: ['/hogar/fiesta']
+2025-07-31 09:11:01.199 | INFO     | scraper:ejecutar_scraper:6 - Iniciando scraping con 1 categorías (concurrencia 3)
+2025-07-31 09:11:02.085 | INFO     | navegador:procesar_categoria:19 - Procesando: //hogar/fiesta
+2025-07-31 09:11:14.480 | INFO     | navegador:procesar_categoria:33 - 45 productos en //hogar/fiesta
+2025-07-31 09:11:14.554 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.555 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Anteojos corazón colores  13x5cm 4unds
+2025-07-31 09:11:14.555 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 200,00
+2025-07-31 09:11:14.555 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/anteojos-corazon-colores-13x5cm-4unds.html
+2025-07-31 09:11:14.556 | INFO     | navegador:procesar_categoria:69 -  SLUG  : anteojos-corazon-colores-13x5cm-4unds
+2025-07-31 09:11:14.616 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.617 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Bolsa color S 80gsm papel kraft 15x8x21cm
+2025-07-31 09:11:14.617 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡200,00
+2025-07-31 09:11:14.617 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/bolsa-color-s-80gsm-papel-kraft-15x8x21cm.html
+2025-07-31 09:11:14.618 | INFO     | navegador:procesar_categoria:69 -  SLUG  : bolsa-color-s-80gsm-papel-kraft-15x8x21cm
+2025-07-31 09:11:14.679 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.679 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Bolsa kraft S 100gsm  16x8x23cm
+2025-07-31 09:11:14.680 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡200,00
+2025-07-31 09:11:14.680 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/bolsa-papel-kraft-con-manija-s.html
+2025-07-31 09:11:14.681 | INFO     | navegador:procesar_categoria:69 -  SLUG  : bolsa-papel-kraft-con-manija-s
+2025-07-31 09:11:14.742 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.742 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Bolsa M 80gsm papel kraft 28x15x28cm
+2025-07-31 09:11:14.743 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡250,00
+2025-07-31 09:11:14.743 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/bolsa-m-80gsm-papel-kraft-28x15x28cm.html
+2025-07-31 09:11:14.743 | INFO     | navegador:procesar_categoria:69 -  SLUG  : bolsa-m-80gsm-papel-kraft-28x15x28cm
+2025-07-31 09:11:14.805 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.805 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Bolsa regalo forma cartón 18x23x10cm 6pcs
+2025-07-31 09:11:14.806 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 800,00
+2025-07-31 09:11:14.806 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/bolsa-regalo-forma-18x23x10cm-6pcs.html
+2025-07-31 09:11:14.806 | INFO     | navegador:procesar_categoria:69 -  SLUG  : bolsa-regalo-forma-18x23x10cm-6pcs
+2025-07-31 09:11:14.865 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.866 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Bolsa regalo rectangular cartón 26x32.4x12.7cm 6pcs
+2025-07-31 09:11:14.866 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2 100,00
+2025-07-31 09:11:14.867 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/bolsa-regalo-rectangular-26x32-4x12-7cm-6pcs.html
+2025-07-31 09:11:14.867 | INFO     | navegador:procesar_categoria:69 -  SLUG  : bolsa-regalo-rectangular-26x32-4x12-7cm-6pcs
+2025-07-31 09:11:14.929 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.929 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Bolsa S 80gsm papel kraft 15x8x21cm
+2025-07-31 09:11:14.930 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡200,00
+2025-07-31 09:11:14.930 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/bolsa-s-80gsm-papel-kraft-15x8x21cm.html
+2025-07-31 09:11:14.930 | INFO     | navegador:procesar_categoria:69 -  SLUG  : bolsa-s-80gsm-papel-kraft-15x8x21cm
+2025-07-31 09:11:14.988 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:14.989 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Botella champán confeti  31x9cm
+2025-07-31 09:11:14.989 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2 200,00
+2025-07-31 09:11:14.990 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/botella-champan-confeti-31x9cm.html
+2025-07-31 09:11:14.990 | INFO     | navegador:procesar_categoria:69 -  SLUG  : botella-champan-confeti-31x9cm
+2025-07-31 09:11:15.052 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.052 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Caja regalo grande  30x30x30cm
+2025-07-31 09:11:15.053 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 500,00
+2025-07-31 09:11:15.053 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/caja-d-regalo-xl-30-5x30-5x30cm.html
+2025-07-31 09:11:15.054 | INFO     | navegador:procesar_categoria:69 -  SLUG  : caja-d-regalo-xl-30-5x30-5x30cm
+2025-07-31 09:11:15.113 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.114 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Caja regalo mediana  25x25x25cm
+2025-07-31 09:11:15.114 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 500,00
+2025-07-31 09:11:15.115 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/caja-d-regalo-l-25-5x25-5x25cm.html
+2025-07-31 09:11:15.115 | INFO     | navegador:procesar_categoria:69 -  SLUG  : caja-d-regalo-l-25-5x25-5x25cm
+2025-07-31 09:11:15.177 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.178 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Candela delgadas  0.6x18.4cm 16pcs
+2025-07-31 09:11:15.178 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 200,00
+2025-07-31 09:11:15.178 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/candela-delgadas-0-6x18-4cm-16pcs.html
+2025-07-31 09:11:15.179 | INFO     | navegador:procesar_categoria:69 -  SLUG  : candela-delgadas-0-6x18-4cm-16pcs
+2025-07-31 09:11:15.241 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.242 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Candela happy birthday  1.8x0.6x2.8cm 13pcs
+2025-07-31 09:11:15.242 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡800,00
+2025-07-31 09:11:15.242 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/candela-happy-birthday-1.8x0.6x2.8cm-13pcs.html
+2025-07-31 09:11:15.243 | INFO     | navegador:procesar_categoria:69 -  SLUG  : candela-happy-birthday-1.8x0.6x2.8cm-13pcs
+2025-07-31 09:11:15.302 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.302 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Collar fiesta  80cm 12unds
+2025-07-31 09:11:15.302 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 000,00
+2025-07-31 09:11:15.303 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/collar-fiesta-80cm-12unds.html
+2025-07-31 09:11:15.303 | INFO     | navegador:procesar_categoria:69 -  SLUG  : collar-fiesta-80cm-12unds
+2025-07-31 09:11:15.359 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.360 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Collar hawaiano  10unds
+2025-07-31 09:11:15.360 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3 000,00
+2025-07-31 09:11:15.360 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/collar-hawaiano-10pcs.html
+2025-07-31 09:11:15.361 | INFO     | navegador:procesar_categoria:69 -  SLUG  : collar-hawaiano-10pcs
+2025-07-31 09:11:15.419 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.419 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Corneta plástico 19cm 2pcs
+2025-07-31 09:11:15.419 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡700,00
+2025-07-31 09:11:15.420 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/corneta-plastico-19cm-2pcs.html
+2025-07-31 09:11:15.420 | INFO     | navegador:procesar_categoria:69 -  SLUG  : corneta-plastico-19cm-2pcs
+2025-07-31 09:11:15.479 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.479 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Cortina decorativa pet 1x2m 2pcs
+2025-07-31 09:11:15.479 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 100,00
+2025-07-31 09:11:15.480 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/cortina-decorativa-1x2m-2pcs.html
+2025-07-31 09:11:15.480 | INFO     | navegador:procesar_categoria:69 -  SLUG  : cortina-decorativa-1x2m-2pcs
+2025-07-31 09:11:15.542 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.543 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración baby shower azul  10 personas
+2025-07-31 09:11:15.543 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5 500,00
+2025-07-31 09:11:15.544 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/baby-shower-kit-azul-10-personas.html
+2025-07-31 09:11:15.544 | INFO     | navegador:procesar_categoria:69 -  SLUG  : baby-shower-kit-azul-10-personas
+2025-07-31 09:11:15.592 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.593 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración baby shower rosado  10 personas
+2025-07-31 09:11:15.593 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5 500,00
+2025-07-31 09:11:15.593 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/baby-shower-kit-rosado-10-personas.html
+2025-07-31 09:11:15.593 | INFO     | navegador:procesar_categoria:69 -  SLUG  : baby-shower-kit-rosado-10-personas
+2025-07-31 09:11:15.645 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.645 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración bride to be  3pcs
+2025-07-31 09:11:15.646 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2 500,00
+2025-07-31 09:11:15.646 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/decoracion-bride-to-be-3pcs.html
+2025-07-31 09:11:15.647 | INFO     | navegador:procesar_categoria:69 -  SLUG  : decoracion-bride-to-be-3pcs
+2025-07-31 09:11:15.703 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.704 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración fiesta color  10 personas
+2025-07-31 09:11:15.704 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡2 000,00
+2025-07-31 09:11:15.705 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/fiesta-kit-color-10-personas.html
+2025-07-31 09:11:15.705 | INFO     | navegador:procesar_categoria:69 -  SLUG  : fiesta-kit-color-10-personas
+2025-07-31 09:11:15.763 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.764 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración fiesta cumpleaños  15pcs
+2025-07-31 09:11:15.764 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 100,00
+2025-07-31 09:11:15.765 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/decoracion-fiesta-cumpleanos-15pcs.html
+2025-07-31 09:11:15.765 | INFO     | navegador:procesar_categoria:69 -  SLUG  : decoracion-fiesta-cumpleanos-15pcs
+2025-07-31 09:11:15.823 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.823 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración fiesta estrellas  10 personas
+2025-07-31 09:11:15.824 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5 500,00
+2025-07-31 09:11:15.824 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/kit-fiesta-estrella.html
+2025-07-31 09:11:15.824 | INFO     | navegador:procesar_categoria:69 -  SLUG  : kit-fiesta-estrella
+2025-07-31 09:11:15.880 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.880 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración fiesta fin año  10 personas
+2025-07-31 09:11:15.880 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡14 000,00
+2025-07-31 09:11:15.881 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/decoracion-fiesta-fin-año-10-personas.html
+2025-07-31 09:11:15.881 | INFO     | navegador:procesar_categoria:69 -  SLUG  : decoracion-fiesta-fin-año-10-personas
+2025-07-31 09:11:15.943 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:15.943 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración fiesta navidad  10 personas
+2025-07-31 09:11:15.945 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡14 000,00
+2025-07-31 09:11:15.945 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/decoracion-fiesta-navidad-10-personas.html
+2025-07-31 09:11:15.945 | INFO     | navegador:procesar_categoria:69 -  SLUG  : decoracion-fiesta-navidad-10-personas
+2025-07-31 09:11:16.004 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.005 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración fiesta pirata  10 personas
+2025-07-31 09:11:16.005 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5 500,00
+2025-07-31 09:11:16.006 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/kit-fiesta-pirata.html
+2025-07-31 09:11:16.006 | INFO     | navegador:procesar_categoria:69 -  SLUG  : kit-fiesta-pirata
+2025-07-31 09:11:16.070 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.070 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Decoración fiesta princesa  10 personas
+2025-07-31 09:11:16.071 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡5 500,00
+2025-07-31 09:11:16.071 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/kit-fiesta-princesa.html
+2025-07-31 09:11:16.072 | INFO     | navegador:procesar_categoria:69 -  SLUG  : kit-fiesta-princesa
+2025-07-31 09:11:16.128 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.130 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Globo happy birthday  16in 13unds
+2025-07-31 09:11:16.130 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡700,00
+2025-07-31 09:11:16.131 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/globo-met-happy-bday.html
+2025-07-31 09:11:16.131 | INFO     | navegador:procesar_categoria:69 -  SLUG  : globo-met-happy-bday
+2025-07-31 09:11:16.187 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.187 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Globo largo Látex 30cm 100pcs
+2025-07-31 09:11:16.188 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 600,00
+2025-07-31 09:11:16.188 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/globos-largos-para-fiesta.html
+2025-07-31 09:11:16.189 | INFO     | navegador:procesar_categoria:69 -  SLUG  : globos-largos-para-fiesta
+2025-07-31 09:11:16.250 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.250 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Globo redondo colores Látex 9in 100unds
+2025-07-31 09:11:16.251 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 700,00
+2025-07-31 09:11:16.251 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/globos-redondos-para-fiesta.html
+2025-07-31 09:11:16.251 | INFO     | navegador:procesar_categoria:69 -  SLUG  : globos-redondos-para-fiesta
+2025-07-31 09:11:16.302 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.302 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Guirnalda feliz cumpleaños  2.7m 13unds
+2025-07-31 09:11:16.303 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡500,00
+2025-07-31 09:11:16.303 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/guirnalda-feliz-cumpleanos-2.7m-13unds.html
+2025-07-31 09:11:16.303 | INFO     | navegador:procesar_categoria:69 -  SLUG  : guirnalda-feliz-cumpleanos-2.7m-13unds
+2025-07-31 09:11:16.364 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.364 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Guirnalda flecos colores  1.3m 12unds
+2025-07-31 09:11:16.365 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡700,00
+2025-07-31 09:11:16.365 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/guirnalda-flecos-colores-1.3m-12unds.html
+2025-07-31 09:11:16.366 | INFO     | navegador:procesar_categoria:69 -  SLUG  : guirnalda-flecos-colores-1.3m-12unds
+2025-07-31 09:11:16.423 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.424 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Guirnalda pompones  1.8m 3unds
+2025-07-31 09:11:16.424 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 500,00
+2025-07-31 09:11:16.424 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/guirnalda-pompones-1.8m-3pcs.html
+2025-07-31 09:11:16.425 | INFO     | navegador:procesar_categoria:69 -  SLUG  : guirnalda-pompones-1.8m-3pcs
+2025-07-31 09:11:16.482 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.482 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Inflador globo y balón  27.5x5cm 2pcs
+2025-07-31 09:11:16.483 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 000,00
+2025-07-31 09:11:16.483 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/inflador-globo-balon-27-5x5cm-2pcs.html
+2025-07-31 09:11:16.484 | INFO     | navegador:procesar_categoria:69 -  SLUG  : inflador-globo-balon-27-5x5cm-2pcs
+2025-07-31 09:11:16.539 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.539 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Lazo regalo  10cm 20unds
+2025-07-31 09:11:16.540 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 200,00
+2025-07-31 09:11:16.540 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/lazos-regalo-10cm-20-und.html
+2025-07-31 09:11:16.540 | INFO     | navegador:procesar_categoria:69 -  SLUG  : lazos-regalo-10cm-20-und
+2025-07-31 09:11:16.599 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.599 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Lazo regalo  5cm 50unds
+2025-07-31 09:11:16.600 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 500,00
+2025-07-31 09:11:16.600 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/lazo-25cm-50-pcs.html
+2025-07-31 09:11:16.600 | INFO     | navegador:procesar_categoria:69 -  SLUG  : lazo-25cm-50-pcs
+2025-07-31 09:11:16.661 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.662 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Mantel 1.3x2.7m 2pcs
+2025-07-31 09:11:16.662 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 400,00
+2025-07-31 09:11:16.662 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/mantel-1-3x2-7m-2pcs.html
+2025-07-31 09:11:16.663 | INFO     | navegador:procesar_categoria:69 -  SLUG  : mantel-1-3x2-7m-2pcs
+2025-07-31 09:11:16.719 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.719 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Máquina burbujas  24x13x13cm
+2025-07-31 09:11:16.720 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡9 500,00
+2025-07-31 09:11:16.721 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/maquina-burbujas-24x13x13cm.html
+2025-07-31 09:11:16.721 | INFO     | navegador:procesar_categoria:69 -  SLUG  : maquina-burbujas-24x13x13cm
+2025-07-31 09:11:16.784 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.784 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Pulsera luminosa  12pcs
+2025-07-31 09:11:16.784 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡600,00
+2025-07-31 09:11:16.784 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/pulseras-fluorescentes-12-und.html
+2025-07-31 09:11:16.785 | INFO     | navegador:procesar_categoria:69 -  SLUG  : pulseras-fluorescentes-12-und
+2025-07-31 09:11:16.840 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.841 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Pulsera y collar luminoso  18pcs
+2025-07-31 09:11:16.841 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡1 800,00
+2025-07-31 09:11:16.841 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/set-fluorescente-18-unidades.html
+2025-07-31 09:11:16.843 | INFO     | navegador:procesar_categoria:69 -  SLUG  : set-fluorescente-18-unidades
+2025-07-31 09:11:16.896 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.896 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Spray serpentina  250ml
+2025-07-31 09:11:16.897 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡500,00
+2025-07-31 09:11:16.897 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/spray-serpentina-250ml.html
+2025-07-31 09:11:16.897 | INFO     | navegador:procesar_categoria:69 -  SLUG  : spray-serpentina-250ml
+2025-07-31 09:11:16.951 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:16.952 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Tubo confeti metálico  30cm
+2025-07-31 09:11:16.952 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡450,00
+2025-07-31 09:11:16.952 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/tubo-con-confetti-metalico-20g.html
+2025-07-31 09:11:16.953 | INFO     | navegador:procesar_categoria:69 -  SLUG  : tubo-con-confetti-metalico-20g
+2025-07-31 09:11:17.008 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:17.009 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Tubo confeti metálico  60cm
+2025-07-31 09:11:17.009 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡700,00
+2025-07-31 09:11:17.009 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/tubo-con-confetti-metalico-40g.html
+2025-07-31 09:11:17.010 | INFO     | navegador:procesar_categoria:69 -  SLUG  : tubo-con-confetti-metalico-40g
+2025-07-31 09:11:17.067 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:17.068 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vasos desechables cartón 9oz 20pcs
+2025-07-31 09:11:17.068 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡500,00
+2025-07-31 09:11:17.069 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vasos-desechables-9oz-20pcs.html
+2025-07-31 09:11:17.069 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vasos-desechables-9oz-20pcs
+2025-07-31 09:11:17.128 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:17.129 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vasos shot luz plástico 70ml 10pcs
+2025-07-31 09:11:17.129 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡3 800,00
+2025-07-31 09:11:17.130 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vasos-shot-luz-plastico-70ml-10pcs.html
+2025-07-31 09:11:17.130 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vasos-shot-luz-plastico-70ml-10pcs
+2025-07-31 09:11:17.178 | INFO     | navegador:procesar_categoria:65 - ─────────────
+2025-07-31 09:11:17.179 | INFO     | navegador:procesar_categoria:66 -  NOMBRE: Vuvuzela plástico 56cm 2pcs
+2025-07-31 09:11:17.180 | INFO     | navegador:procesar_categoria:67 -  PRECIO: ₡700,00
+2025-07-31 09:11:17.180 | INFO     | navegador:procesar_categoria:68 -  URL   : https://tienda.pequenomundo.com/vuvuzela-plastico-56cm-2-pcs.html
+2025-07-31 09:11:17.180 | INFO     | navegador:procesar_categoria:69 -  SLUG  : vuvuzela-plastico-56cm-2-pcs
+2025-07-31 09:11:17.279 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 09:11:17.371 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 45 productos en la base de datos.
+2025-07-31 09:11:17.372 | INFO     | navegador:procesar_categoria:87 - 45 productos guardados de /hogar/fiesta
+2025-07-31 09:11:17.391 | INFO     | scraper:ejecutar_scraper:9 - Scraping finalizado correctamente
+2025-07-31 09:11:17.391 | INFO     | __main__:main:38 - Scraping finalizado correctamente
+2025-07-31 09:11:17.392 | INFO     | __main__:main:39 - Procesadas 1 categorías
+2025-07-31 09:11:17.392 | INFO     | __main__:main:40 - Tiempo total: 16.19 segundos
