@@ -24,3 +24,9 @@ docker tag scraper-pqm prizioacr.azurecr.io/scraper-pqm:latest
 3:
 docker push prizioacr.azurecr.io/scraper-wm:latest
 docker push prizioacr.azurecr.io/scraper-pqm:latest
+
+
+
+----
+ . .\.venv\Scripts\Activate.ps1
+ 
