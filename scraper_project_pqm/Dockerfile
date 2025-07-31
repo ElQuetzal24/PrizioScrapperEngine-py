@@ -21,4 +21,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN playwright install --with-deps
 
 # Ejecutar el script principal
-CMD ["python", "entrypoint.py"]
+ENTRYPOINT  ["python", "entrypoint.py"]

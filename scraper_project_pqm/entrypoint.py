@@ -40,12 +40,9 @@ async def main(categorias):
         logger.info(f"Tiempo total: {round(fin - inicio, 2)} segundos")
 
 if __name__ == "__main__":
-    # En producción, el orquestador pasará las categorías, así que no es necesario asignarlas manualmente.
-    categorias_fn = None  # En producción, esto será reemplazado por el orquestador
+    #categorias_fn = None Simulación local
+    #if categorias_fn is None: Simulación local
+        #categorias_fn = ["/hogar/fiesta"]  Simulación local  
 
-    if categorias_fn is None:
-        # Simulación local: cuando las categorías no provienen del orquestador (en producción se omite)
-        categorias_fn = ["/hogar/fiesta"]  # Simulando que el orquestador pasa estas categorías
-
-    asyncio.run(main(categorias_fn))
-
+    #asyncio.run(main(categorias_fn)) Simulación local
+    asyncio.run(main([]))
