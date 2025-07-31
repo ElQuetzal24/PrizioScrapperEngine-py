@@ -41,10 +41,10 @@ async def run():
 
         # Guardar en JSON
         rutas_ordenadas = sorted(rutas)
-        with open("categorias.json", "w", encoding="utf-8") as f:
+        with open("categorias_pqm.json", "w", encoding="utf-8") as f:
             json.dump(rutas_ordenadas, f, ensure_ascii=False, indent=2)
 
-        print(f"\n {len(rutas_ordenadas)} rutas exportadas a categorias.json")
+        print(f"\n {len(rutas_ordenadas)} rutas exportadas a categorias_pqm.json")
         await browser.close()
 
 if __name__ == "__main__":
