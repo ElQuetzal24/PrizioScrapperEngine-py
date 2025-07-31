@@ -15,32 +15,35 @@ def obtener_conexion_sql():
     )
 
 def guardar_productos_scrapeados(productos: list):
+    if not productos:
+        logger.warning("No hay productos para guardar.")
+        return
+
     try:
         logger.debug(f"SQL_SERVER desde .env: {os.getenv('SQL_SERVER')}")
         conn = obtener_conexion_sql()
         cursor = conn.cursor()
 
-        registros = [
-            (
+        for p in productos:
+            cursor.execute("""
+                EXEC usp_ProductosScrapeados_Guardar ?, ?, ?, ?, ?, ?, ?
+            """, (
                 p.get("nombre", ""),
                 p.get("precio", ""),
                 p.get("url", ""),
                 p.get("slug", ""),
                 p.get("categoria", ""),
-                p.get("imagen", "")
-            )
-            for p in productos
-        ]
-
-        cursor.executemany("""
-            INSERT INTO ProductosScrapeadosSimple (Nombre, Precio, Url, Slug, Categoria, ImagenUrl)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, registros)
+                p.get("imagen", ""),
+                "WalmartAPI"  # codigoorigen
+            ))
 
         conn.commit()
-        cursor.close()
-        conn.close()
-
         logger.info(f"Guardados {len(productos)} productos en la base de datos.")
     except Exception as e:
-        logger.error(f"Error al guardar productos en la base de datos: {e}")
+        logger.error(f"Error al guardar productos con SP: {e}")
+    finally:
+        try:
+            cursor.close()
+            conn.close()
+        except Exception as e:
+            logger.warning(f"Error al cerrar conexión: {e}")

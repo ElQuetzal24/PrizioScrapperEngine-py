@@ -250,3 +250,193 @@
 2025-07-13 20:21:21.121 | INFO     | __main__:main:16 - Scraping finalizado correctamente
 2025-07-13 20:21:21.121 | INFO     | __main__:main:17 - Procesadas 1 categorías
 2025-07-13 20:21:21.121 | INFO     | __main__:main:18 - Tiempo total: 84.39 segundos
+2025-07-31 08:39:34.244 | INFO     | __main__:main:10 - Lanzando scraper de pqm...
+2025-07-31 08:39:34.254 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:39:34.254 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:39:35.247 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:40:05.274 | ERROR    | extractor:procesar_categoria:145 - Error procesando categoría lo-nuevo: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.walmart.co.cr/lo-nuevo", waiting until "load"
+
+2025-07-31 08:40:05.381 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:40:05.381 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:40:05.382 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:40:05.382 | INFO     | __main__:main:41 - Tiempo total: 31.13 segundos
+2025-07-31 08:41:22.160 | INFO     | __main__:main:10 - Lanzando scraper de pqm...
+2025-07-31 08:41:22.161 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:41:22.161 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:41:23.997 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:41:29.563 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 08:41:29.832 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 28 productos visibles
+2025-07-31 08:41:29.832 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 28
+2025-07-31 08:41:36.870 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: svr-scai-prod.database.windows.net
+2025-07-31 08:41:37.763 | ERROR    | db:guardar_productos_scrapeados:43 - Error al guardar productos con SP: ('28000', '[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user \'usrPricingdev\'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open database "Scrap_db" requested by the login. The login failed. (4060); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user \'usrPricingdev\'. (18456); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open database "Scrap_db" requested by the login. The login failed. (4060)')
+2025-07-31 08:41:37.764 | WARNING  | db:guardar_productos_scrapeados:49 - Error al cerrar conexión: cannot access local variable 'cursor' where it is not associated with a value
+2025-07-31 08:41:38.289 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:41:38.290 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:41:38.290 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:41:38.290 | INFO     | __main__:main:41 - Tiempo total: 16.13 segundos
+2025-07-31 08:42:23.833 | INFO     | __main__:main:10 - Lanzando scraper de pqm...
+2025-07-31 08:42:23.833 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:42:23.834 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:42:25.050 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:42:28.579 | ERROR    | extractor:procesar_categoria:145 - Error procesando categoría lo-nuevo: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.walmart.co.cr/lo-nuevo", waiting until "load"
+
+2025-07-31 08:42:29.102 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:42:29.103 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:42:29.103 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:42:29.103 | INFO     | __main__:main:41 - Tiempo total: 5.27 segundos
+2025-07-31 08:42:38.685 | INFO     | __main__:main:10 - Lanzando scraper de wal...
+2025-07-31 08:42:38.685 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:42:38.685 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:42:39.869 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:42:45.391 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 08:42:45.642 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 28 productos visibles
+2025-07-31 08:42:45.643 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 28
+2025-07-31 08:42:53.108 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 08:42:53.185 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 28 productos en la base de datos.
+2025-07-31 08:42:53.629 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:42:53.629 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:42:53.629 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:42:53.630 | INFO     | __main__:main:41 - Tiempo total: 14.94 segundos
+2025-07-31 08:48:12.555 | INFO     | __main__:main:10 - Lanzando scraper de wal...
+2025-07-31 08:48:12.556 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:48:12.556 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:48:13.800 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:48:19.190 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 08:48:19.473 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 28 productos visibles
+2025-07-31 08:48:19.474 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 28
+2025-07-31 08:48:27.411 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 08:48:27.491 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 28 productos en la base de datos.
+2025-07-31 08:48:27.995 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:48:27.995 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:48:27.995 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:48:27.996 | INFO     | __main__:main:41 - Tiempo total: 15.44 segundos
+2025-07-31 08:51:07.358 | INFO     | __main__:main:10 - Lanzando scraper de pqm...
+2025-07-31 08:51:07.358 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['/hogar/fiesta']
+2025-07-31 08:51:07.359 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:51:08.598 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: /hogar/fiesta
+2025-07-31 08:51:15.631 | ERROR    | extractor:procesar_categoria:145 - Error procesando categoría /hogar/fiesta: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator(".vtex-search-result-3-x-galleryItem") to be visible
+
+2025-07-31 08:51:16.060 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:51:16.060 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:51:16.061 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:51:16.061 | INFO     | __main__:main:41 - Tiempo total: 8.7 segundos
+2025-07-31 08:51:36.028 | INFO     | __main__:main:10 - Lanzando scraper de pqm...
+2025-07-31 08:51:36.028 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:51:36.028 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:51:37.212 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:51:46.475 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 28 productos visibles
+2025-07-31 08:51:46.847 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 28 productos visibles
+2025-07-31 08:51:46.848 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 28
+2025-07-31 08:51:53.942 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 08:51:54.011 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 25 productos en la base de datos.
+2025-07-31 08:51:54.466 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:51:54.466 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:51:54.467 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:51:54.467 | INFO     | __main__:main:41 - Tiempo total: 18.44 segundos
+2025-07-31 08:52:41.321 | INFO     | __main__:main:10 - Lanzando scraper de pqm...
+2025-07-31 08:52:41.321 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:52:41.321 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:52:42.668 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:52:47.987 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 08:52:48.277 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 8 productos visibles
+2025-07-31 08:52:48.277 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 8
+2025-07-31 08:52:54.690 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 08:52:54.761 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 8 productos en la base de datos.
+2025-07-31 08:52:55.136 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:52:55.136 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:52:55.136 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:52:55.136 | INFO     | __main__:main:41 - Tiempo total: 13.81 segundos
+2025-07-31 08:53:22.906 | INFO     | __main__:main:10 - Lanzando scraper de pqm...
+2025-07-31 08:53:22.907 | INFO     | __main__:main:15 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:53:22.907 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:53:24.220 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:53:29.831 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 08:53:30.081 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 8 productos visibles
+2025-07-31 08:53:30.082 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 8
+2025-07-31 08:53:36.593 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 08:53:36.675 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 8 productos en la base de datos.
+2025-07-31 08:53:37.178 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:53:37.179 | INFO     | __main__:main:39 - Scraping finalizado correctamente
+2025-07-31 08:53:37.179 | INFO     | __main__:main:40 - Procesadas 1 categorías
+2025-07-31 08:53:37.179 | INFO     | __main__:main:41 - Tiempo total: 14.27 segundos
+2025-07-31 08:54:10.141 | INFO     | __main__:main:10 - Lanzando scraper de Walmart
+2025-07-31 08:54:10.141 | INFO     | __main__:main:27 - Usando categorías por defecto (1): ['lo-nuevo']...
+2025-07-31 08:54:10.141 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:54:11.322 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:54:16.876 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 08:54:17.160 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 28 productos visibles
+2025-07-31 08:54:17.160 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 28
+2025-07-31 08:54:24.531 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 08:54:24.586 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 28 productos en la base de datos.
+2025-07-31 08:54:25.049 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 08:54:25.049 | INFO     | __main__:main:33 - Scraping finalizado correctamente
+2025-07-31 08:54:25.050 | INFO     | __main__:main:34 - Procesadas 1 categorías
+2025-07-31 08:54:25.050 | INFO     | __main__:main:35 - Tiempo total: 14.91 segundos
+2025-07-31 08:59:51.221 | INFO     | __main__:main:27 - Lanzando scraper de wal...
+2025-07-31 08:59:51.222 | INFO     | __main__:main:31 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 08:59:51.222 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 08:59:52.447 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 08:59:58.045 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 08:59:58.341 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 28 productos visibles
+2025-07-31 08:59:58.351 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (2). Productos detectados: 28
+2025-07-31 09:00:05.720 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 09:00:05.807 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 28 productos en la base de datos.
+2025-07-31 09:00:06.260 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 09:00:06.260 | INFO     | __main__:main:52 - Scraping finalizado correctamente
+2025-07-31 09:00:06.260 | INFO     | __main__:main:53 - Procesadas 1 categorías
+2025-07-31 09:00:06.261 | INFO     | __main__:main:54 - Tiempo total: 15.04 segundos
+2025-07-31 09:04:13.830 | INFO     | __main__:main:27 - Lanzando scraper de wal...
+2025-07-31 09:04:13.830 | INFO     | __main__:main:31 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 09:04:13.831 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 09:04:15.022 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 09:04:20.610 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 8 productos visibles
+2025-07-31 09:04:20.884 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 28 productos visibles
+2025-07-31 09:04:21.310 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 3: 28 productos visibles
+2025-07-31 09:04:22.002 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 4: 28 productos visibles
+2025-07-31 09:04:22.002 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (4). Productos detectados: 28
+2025-07-31 09:04:28.885 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 09:04:28.983 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 28 productos en la base de datos.
+2025-07-31 09:04:29.501 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 09:04:29.502 | INFO     | __main__:main:52 - Scraping finalizado correctamente
+2025-07-31 09:04:29.502 | INFO     | __main__:main:53 - Procesadas 1 categorías
+2025-07-31 09:04:29.502 | INFO     | __main__:main:54 - Tiempo total: 15.67 segundos
+2025-07-31 09:08:17.744 | INFO     | __main__:main:27 - Lanzando scraper de wal...
+2025-07-31 09:08:17.745 | INFO     | __main__:main:31 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 09:08:17.745 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 09:08:18.977 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 09:08:29.386 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 52 productos visibles
+2025-07-31 09:08:35.174 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 96 productos visibles
+2025-07-31 09:08:41.565 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 3: 120 productos visibles
+2025-07-31 09:08:46.770 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 4: 140 productos visibles
+2025-07-31 09:08:52.022 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 5: 190 productos visibles
+2025-07-31 09:09:00.521 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 6: 220 productos visibles
+2025-07-31 09:09:00.521 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (6). Productos detectados: 220
+2025-07-31 09:09:17.722 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 09:09:17.880 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 220 productos en la base de datos.
+2025-07-31 09:09:18.592 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 09:09:18.593 | INFO     | __main__:main:52 - Scraping finalizado correctamente
+2025-07-31 09:09:18.593 | INFO     | __main__:main:53 - Procesadas 1 categorías
+2025-07-31 09:09:18.593 | INFO     | __main__:main:54 - Tiempo total: 60.85 segundos
+2025-07-31 10:08:43.249 | INFO     | __main__:main:27 - Lanzando scraper de wal...
+2025-07-31 10:08:43.250 | INFO     | __main__:main:31 - CATEGORIAS recibidas desde el orquestador: ['lo-nuevo']
+2025-07-31 10:08:43.250 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-07-31 10:08:44.049 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-07-31 10:09:01.673 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 64 productos visibles
+2025-07-31 10:09:06.853 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 96 productos visibles
+2025-07-31 10:09:12.558 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 3: 128 productos visibles
+2025-07-31 10:09:17.677 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 4: 146 productos visibles
+2025-07-31 10:09:23.376 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 5: 164 productos visibles
+2025-07-31 10:09:31.969 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 6: 200 productos visibles
+2025-07-31 10:09:31.969 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (6). Productos detectados: 200
+2025-07-31 10:09:50.301 | DEBUG    | db:guardar_productos_scrapeados:23 - SQL_SERVER desde .env: DESKTOP-S5C78JU
+2025-07-31 10:09:50.518 | INFO     | db:guardar_productos_scrapeados:41 - Guardados 200 productos en la base de datos.
+2025-07-31 10:09:50.690 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-07-31 10:09:50.690 | INFO     | __main__:main:52 - Scraping finalizado correctamente
+2025-07-31 10:09:50.691 | INFO     | __main__:main:53 - Procesadas 1 categorías
+2025-07-31 10:09:50.691 | INFO     | __main__:main:54 - Tiempo total: 67.44 segundos

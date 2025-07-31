@@ -8,10 +8,10 @@ async def lanzar_navegador():
 
 async def scroll_hasta_cargar_todos(page):
     productos_previos = -1
-    ciclos_sin_cambio = 0
-    max_sin_cambio = 2
-    max_ciclos = 2  # máximo de intentos para evitar bucles infinitos
-    velocidad_scroll = 200  # milisegundos entre ciclos
+    ciclos_sin_cambio = 4
+    max_sin_cambio = 6
+    max_ciclos = 6  # máximo de intentos para evitar bucles infinitos
+    velocidad_scroll = 5000   # milisegundos entre ciclos -5 segundos
 
     for ciclo in range(max_ciclos):
         try:
