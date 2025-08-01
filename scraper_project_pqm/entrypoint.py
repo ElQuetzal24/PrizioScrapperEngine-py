@@ -1,6 +1,9 @@
 import asyncio
 import os
 import time
+import sys
+import json
+
 from scraper import ejecutar_scraper
 from categorias import CATEGORIAS
 from logger import logger
@@ -9,11 +12,9 @@ async def main(categorias):
     logger.info("Lanzando scraper de pqm...")
     inicio = time.time()
 
-    # Si las categorías vienen desde el orquestador, las usamos
     if categorias:
-        logger.info(f"CATEGORIAS recibidas desde el orquestador: {categorias}")
+        logger.info(f"CATEGORIAS recibidas desde sys.argv: {categorias}")
     else:
-        # Si no, seguimos con las categorías de las variables de entorno o por defecto
         categorias_env = os.getenv("CATEGORIAS")
         if categorias_env:
             categorias = [cat.strip() for cat in categorias_env.split(",") if cat.strip()]
@@ -24,7 +25,6 @@ async def main(categorias):
 
     concurrencia_env = os.getenv("CONCURRENCIA", "3")
 
-    # Parsear concurrencia
     try:
         concurrencia = int(concurrencia_env)
     except ValueError:
@@ -40,9 +40,17 @@ async def main(categorias):
         logger.info(f"Tiempo total: {round(fin - inicio, 2)} segundos")
 
 if __name__ == "__main__":
-    #categorias_fn = None Simulación local
-    #if categorias_fn is None: Simulación local
-        #categorias_fn = ["/hogar/fiesta"]  Simulación local  
+    categorias = []
 
-    #asyncio.run(main(categorias_fn)) Simulación local
-    asyncio.run(main([]))
+    if len(sys.argv) > 1:
+        try:
+            raw_arg = sys.argv[1]
+            logger.info(f"sys.argv: {sys.argv}")
+            if raw_arg.startswith("[") and raw_arg.endswith("]"):
+                categorias = json.loads(raw_arg)
+            else:
+                categorias = [cat.strip() for cat in raw_arg.split(",") if cat.strip()]
+        except Exception as e:
+            logger.warning(f"Error interpretando sys.argv[1]: {e}")
+
+    asyncio.run(main(categorias))

@@ -28,5 +28,38 @@ docker push prizioacr.azurecr.io/scraper-pqm:latest
 
 
 ----
+
  . .\.venv\Scripts\Activate.ps1
+
+
+ pip install -r requirements.txt
+
+# probar localmente pqm
+python entrypoint.py "/hogar,/ferreteria"
+
  
+ # probar localmente wm
+python entrypoint.py "lo-nuevo"
+
+#docker
+docker build -t prizio-scraper-wm:latest .
+#Ejecutá el contenedor
+docker run --rm -it --env-file .env prizio-scraper-wm:latest "lo-nuevo"
+
+#Opción B – Probar con volumen (si necesitás acceso al código)
+docker run --rm -it -v ${PWD}:/app --env-file .env prizio-scraper-wm:latest "lo-nuevo"
+#Esto monta tu código local dentro del contenedor (/app), útil si estás probando ajustes sin rebuild constante.
+
+
+.\deploy.ps1
+
+
+
+##actualizar la imagen correcta 
+(.venv) PS C:\Users\dfern\source\repos\PrizioScrapperEngine-py\scraper_project_wm> az containerapp job update `
+>>   --name scraper-wal-job `
+>>   --resource-group rsgbethel `
+>>   --image acrprizio-atceczg7a7atfpew.azurecr.io/scraper-wm:V1.0.0  
+
+
+ az account get-access-token --resource https://management.azure.com/
