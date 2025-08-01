@@ -440,3 +440,68 @@ Call log:
 2025-07-31 10:09:50.690 | INFO     | __main__:main:52 - Scraping finalizado correctamente
 2025-07-31 10:09:50.691 | INFO     | __main__:main:53 - Procesadas 1 categorías
 2025-07-31 10:09:50.691 | INFO     | __main__:main:54 - Tiempo total: 67.44 segundos
+2025-08-01 01:57:05.339 | INFO     | __main__:<module>:96 - CATEGORIAS desde sys.argv: ['farmacia']
+2025-08-01 01:57:05.340 | INFO     | __main__:main:25 -  scraper de wal...
+2025-08-01 01:57:05.340 | INFO     | __main__:main:28 - == DEBUG ENV ==
+2025-08-01 01:57:05.341 | INFO     | __main__:main:29 - srgv: ['entrypoint.py', 'farmacia']
+2025-08-01 01:57:05.343 | INFO     | __main__:main:30 - os.environ['CATEGORIAS']: None
+2025-08-01 01:57:05.344 | INFO     | __main__:main:31 - categorias parámetro inicial: ['farmacia']
+2025-08-01 01:57:05.345 | INFO     | __main__:main:32 - ================
+2025-08-01 01:57:05.346 | INFO     | __main__:main:33 - DEBUG sys.argv completo: ['entrypoint.py', 'farmacia']
+2025-08-01 01:57:05.347 | INFO     | __main__:main:41 - CATEGORIAS recibidas desde argumento: ['farmacia']
+2025-08-01 01:57:05.349 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-08-01 01:57:07.176 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: farmacia
+2025-08-01 01:57:07.260 | ERROR    | extractor:procesar_categoria:145 - Error procesando categoría farmacia: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.walmart.co.cr/farmacia
+Call log:
+  - navigating to "https://www.walmart.co.cr/farmacia", waiting until "load"
+
+2025-08-01 01:57:07.400 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-08-01 01:57:07.400 | INFO     | __main__:main:73 - Scraping finalizado correctamente
+2025-08-01 01:57:07.401 | INFO     | __main__:main:74 - Procesadas 1 categorías
+2025-08-01 01:57:07.402 | INFO     | __main__:main:75 - Tiempo total: 2.06 segundos
+2025-08-01 02:07:51.732 | INFO     | __main__:<module>:96 - CATEGORIAS desde sys.argv: ['farmacia']
+2025-08-01 02:07:51.733 | INFO     | __main__:main:25 -  scraper de wal...
+2025-08-01 02:07:51.733 | INFO     | __main__:main:28 - == DEBUG ENV ==
+2025-08-01 02:07:51.734 | INFO     | __main__:main:29 - srgv: ['entrypoint.py', 'farmacia']
+2025-08-01 02:07:51.735 | INFO     | __main__:main:30 - os.environ['CATEGORIAS']: None
+2025-08-01 02:07:51.736 | INFO     | __main__:main:31 - categorias parámetro inicial: ['farmacia']
+2025-08-01 02:07:51.737 | INFO     | __main__:main:32 - ================
+2025-08-01 02:07:51.738 | INFO     | __main__:main:33 - DEBUG sys.argv completo: ['entrypoint.py', 'farmacia']
+2025-08-01 02:07:51.739 | INFO     | __main__:main:41 - CATEGORIAS recibidas desde argumento: ['farmacia']
+2025-08-01 02:07:51.740 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-08-01 02:07:52.456 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: farmacia
+2025-08-01 02:07:53.351 | ERROR    | extractor:procesar_categoria:145 - Error procesando categoría farmacia: Page.goto: net::ERR_ABORTED at https://www.walmart.co.cr/farmacia
+Call log:
+  - navigating to "https://www.walmart.co.cr/farmacia", waiting until "load"
+
+2025-08-01 02:07:53.369 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-08-01 02:07:53.370 | INFO     | __main__:main:73 - Scraping finalizado correctamente
+2025-08-01 02:07:53.370 | INFO     | __main__:main:74 - Procesadas 1 categorías
+2025-08-01 02:07:53.371 | INFO     | __main__:main:75 - Tiempo total: 1.64 segundos
+2025-08-01 02:32:27.051 | INFO     | __main__:<module>:106 - CATEGORIAS fallback como texto plano: ['lo-nuevo']
+2025-08-01 02:32:27.052 | INFO     | __main__:main:28 -  scraper de wal...
+2025-08-01 02:32:27.053 | INFO     | __main__:main:31 - == DEBUG ENV ==
+2025-08-01 02:32:27.054 | INFO     | __main__:main:32 - srgv: ['entrypoint.py', 'lo-nuevo']
+2025-08-01 02:32:27.055 | INFO     | __main__:main:33 - os.environ['CATEGORIAS']: None
+2025-08-01 02:32:27.056 | INFO     | __main__:main:34 - categorias parámetro inicial: ['lo-nuevo']
+2025-08-01 02:32:27.056 | INFO     | __main__:main:35 - ================
+2025-08-01 02:32:27.057 | INFO     | __main__:main:36 - DEBUG sys.argv completo: ['entrypoint.py', 'lo-nuevo']
+2025-08-01 02:32:42.611 | INFO     | __main__:<module>:96 - CATEGORIAS desde sys.argv: ['lo-nuevo']
+2025-08-01 02:32:42.612 | INFO     | __main__:main:25 -  scraper de wal...
+2025-08-01 02:32:42.613 | INFO     | __main__:main:28 - == DEBUG ENV ==
+2025-08-01 02:32:42.615 | INFO     | __main__:main:29 - srgv: ['entrypoint.py', 'lo-nuevo']
+2025-08-01 02:32:42.616 | INFO     | __main__:main:30 - os.environ['CATEGORIAS']: None
+2025-08-01 02:32:42.617 | INFO     | __main__:main:31 - categorias parámetro inicial: ['lo-nuevo']
+2025-08-01 02:32:42.619 | INFO     | __main__:main:32 - ================
+2025-08-01 02:32:42.620 | INFO     | __main__:main:33 - DEBUG sys.argv completo: ['entrypoint.py', 'lo-nuevo']
+2025-08-01 02:32:42.622 | INFO     | __main__:main:41 - CATEGORIAS recibidas desde argumento: ['lo-nuevo']
+2025-08-01 02:32:42.623 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-08-01 02:32:43.607 | INFO     | extractor:procesar_categoria:138 - Procesando categoría: lo-nuevo
+2025-08-01 02:32:47.287 | ERROR    | extractor:procesar_categoria:145 - Error procesando categoría lo-nuevo: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.walmart.co.cr/lo-nuevo", waiting until "load"
+
+2025-08-01 02:32:47.316 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-08-01 02:32:47.317 | INFO     | __main__:main:73 - Scraping finalizado correctamente
+2025-08-01 02:32:47.321 | INFO     | __main__:main:74 - Procesadas 1 categorías
+2025-08-01 02:32:47.322 | INFO     | __main__:main:75 - Tiempo total: 4.7 segundos
