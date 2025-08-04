@@ -505,3 +505,95 @@ Call log:
 2025-08-01 02:32:47.317 | INFO     | __main__:main:73 - Scraping finalizado correctamente
 2025-08-01 02:32:47.321 | INFO     | __main__:main:74 - Procesadas 1 categorías
 2025-08-01 02:32:47.322 | INFO     | __main__:main:75 - Tiempo total: 4.7 segundos
+2025-08-04 09:50:15.710 | INFO     | __main__:<module>:95 - CATEGORIAS desde sys.argv: ['/electronica/audio']
+2025-08-04 09:50:15.712 | INFO     | __main__:main:25 -  scraper de wal...
+2025-08-04 09:50:15.712 | INFO     | __main__:main:28 - 1== DEBUG ENV ==
+2025-08-04 09:50:15.712 | INFO     | __main__:main:29 - 2 srgv: ['entrypoint.py', '/electronica/audio']
+2025-08-04 09:50:15.715 | INFO     | __main__:main:30 - 3os.environ['CATEGORIAS']: None
+2025-08-04 09:50:15.715 | INFO     | __main__:main:31 - 4categorias parámetro inicial: ['/electronica/audio']
+2025-08-04 09:50:15.715 | INFO     | __main__:main:32 - 5DEBUG sys.argv completo: ['entrypoint.py', '/electronica/audio']
+2025-08-04 09:50:15.715 | INFO     | __main__:main:33 - 6VALOR os.environ.get('arguments'): None
+2025-08-04 09:50:15.717 | INFO     | __main__:main:41 - CATEGORIAS recibidas desde argumento: ['/electronica/audio']
+2025-08-04 09:50:15.718 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-08-04 09:50:17.624 | INFO     | extractor:procesar_categoria:139 - Procesando categoría: /electronica/audio
+2025-08-04 09:50:32.995 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 0 productos visibles
+2025-08-04 09:50:38.052 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 0 productos visibles
+2025-08-04 09:50:43.095 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 3: 0 productos visibles
+2025-08-04 09:50:48.161 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 4: 0 productos visibles
+2025-08-04 09:50:53.217 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 5: 0 productos visibles
+2025-08-04 09:50:58.276 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 6: 0 productos visibles
+2025-08-04 09:50:58.276 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (6). Productos detectados: 0
+2025-08-04 09:50:58.313 | WARNING  | extractor:procesar_categoria:145 - No se encontraron productos en la categoría: /electronica/audio
+2025-08-04 09:50:58.558 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-08-04 09:50:58.559 | INFO     | __main__:main:74 - Scraping finalizado correctamente
+2025-08-04 09:50:58.559 | INFO     | __main__:main:75 - Procesadas 1 categorías
+2025-08-04 09:50:58.559 | INFO     | __main__:main:76 - Tiempo total: 42.85 segundos
+2025-08-04 09:51:55.852 | INFO     | __main__:<module>:95 - CATEGORIAS desde sys.argv: ['lo-nuevo']
+2025-08-04 09:51:55.852 | INFO     | __main__:main:25 -  scraper de wal...
+2025-08-04 09:51:55.852 | INFO     | __main__:main:28 - 1== DEBUG ENV ==
+2025-08-04 09:51:55.852 | INFO     | __main__:main:29 - 2 srgv: ['entrypoint.py', 'lo-nuevo']
+2025-08-04 09:51:55.852 | INFO     | __main__:main:30 - 3os.environ['CATEGORIAS']: None
+2025-08-04 09:51:55.852 | INFO     | __main__:main:31 - 4categorias parámetro inicial: ['lo-nuevo']
+2025-08-04 09:51:55.852 | INFO     | __main__:main:32 - 5DEBUG sys.argv completo: ['entrypoint.py', 'lo-nuevo']
+2025-08-04 09:51:55.852 | INFO     | __main__:main:33 - 6VALOR os.environ.get('arguments'): None
+2025-08-04 09:51:55.859 | INFO     | __main__:main:41 - CATEGORIAS recibidas desde argumento: ['lo-nuevo']
+2025-08-04 09:51:55.859 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-08-04 09:51:57.456 | INFO     | extractor:procesar_categoria:139 - Procesando categoría: lo-nuevo
+2025-08-04 09:52:08.197 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 32 productos visibles
+2025-08-04 09:52:14.212 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 68 productos visibles
+2025-08-04 09:52:21.281 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 3: 72 productos visibles
+2025-08-04 09:52:27.725 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 4: 112 productos visibles
+2025-08-04 09:52:34.269 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 5: 116 productos visibles
+2025-08-04 09:52:40.200 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 6: 156 productos visibles
+2025-08-04 09:52:40.202 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (6). Productos detectados: 156
+2025-08-04 09:53:19.487 | ERROR    | db:guardar_productos_scrapeados_masivo:44 - Error al guardar productos masivamente: "['slug'] not in index"
+2025-08-04 09:53:19.962 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-08-04 09:53:19.963 | INFO     | __main__:main:74 - Scraping finalizado correctamente
+2025-08-04 09:53:19.963 | INFO     | __main__:main:75 - Procesadas 1 categorías
+2025-08-04 09:53:19.964 | INFO     | __main__:main:76 - Tiempo total: 84.11 segundos
+2025-08-04 10:03:27.467 | INFO     | __main__:<module>:95 - CATEGORIAS desde sys.argv: ['lo-nuevo']
+2025-08-04 10:03:27.467 | INFO     | __main__:main:25 -  scraper de wal...
+2025-08-04 10:03:27.467 | INFO     | __main__:main:28 - 1== DEBUG ENV ==
+2025-08-04 10:03:27.469 | INFO     | __main__:main:29 - 2 srgv: ['entrypoint.py', 'lo-nuevo']
+2025-08-04 10:03:27.469 | INFO     | __main__:main:30 - 3os.environ['CATEGORIAS']: None
+2025-08-04 10:03:27.469 | INFO     | __main__:main:31 - 4categorias parámetro inicial: ['lo-nuevo']
+2025-08-04 10:03:27.469 | INFO     | __main__:main:32 - 5DEBUG sys.argv completo: ['entrypoint.py', 'lo-nuevo']
+2025-08-04 10:03:27.469 | INFO     | __main__:main:33 - 6VALOR os.environ.get('arguments'): None
+2025-08-04 10:03:27.471 | INFO     | __main__:main:41 - CATEGORIAS recibidas desde argumento: ['lo-nuevo']
+2025-08-04 10:03:27.471 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-08-04 10:03:29.798 | INFO     | extractor:procesar_categoria:140 - Procesando categoría: lo-nuevo
+2025-08-04 10:03:44.173 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 20 productos visibles
+2025-08-04 10:03:50.167 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 52 productos visibles
+2025-08-04 10:03:56.258 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 3: 76 productos visibles
+2025-08-04 10:04:01.664 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 4: 98 productos visibles
+2025-08-04 10:04:08.498 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 5: 100 productos visibles
+2025-08-04 10:04:14.710 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 6: 120 productos visibles
+2025-08-04 10:04:14.710 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (6). Productos detectados: 120
+2025-08-04 10:04:52.158 | INFO     | db:guardar_productos_scrapeados_masivo:41 - Guardados 120 productos en la base de datos (masivo).
+2025-08-04 10:04:52.622 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-08-04 10:04:52.622 | INFO     | __main__:main:74 - Scraping finalizado correctamente
+2025-08-04 10:04:52.626 | INFO     | __main__:main:75 - Procesadas 1 categorías
+2025-08-04 10:04:52.626 | INFO     | __main__:main:76 - Tiempo total: 85.15 segundos
+2025-08-04 10:05:52.761 | INFO     | __main__:<module>:95 - CATEGORIAS desde sys.argv: ['lo-nuevo']
+2025-08-04 10:05:52.761 | INFO     | __main__:main:25 -  scraper de wal...
+2025-08-04 10:05:52.766 | INFO     | __main__:main:28 - 1== DEBUG ENV ==
+2025-08-04 10:05:52.766 | INFO     | __main__:main:29 - 2 srgv: ['entrypoint.py', 'lo-nuevo']
+2025-08-04 10:05:52.768 | INFO     | __main__:main:30 - 3os.environ['CATEGORIAS']: None
+2025-08-04 10:05:52.770 | INFO     | __main__:main:31 - 4categorias parámetro inicial: ['lo-nuevo']
+2025-08-04 10:05:52.772 | INFO     | __main__:main:32 - 5DEBUG sys.argv completo: ['entrypoint.py', 'lo-nuevo']
+2025-08-04 10:05:52.775 | INFO     | __main__:main:33 - 6VALOR os.environ.get('arguments'): None
+2025-08-04 10:05:52.775 | INFO     | __main__:main:41 - CATEGORIAS recibidas desde argumento: ['lo-nuevo']
+2025-08-04 10:05:52.777 | INFO     | scraper:ejecutar_scraper:10 - Lanzando scraper de Walmart
+2025-08-04 10:05:54.791 | INFO     | extractor:procesar_categoria:140 - Procesando categoría: lo-nuevo
+2025-08-04 10:06:06.938 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 1: 40 productos visibles
+2025-08-04 10:06:14.806 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 2: 64 productos visibles
+2025-08-04 10:06:22.538 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 3: 82 productos visibles
+2025-08-04 10:06:33.154 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 4: 112 productos visibles
+2025-08-04 10:06:39.557 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 5: 114 productos visibles
+2025-08-04 10:06:46.937 | INFO     | navegador:scroll_hasta_cargar_todos:23 - Scroll 6: 136 productos visibles
+2025-08-04 10:06:46.937 | INFO     | navegador:scroll_hasta_cargar_todos:39 - Fin de scroll por límite de ciclos (6). Productos detectados: 136
+2025-08-04 10:07:22.278 | INFO     | db:guardar_productos_scrapeados_masivo:41 - Guardados 136 productos en la base de datos (masivo).
+2025-08-04 10:07:22.539 | INFO     | scraper:ejecutar_scraper:22 - Scraping finalizado correctamente
+2025-08-04 10:07:22.539 | INFO     | __main__:main:74 - Scraping finalizado correctamente
+2025-08-04 10:07:22.539 | INFO     | __main__:main:75 - Procesadas 1 categorías
+2025-08-04 10:07:22.539 | INFO     | __main__:main:76 - Tiempo total: 89.77 segundos

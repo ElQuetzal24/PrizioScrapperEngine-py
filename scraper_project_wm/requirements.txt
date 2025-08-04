@@ -3,3 +3,4 @@ pyodbc>=5.0.1
 loguru>=0.7.2
 azure-servicebus>=7.11.1  # (solo si usas Service Bus para notificación)
 python-dotenv
+pandas

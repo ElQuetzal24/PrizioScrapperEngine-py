@@ -2,6 +2,7 @@ import re
 from datetime import datetime
 from navegador import scroll_hasta_cargar_todos, safe_text_content
 from db import guardar_productos_scrapeados
+from db import guardar_productos_scrapeados_masivo
 from loguru import logger
 import asyncio
 
@@ -126,7 +127,8 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
             "url": url,
             "fecha": fecha_hoy,
             "imagen": img_url,
-            "categoria": categoria
+            "categoria": categoria,
+            "slug": "",
         })
 
     return productos
@@ -138,7 +140,8 @@ async def procesar_categoria(page, categoria, urls_vistas, semaforo):
             logger.info(f"Procesando categoría: {categoria}")
             productos = await extraer_productos(page, url_categoria, categoria, urls_vistas)
             if productos:
-                guardar_productos_scrapeados(productos)
+                #guardar_productos_scrapeados(productos)
+                guardar_productos_scrapeados_masivo(productos)
             else:
                 logger.warning(f"No se encontraron productos en la categoría: {categoria}")
         except Exception as e:
