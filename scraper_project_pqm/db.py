@@ -1,5 +1,6 @@
 import pyodbc
 import os
+import pandas as pd
 from dotenv import load_dotenv
 from loguru import logger
 
@@ -13,6 +14,41 @@ def obtener_conexion_sql():
         f"UID={os.getenv('SQL_USER')};"
         f"PWD={os.getenv('SQL_PASSWORD')};"
     )
+
+
+def guardar_productos_scrapeados_masivo(productos: list):
+    if not productos:
+        logger.warning("No hay productos para guardar.")
+        return
+
+    try:
+        conn = obtener_conexion_sql()
+        cursor = conn.cursor()
+
+        # Convertir a DataFrame y luego a lista de tuplas
+        df = pd.DataFrame(productos)
+        df["CodigoOrigen"] = "PequenoMundo"
+
+        # Convertir a lista de tuplas
+        registros = list(df[["nombre", "precio", "url", "slug", "categoria", "imagen", "CodigoOrigen"]].itertuples(index=False, name=None))
+
+        # Crear TVP
+        tvp = cursor.execute(
+            "EXEC usp_ProductosScrapeados_GuardarMasivo ?",
+            (registros,)
+        )
+
+        conn.commit()
+        logger.info(f"Guardados {len(registros)} productos en la base de datos (masivo).")
+
+    except Exception as e:
+        logger.error(f"Error al guardar productos masivamente: {e}")
+    finally:
+        try:
+            cursor.close()
+            conn.close()
+        except Exception as e:
+            logger.warning(f"Error al cerrar conexión: {e}")
 
 def guardar_productos_scrapeados(productos: list):
     if not productos:
