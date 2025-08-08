@@ -13,12 +13,12 @@ async def main(categorias):
     inicio = time.time()
 
     if categorias:
-        logger.info(f"CATEGORIAS recibidas desde sys.argv: {categorias}")
+        logger.info(f"Categorías recibidas desde sys.argv: {categorias}")
     else:
         categorias_env = os.getenv("CATEGORIAS")
         if categorias_env:
             categorias = [cat.strip() for cat in categorias_env.split(",") if cat.strip()]
-            logger.info(f"CATEGORIAS desde env: {categorias}")
+            logger.info(f"Categorías desde env: {categorias}")
         else:
             categorias = CATEGORIAS
             logger.info(f"Usando categorías por defecto ({len(categorias)}): {categorias[:5]}...")
@@ -28,7 +28,7 @@ async def main(categorias):
     try:
         concurrencia = int(concurrencia_env)
     except ValueError:
-        logger.warning(f"Valor inválido para CONCURRENCIA: {concurrencia_env}, usando 3")
+        logger.warning(f"Valor inválido para Concurrencia: {concurrencia_env}, usando 3")
         concurrencia = 3
 
     try:

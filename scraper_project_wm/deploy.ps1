@@ -1,6 +1,6 @@
-$acrName = "acrprizio" #prd: "crprizio" | dev: "acrprizio"
+$acrName = "crprizio"
 $imageName = "scraper-wm"
-$tag = "V1.0.1"
+$tag = "latest"
 $loginServer = az acr show --name $acrName --query loginServer --output tsv
 
 Write-Host "`n Iniciando sesion en Azure..."

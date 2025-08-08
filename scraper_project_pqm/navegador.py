@@ -84,6 +84,6 @@ async def procesar_categoria(ruta: str, sem: asyncio.Semaphore):
 
             if productos_data:
                 
-               # guardar_productos_scrapeados(productos_data)
+ 
                 guardar_productos_scrapeados_masivo(productos_data)
                 logger.info(f"{len(productos_data)} productos guardados de {ruta}")

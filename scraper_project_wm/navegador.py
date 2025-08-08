@@ -1,5 +1,5 @@
 from playwright.async_api import async_playwright
-from logger import logger  # Asegúrate de tener logger.py correctamente importado
+from logger import logger  
 
 async def lanzar_navegador():
     playwright = await async_playwright().start()

@@ -25,12 +25,7 @@ async def main(categorias):
     logger.info(" scraper de wal...")
     inicio = time.time()
 
-    logger.info("1== DEBUG ENV ==")
-    logger.info(f"2 srgv: {sys.argv}")
-    logger.info(f"3os.environ['CATEGORIAS']: {os.getenv('CATEGORIAS')}")
-    logger.info(f"4categorias parámetro inicial: {categorias}")
-    logger.info(f"5DEBUG sys.argv completo: {sys.argv}")
-    logger.info(f"6VALOR os.environ.get('arguments'): {os.environ.get('arguments')}")
+
     if len(sys.argv) > 1:
         try:
             raw_arg = sys.argv[1]

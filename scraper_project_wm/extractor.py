@@ -61,7 +61,7 @@ async def extraer_productos(page, url_categoria, categoria, visto_urls):
     try:
         await asyncio.wait_for(scroll_hasta_cargar_todos(page), timeout=90)
     except asyncio.TimeoutError:
-        logger.error("⏱️ Timeout: scroll se detuvo por exceder 90 segundos")
+        logger.error(" Timeout: scroll se detuvo por exceder 90 segundos")
         return []
 
     productos = []

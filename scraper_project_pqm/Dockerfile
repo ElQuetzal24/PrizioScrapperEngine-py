@@ -2,7 +2,7 @@ FROM python:3.11-bullseye
 
 WORKDIR /app
 
-# Instalar dependencias de sistema necesarias
+ 
 RUN apt-get update && \
     apt-get install -y curl gnupg unixodbc-dev gcc g++ && \
     apt-get remove -y libodbc2 libodbcinst2 unixodbc-common || true && \
@@ -14,10 +14,10 @@ RUN apt-get update && \
 # Copiar archivos del proyecto
 COPY . .
 
-# Instalar dependencias Python
+ 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Instalar navegadores de Playwright
+ 
 RUN playwright install --with-deps
 
 # Ejecutar el script principal

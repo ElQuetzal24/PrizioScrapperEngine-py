@@ -25,14 +25,14 @@ def guardar_productos_scrapeados_masivo(productos: list):
         conn = obtener_conexion_sql()
         cursor = conn.cursor()
 
-        # Convertir a DataFrame y luego a lista de tuplas
+      
         df = pd.DataFrame(productos)
         df["CodigoOrigen"] = "PequenoMundo"
 
-        # Convertir a lista de tuplas
+ 
         registros = list(df[["nombre", "precio", "url", "slug", "categoria", "imagen", "CodigoOrigen"]].itertuples(index=False, name=None))
 
-        # Crear TVP
+        
         tvp = cursor.execute(
             "EXEC usp_ProductosScrapeados_GuardarMasivo ?",
             (registros,)
